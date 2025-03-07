@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VBAScript | Bajins</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="Office Visual Basic for Applications (VBA)">
+    <meta name="twitter:title" content="VBAScript">
+    <meta name="twitter:description" content="Office Visual Basic for Applications (VBA)">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://bajins.com/Shell/WindowsVBAScript.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="VBAScript">
+    <meta property="og:description" content="Office Visual Basic for Applications (VBA)">
+    <meta property="og:url" content="https://bajins.com/Shell/WindowsVBAScript.html">
+    <meta property="og:site_name" content="bajins">
+    <meta itemprop="name" content="VBAScript">
+    <meta itemprop="description" content="Office Visual Basic for Applications (VBA)">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog
+        ,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive
+        ,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.88fdddf1.css" as="style"><link rel="preload" href="/assets/js/app.af433f24.js" as="script"><link rel="preload" href="/assets/js/2.5bba9cda.js" as="script"><link rel="preload" href="/assets/js/1.e94e7bb0.js" as="script"><link rel="preload" href="/assets/js/101.4bf7ed3e.js" as="script"><link rel="prefetch" href="/assets/js/100.b2d9c364.js"><link rel="prefetch" href="/assets/js/102.d73d4a07.js"><link rel="prefetch" href="/assets/js/103.edfa2dfa.js"><link rel="prefetch" href="/assets/js/104.c2aaaa39.js"><link rel="prefetch" href="/assets/js/105.52becf93.js"><link rel="prefetch" href="/assets/js/106.6948127d.js"><link rel="prefetch" href="/assets/js/107.684cc6c1.js"><link rel="prefetch" href="/assets/js/108.6b8b295e.js"><link rel="prefetch" href="/assets/js/109.4705aab4.js"><link rel="prefetch" href="/assets/js/110.f1dab9c6.js"><link rel="prefetch" href="/assets/js/111.59037d2b.js"><link rel="prefetch" href="/assets/js/112.43b5af2b.js"><link rel="prefetch" href="/assets/js/113.2029bbb7.js"><link rel="prefetch" href="/assets/js/114.de76752d.js"><link rel="prefetch" href="/assets/js/115.bf19268d.js"><link rel="prefetch" href="/assets/js/116.5a218819.js"><link rel="prefetch" href="/assets/js/117.14a4227e.js"><link rel="prefetch" href="/assets/js/118.c048a888.js"><link rel="prefetch" href="/assets/js/119.3a62035a.js"><link rel="prefetch" href="/assets/js/12.3e573997.js"><link rel="prefetch" href="/assets/js/120.820fe27d.js"><link rel="prefetch" href="/assets/js/121.2ef79c43.js"><link rel="prefetch" href="/assets/js/122.521e518c.js"><link rel="prefetch" href="/assets/js/123.38d2dc8f.js"><link rel="prefetch" href="/assets/js/124.5f98c71b.js"><link rel="prefetch" href="/assets/js/125.48298a3a.js"><link rel="prefetch" href="/assets/js/126.0e06d4e6.js"><link rel="prefetch" href="/assets/js/13.adb544f0.js"><link rel="prefetch" href="/assets/js/14.229e74ec.js"><link rel="prefetch" href="/assets/js/15.18c6eae3.js"><link rel="prefetch" href="/assets/js/16.047133be.js"><link rel="prefetch" href="/assets/js/17.98455d61.js"><link rel="prefetch" href="/assets/js/18.7f79ddcd.js"><link rel="prefetch" href="/assets/js/19.f6bd48e9.js"><link rel="prefetch" href="/assets/js/20.74fe9f6f.js"><link rel="prefetch" href="/assets/js/21.d70130f4.js"><link rel="prefetch" href="/assets/js/22.1cb56e3a.js"><link rel="prefetch" href="/assets/js/23.d95a301b.js"><link rel="prefetch" href="/assets/js/24.023b731e.js"><link rel="prefetch" href="/assets/js/25.3fb7449c.js"><link rel="prefetch" href="/assets/js/26.58839edf.js"><link rel="prefetch" href="/assets/js/27.14a96e03.js"><link rel="prefetch" href="/assets/js/28.3b526abb.js"><link rel="prefetch" href="/assets/js/29.18dd1d78.js"><link rel="prefetch" href="/assets/js/3.e306265c.js"><link rel="prefetch" href="/assets/js/30.425053e8.js"><link rel="prefetch" href="/assets/js/31.909a20ba.js"><link rel="prefetch" href="/assets/js/32.74a92cd1.js"><link rel="prefetch" href="/assets/js/33.c0834037.js"><link rel="prefetch" href="/assets/js/34.4b3fc894.js"><link rel="prefetch" href="/assets/js/35.5e29dbe4.js"><link rel="prefetch" href="/assets/js/36.0f4b8b74.js"><link rel="prefetch" href="/assets/js/37.84f9a846.js"><link rel="prefetch" href="/assets/js/38.24604b00.js"><link rel="prefetch" href="/assets/js/39.2f1d8f6f.js"><link rel="prefetch" href="/assets/js/4.68d576e1.js"><link rel="prefetch" href="/assets/js/40.9c27d666.js"><link rel="prefetch" href="/assets/js/41.d44d9fd4.js"><link rel="prefetch" href="/assets/js/42.ee86dc25.js"><link rel="prefetch" href="/assets/js/43.63f585ea.js"><link rel="prefetch" href="/assets/js/44.b1ce0ab7.js"><link rel="prefetch" href="/assets/js/45.2756d19f.js"><link rel="prefetch" href="/assets/js/46.e2b38a0d.js"><link rel="prefetch" href="/assets/js/47.784ca3db.js"><link rel="prefetch" href="/assets/js/48.beeb6371.js"><link rel="prefetch" href="/assets/js/49.7c4bff07.js"><link rel="prefetch" href="/assets/js/5.f9bb3212.js"><link rel="prefetch" href="/assets/js/50.a449a5e9.js"><link rel="prefetch" href="/assets/js/51.158a2da2.js"><link rel="prefetch" href="/assets/js/52.ab3759f5.js"><link rel="prefetch" href="/assets/js/53.c5cca695.js"><link rel="prefetch" href="/assets/js/54.080f6315.js"><link rel="prefetch" href="/assets/js/55.08e8a399.js"><link rel="prefetch" href="/assets/js/56.058e4dec.js"><link rel="prefetch" href="/assets/js/57.ce412d0b.js"><link rel="prefetch" href="/assets/js/58.653ba1f1.js"><link rel="prefetch" href="/assets/js/59.b7f42568.js"><link rel="prefetch" href="/assets/js/6.82564f6f.js"><link rel="prefetch" href="/assets/js/60.fcd68ac2.js"><link rel="prefetch" href="/assets/js/61.447165b5.js"><link rel="prefetch" href="/assets/js/62.3d6bd98f.js"><link rel="prefetch" href="/assets/js/63.a30d293a.js"><link rel="prefetch" href="/assets/js/64.0a7102e5.js"><link rel="prefetch" href="/assets/js/65.1cdfca53.js"><link rel="prefetch" href="/assets/js/66.2c6d3f09.js"><link rel="prefetch" href="/assets/js/67.693c9b67.js"><link rel="prefetch" href="/assets/js/68.9ce5c609.js"><link rel="prefetch" href="/assets/js/69.763248ac.js"><link rel="prefetch" href="/assets/js/7.fea9968b.js"><link rel="prefetch" href="/assets/js/70.807951a6.js"><link rel="prefetch" href="/assets/js/71.5d3420e7.js"><link rel="prefetch" href="/assets/js/72.ee04bee0.js"><link rel="prefetch" href="/assets/js/73.e7f75b03.js"><link rel="prefetch" href="/assets/js/74.fb22d655.js"><link rel="prefetch" href="/assets/js/75.43a5415a.js"><link rel="prefetch" href="/assets/js/76.f4a16cdf.js"><link rel="prefetch" href="/assets/js/77.5d486651.js"><link rel="prefetch" href="/assets/js/78.6d8272ec.js"><link rel="prefetch" href="/assets/js/79.3fa783b2.js"><link rel="prefetch" href="/assets/js/8.db3e67e4.js"><link rel="prefetch" href="/assets/js/80.de84f762.js"><link rel="prefetch" href="/assets/js/81.22865c23.js"><link rel="prefetch" href="/assets/js/82.f64016ab.js"><link rel="prefetch" href="/assets/js/83.e703973f.js"><link rel="prefetch" href="/assets/js/84.409f2d6e.js"><link rel="prefetch" href="/assets/js/85.e2dccd5c.js"><link rel="prefetch" href="/assets/js/86.70d04195.js"><link rel="prefetch" href="/assets/js/87.8156e2ee.js"><link rel="prefetch" href="/assets/js/88.53a77bb9.js"><link rel="prefetch" href="/assets/js/89.a6445dfb.js"><link rel="prefetch" href="/assets/js/90.62aa07ad.js"><link rel="prefetch" href="/assets/js/91.6ca7f2c2.js"><link rel="prefetch" href="/assets/js/92.a31441aa.js"><link rel="prefetch" href="/assets/js/93.bda1ebba.js"><link rel="prefetch" href="/assets/js/94.64e6411d.js"><link rel="prefetch" href="/assets/js/95.c0b3d405.js"><link rel="prefetch" href="/assets/js/96.a6269ef7.js"><link rel="prefetch" href="/assets/js/97.acbbd246.js"><link rel="prefetch" href="/assets/js/98.97a78c41.js"><link rel="prefetch" href="/assets/js/99.4200abf8.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.c8203ef5.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.ef0876c5.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.88fdddf1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name can-hide">Bajins</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link router-link-active">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link router-link-active">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Shell</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Shell/" aria-current="page" class="sidebar-link">Shell</a></li><li><a href="/Shell/PowerShell.html" class="sidebar-link">PowerShell</a></li><li><a href="/Shell/PowerShell命令.html" class="sidebar-link">PowerShell命令</a></li><li><a href="/Shell/ShellScript.html" class="sidebar-link">ShellScript</a></li><li><a href="/Shell/ShellWindows.html" class="sidebar-link">ShellWindows</a></li><li><a href="/Shell/Shell命令.html" class="sidebar-link">Shell命令</a></li><li><a href="/Shell/WindowsBatch.html" class="sidebar-link">WindowsBatch</a></li><li><a href="/Shell/WindowsJScript.html" class="sidebar-link">WindowsJScript</a></li><li><a href="/Shell/WindowsScript.html" class="sidebar-link">WindowsScript</a></li><li><a href="/Shell/WindowsVBAScript.html" aria-current="page" class="active sidebar-link">VBAScript</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Shell/WindowsVBAScript.html#flag" class="sidebar-link">Flag</a></li></ul></li><li><a href="/Shell/WindowsVBScript.html" class="sidebar-link">WindowsVBScript</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vbascript"><a href="#vbascript" class="header-anchor">#</a> VBAScript</h1> <p></p><div class="table-of-contents"><ul><li><a href="#flag">Flag</a></li></ul></div><p></p> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h2> <blockquote><p>Office Visual Basic for Applications (VBA)</p></blockquote> <ul><li><a href="https://github.com/MicrosoftDocs/VBA-Docs" target="_blank" rel="noopener noreferrer">https://github.com/MicrosoftDocs/VBA-Docs<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.microsoft.com/zh-cn/office/vba/api/overview/language-reference" target="_blank" rel="noopener noreferrer">Visual Basic for Applications (VBA) 语言参考<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>Microsoft Office Development <a href="https://bettersolutions.com" target="_blank" rel="noopener noreferrer">https://bettersolutions.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.zhihu.com/people/xia-xi-lan/posts" target="_blank" rel="noopener noreferrer">VBA学习笔记<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/wordsin/article/details/80575615" target="_blank" rel="noopener noreferrer">xcel之VBA简单宏编程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.zhihu.com/people/xia-xi-lan/posts" target="_blank" rel="noopener noreferrer">VBA学习笔记<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/wordsin/article/details/80575615" target="_blank" rel="noopener noreferrer">xcel之VBA简单宏编程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.microsoft.com/zh-cn/javascript/api" target="_blank" rel="noopener noreferrer">https://docs.microsoft.com/zh-cn/javascript/api<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.microsoft.com/zh-cn/office/dev/add-ins/excel" target="_blank" rel="noopener noreferrer">https://docs.microsoft.com/zh-cn/office/dev/add-ins/excel<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><code>=IF(IFERROR(FIND(&quot;不良&quot;,B2),0),&quot;不良品仓&quot;,IF(IFERROR(FIND(&quot;待检&quot;,B2),0),&quot;待检仓&quot;,IF(IFERROR(FIND(&quot;报废&quot;,B2),0),&quot;报废仓&quot;,IF(IFERROR(FIND(&quot;良&quot;,B2),0),&quot;良品仓&quot;,&quot;&quot;))))</code></li> <li>匹配单元格左边英文及其他字符=RegexString(A1,&quot;[^\u4e00-\u9fa5]+&quot;)</li> <li>匹配单元格右边中文及其他字符=RegexString(A1,&quot;[\u4e00-\u9fa5].*&quot;)</li></ul> <div class="language-vb extra-class"><pre class="language-vb"><code><span class="token keyword">Function</span> RegexString<span class="token punctuation">(</span>rng <span class="token keyword">As</span> Range<span class="token punctuation">,</span> str <span class="token keyword">As</span> <span class="token keyword">String</span><span class="token punctuation">)</span>
+<span class="token comment">'第一个参数rng为区域保持不变， 添加第二个参数str（作为正则表达式）</span>
+  <span class="token keyword">With</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;VBscript.regexp&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token keyword">Global</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token punctuation">.</span>Pattern <span class="token operator">=</span> str <span class="token comment">'表达式,直接从用户函数的第二个参数中调用</span>
+    <span class="token keyword">If</span> <span class="token punctuation">.</span>Execute<span class="token punctuation">(</span>rng<span class="token punctuation">)</span><span class="token punctuation">.</span>Count <span class="token operator">=</span> <span class="token number">0</span> <span class="token keyword">Then</span>
+    RegexString <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+    <span class="token keyword">Else</span>
+    RegexString <span class="token operator">=</span> <span class="token punctuation">.</span>Execute<span class="token punctuation">(</span>rng<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">End</span> <span class="token keyword">If</span>
+  <span class="token keyword">End</span> <span class="token keyword">With</span>
+<span class="token keyword">End</span> <span class="token keyword">Function</span>
+</code></pre></div><ul><li>分割字符串并统计</li></ul> <div class="language-vb extra-class"><pre class="language-vb"><code><span class="token comment">'https://blog.csdn.net/wordsin/article/details/80575615</span>
+<span class="token comment">'自定义函数用于工作表时，必须是被动式的，只是返回一个值，不能处理单元格或在工作表上修改，批注是个例外，不能调用range的方法，如：Find，Range.Replace例外</span>
+<span class="token keyword">Function</span> ReSplit<span class="token punctuation">(</span>rng <span class="token keyword">As</span> Range<span class="token punctuation">)</span>
+    <span class="token keyword">Dim</span> newStr <span class="token keyword">As</span> <span class="token keyword">String</span>
+    <span class="token keyword">Dim</span> countNum <span class="token keyword">As</span> <span class="token keyword">Integer</span>
+    
+    old <span class="token operator">=</span> Strings<span class="token punctuation">.</span>Split<span class="token punctuation">(</span>rng<span class="token punctuation">,</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">For</span> <span class="token keyword">Each</span> e <span class="token keyword">In</span> old
+        <span class="token keyword">If</span> e <span class="token operator">&lt;</span><span class="token operator">&gt;</span> <span class="token string">&quot;&quot;</span> <span class="token keyword">Then</span>
+            <span class="token comment">'MsgBox TypeName(e)</span>
+            <span class="token comment">'Replace(, &quot;/&quot;, &quot;&quot;)</span>
+            <span class="token keyword">With</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;VBSCRIPT.REGEXP&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token keyword">Global</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+                <span class="token punctuation">.</span>IgnoreCase <span class="token operator">=</span> <span class="token boolean">True</span>
+                <span class="token punctuation">.</span>Pattern <span class="token operator">=</span> <span class="token string">&quot;([a-zA-Z]+)([0-9]+)-([0-9]+)&quot;</span>
+                <span class="token keyword">If</span> <span class="token punctuation">.</span>test<span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token keyword">Then</span>
+                    <span class="token comment">'执行正则表达式，获取子匹配列表</span>
+                    <span class="token keyword">Set</span> da <span class="token operator">=</span> <span class="token punctuation">.</span>Execute<span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>SubMatches
+                    last <span class="token operator">=</span> da<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+                    st <span class="token operator">=</span> da<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+                    en <span class="token operator">=</span> da<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+                    <span class="token comment">'Debug.Print last, st, en</span>
+                    <span class="token keyword">For</span> i <span class="token operator">=</span> st <span class="token keyword">To</span> en
+                        newStr <span class="token operator">=</span> newStr <span class="token operator">&amp;</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">&amp;</span> last <span class="token operator">&amp;</span> i
+                        countNum <span class="token operator">=</span> countNum <span class="token operator">+</span> <span class="token number">1</span>
+                    <span class="token keyword">Next</span>
+                <span class="token keyword">Else</span>
+                    newStr <span class="token operator">=</span> newStr <span class="token operator">&amp;</span> <span class="token string">&quot;,&quot;</span> <span class="token operator">&amp;</span> e
+                    countNum <span class="token operator">=</span> countNum <span class="token operator">+</span> <span class="token number">1</span>
+                <span class="token keyword">End</span> <span class="token keyword">If</span>
+            <span class="token keyword">End</span> <span class="token keyword">With</span>
+        <span class="token keyword">End</span> <span class="token keyword">If</span>
+    <span class="token keyword">Next</span>
+    <span class="token keyword">If</span> InStr<span class="token punctuation">(</span>newStr<span class="token punctuation">,</span> <span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span> <span class="token keyword">Then</span>
+        newStr <span class="token operator">=</span> Right<span class="token punctuation">(</span>newStr<span class="token punctuation">,</span> Len<span class="token punctuation">(</span>newStr<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">End</span> <span class="token keyword">If</span>
+    Debug<span class="token punctuation">.</span>Print newStr
+    Debug<span class="token punctuation">.</span>Print countNum
+    
+    ReSplit <span class="token operator">=</span> newStr
+    
+    <span class="token comment">'ActiveCell.Address '这是当前单元格地址</span>
+    <span class="token comment">'Selection.Offset(1, 0).Select '这是向下跳1格</span>
+    <span class="token comment">'Selection.Offset(-1, 0).Select '这是向上跳1格</span>
+    <span class="token comment">'Selection.Offset(0, -1).Select '这是向左跳1格</span>
+    <span class="token comment">'Selection.Offset(0, 1).Select '这是向右跳1格</span>
+
+<span class="token keyword">End</span> <span class="token keyword">Function</span>
+
+
+<span class="token keyword">Function</span> SplitCount<span class="token punctuation">(</span>rng <span class="token keyword">As</span> Range<span class="token punctuation">,</span> delimiter <span class="token keyword">As</span> <span class="token keyword">String</span><span class="token punctuation">)</span>
+   SplitCount <span class="token operator">=</span> Len<span class="token punctuation">(</span>Strings<span class="token punctuation">.</span>Split<span class="token punctuation">(</span>rng<span class="token punctuation">,</span> delimiter<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">End</span> <span class="token keyword">Function</span>
+
+<span class="token keyword">Sub</span> SetValue<span class="token punctuation">(</span>offset <span class="token keyword">As</span> Range<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+    offset <span class="token operator">=</span> value
+<span class="token keyword">End</span> <span class="token keyword">Sub</span>
+
+
+<span class="token keyword">Sub</span> run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">Set</span> rng <span class="token operator">=</span> Application<span class="token punctuation">.</span>InputBox<span class="token punctuation">(</span>prompt<span class="token punctuation">:</span><span class="token operator">=</span><span class="token string">&quot;请选择区域&quot;</span><span class="token punctuation">,</span> <span class="token keyword">Type</span><span class="token punctuation">:</span><span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span>
+    <span class="token keyword">If</span> rng<span class="token punctuation">.</span>Count <span class="token operator">=</span> <span class="token number">0</span> <span class="token keyword">Then</span>
+        MsgBox <span class="token string">&quot;请至少选择一个单元格！&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">,</span> <span class="token string">&quot;提示&quot;</span><span class="token punctuation">:</span>
+        <span class="token keyword">Exit</span> <span class="token keyword">Sub</span>
+    <span class="token keyword">End</span> <span class="token keyword">If</span>
+    <span class="token comment">'If rng.Count &lt;&gt; 1 Then</span>
+        <span class="token comment">'MsgBox &quot;只能选择一个单元格！&quot;, , &quot;提示&quot;:</span>
+        <span class="token comment">'Exit Sub</span>
+    <span class="token comment">'End If</span>
+    Debug<span class="token punctuation">.</span>Print <span class="token string">&quot;当前选择：&quot;</span><span class="token punctuation">,</span> rng<span class="token punctuation">.</span>Address<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    
+    rngs <span class="token operator">=</span> Strings<span class="token punctuation">.</span>Split<span class="token punctuation">(</span>rng<span class="token punctuation">.</span>Address<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;:&quot;</span><span class="token punctuation">)</span>
+    st <span class="token operator">=</span> Strings<span class="token punctuation">.</span>Split<span class="token punctuation">(</span>rngs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;$&quot;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    sta <span class="token operator">=</span> Replace<span class="token punctuation">(</span>rngs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;$&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment">'Debug.Print rngs(0), st, sta</span>
+    
+    of1Content <span class="token operator">=</span> <span class="token string">&quot;整理后的数据&quot;</span>
+    of2Content <span class="token operator">=</span> <span class="token string">&quot;整理后的统计&quot;</span>
+    <span class="token keyword">If</span> Range<span class="token punctuation">(</span>st <span class="token operator">&amp;</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>offset<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span> of1Content <span class="token keyword">Then</span>
+        <span class="token comment">'插入空列</span>
+        Range<span class="token punctuation">(</span>sta<span class="token punctuation">)</span><span class="token punctuation">.</span>offset<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>EntireColumn<span class="token punctuation">.</span>Insert
+        Range<span class="token punctuation">(</span>st <span class="token operator">&amp;</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>offset<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> of1Content
+    <span class="token keyword">End</span> <span class="token keyword">If</span>
+    <span class="token keyword">If</span> Range<span class="token punctuation">(</span>st <span class="token operator">&amp;</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>offset<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span><span class="token operator">&gt;</span> of2Content <span class="token keyword">Then</span>
+        Range<span class="token punctuation">(</span>sta<span class="token punctuation">)</span><span class="token punctuation">.</span>offset<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>EntireColumn<span class="token punctuation">.</span>Insert
+        Range<span class="token punctuation">(</span>st <span class="token operator">&amp;</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>offset<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> of2Content
+    <span class="token keyword">End</span> <span class="token keyword">If</span>
+    
+    <span class="token keyword">For</span> <span class="token keyword">Each</span> im <span class="token keyword">In</span> rng
+        
+        <span class="token keyword">If</span> im <span class="token operator">&lt;</span><span class="token operator">&gt;</span> <span class="token string">&quot;&quot;</span> <span class="token keyword">Then</span>
+            <span class="token comment">'Debug.Print TypeName(im), im.Address</span>
+            
+            str1 <span class="token operator">=</span> ReSplit<span class="token punctuation">(</span>Range<span class="token punctuation">(</span>Replace<span class="token punctuation">(</span>im<span class="token punctuation">.</span>Address<span class="token punctuation">,</span> <span class="token string">&quot;$&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            im<span class="token punctuation">.</span>offset<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> str1
+            im<span class="token punctuation">.</span>offset<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> Application<span class="token punctuation">.</span>CountA<span class="token punctuation">(</span>Strings<span class="token punctuation">.</span>Split<span class="token punctuation">(</span>str1<span class="token punctuation">,</span> <span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">End</span> <span class="token keyword">If</span>
+    <span class="token keyword">Next</span>
+<span class="token keyword">End</span> <span class="token keyword">Sub</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bajins/notes-vuepress/edit/master//Shell/WindowsVBAScript.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2025-03-07 05:41:29</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Shell/WindowsScript.html" class="prev">
+        WindowsScript
+      </a></span> <span class="next"><a href="/Shell/WindowsVBScript.html">
+        WindowsVBScript
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.af433f24.js" defer></script><script src="/assets/js/2.5bba9cda.js" defer></script><script src="/assets/js/1.e94e7bb0.js" defer></script><script src="/assets/js/101.4bf7ed3e.js" defer></script>
+  </body>
+</html>
