@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ShellScript | Bajins</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="Shell脚本（shell script），是一种为Shell编写的脚本程序。
+&gt; Shell脚本文件的名称可以任意，但为了避免被误以为是普通文件，建议将.sh后缀加上，以表示是一个脚本文件。">
+    <meta name="twitter:title" content="ShellScript">
+    <meta name="twitter:description" content="Shell脚本（shell script），是一种为Shell编写的脚本程序。
+&gt; Shell脚本文件的名称可以任意，但为了避免被误以为是普通文件，建议将.sh后缀加上，以表示是一个脚本文件。">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://bajins.com/Shell/ShellScript.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ShellScript">
+    <meta property="og:description" content="Shell脚本（shell script），是一种为Shell编写的脚本程序。
+&gt; Shell脚本文件的名称可以任意，但为了避免被误以为是普通文件，建议将.sh后缀加上，以表示是一个脚本文件。">
+    <meta property="og:url" content="https://bajins.com/Shell/ShellScript.html">
+    <meta property="og:site_name" content="bajins">
+    <meta itemprop="name" content="ShellScript">
+    <meta itemprop="description" content="Shell脚本（shell script），是一种为Shell编写的脚本程序。
+&gt; Shell脚本文件的名称可以任意，但为了避免被误以为是普通文件，建议将.sh后缀加上，以表示是一个脚本文件。">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog
+        ,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive
+        ,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.88fdddf1.css" as="style"><link rel="preload" href="/assets/js/app.c8efcbfc.js" as="script"><link rel="preload" href="/assets/js/2.8e983ff4.js" as="script"><link rel="preload" href="/assets/js/1.955a609f.js" as="script"><link rel="preload" href="/assets/js/95.c0b3d405.js" as="script"><link rel="prefetch" href="/assets/js/100.fd5426e2.js"><link rel="prefetch" href="/assets/js/101.58414f6b.js"><link rel="prefetch" href="/assets/js/102.b00da7cc.js"><link rel="prefetch" href="/assets/js/103.09936a2c.js"><link rel="prefetch" href="/assets/js/104.81dc17c0.js"><link rel="prefetch" href="/assets/js/105.52becf93.js"><link rel="prefetch" href="/assets/js/106.cd5ca2e0.js"><link rel="prefetch" href="/assets/js/107.b5f7dc2a.js"><link rel="prefetch" href="/assets/js/108.80e6d9f1.js"><link rel="prefetch" href="/assets/js/109.b8e6960d.js"><link rel="prefetch" href="/assets/js/110.0d2d7ff1.js"><link rel="prefetch" href="/assets/js/111.263a6f7f.js"><link rel="prefetch" href="/assets/js/112.062a69c6.js"><link rel="prefetch" href="/assets/js/113.6020cf17.js"><link rel="prefetch" href="/assets/js/114.fd19f07f.js"><link rel="prefetch" href="/assets/js/115.c4c4f60f.js"><link rel="prefetch" href="/assets/js/116.57eb22d7.js"><link rel="prefetch" href="/assets/js/117.4d87adbb.js"><link rel="prefetch" href="/assets/js/118.aeac9c08.js"><link rel="prefetch" href="/assets/js/119.3a62035a.js"><link rel="prefetch" href="/assets/js/12.df1830d9.js"><link rel="prefetch" href="/assets/js/120.820fe27d.js"><link rel="prefetch" href="/assets/js/121.2ef79c43.js"><link rel="prefetch" href="/assets/js/122.fb9c2732.js"><link rel="prefetch" href="/assets/js/123.58373df6.js"><link rel="prefetch" href="/assets/js/124.5f98c71b.js"><link rel="prefetch" href="/assets/js/125.88abee71.js"><link rel="prefetch" href="/assets/js/126.79ceec80.js"><link rel="prefetch" href="/assets/js/13.c6ae7a5d.js"><link rel="prefetch" href="/assets/js/14.07dd5428.js"><link rel="prefetch" href="/assets/js/15.cbe73d4f.js"><link rel="prefetch" href="/assets/js/16.825d7f91.js"><link rel="prefetch" href="/assets/js/17.7676d4ed.js"><link rel="prefetch" href="/assets/js/18.231891d5.js"><link rel="prefetch" href="/assets/js/19.e8b9447b.js"><link rel="prefetch" href="/assets/js/20.4087bdff.js"><link rel="prefetch" href="/assets/js/21.efcdc49d.js"><link rel="prefetch" href="/assets/js/22.1cb56e3a.js"><link rel="prefetch" href="/assets/js/23.ded316d8.js"><link rel="prefetch" href="/assets/js/24.023b731e.js"><link rel="prefetch" href="/assets/js/25.7205291a.js"><link rel="prefetch" href="/assets/js/26.bc70b637.js"><link rel="prefetch" href="/assets/js/27.c88f8a03.js"><link rel="prefetch" href="/assets/js/28.61f5cfe6.js"><link rel="prefetch" href="/assets/js/29.cdb013c7.js"><link rel="prefetch" href="/assets/js/3.c04e12e3.js"><link rel="prefetch" href="/assets/js/30.f4a93607.js"><link rel="prefetch" href="/assets/js/31.1186c992.js"><link rel="prefetch" href="/assets/js/32.74a92cd1.js"><link rel="prefetch" href="/assets/js/33.7755b1ba.js"><link rel="prefetch" href="/assets/js/34.05fec650.js"><link rel="prefetch" href="/assets/js/35.d9f32766.js"><link rel="prefetch" href="/assets/js/36.9b502b76.js"><link rel="prefetch" href="/assets/js/37.50dd24ba.js"><link rel="prefetch" href="/assets/js/38.fd1c5db6.js"><link rel="prefetch" href="/assets/js/39.5d489e7f.js"><link rel="prefetch" href="/assets/js/4.3d39386f.js"><link rel="prefetch" href="/assets/js/40.917af558.js"><link rel="prefetch" href="/assets/js/41.d38b32d4.js"><link rel="prefetch" href="/assets/js/42.4a9b6f4e.js"><link rel="prefetch" href="/assets/js/43.cb52391e.js"><link rel="prefetch" href="/assets/js/44.98be21df.js"><link rel="prefetch" href="/assets/js/45.8369d33c.js"><link rel="prefetch" href="/assets/js/46.b1d3f62f.js"><link rel="prefetch" href="/assets/js/47.843cab5a.js"><link rel="prefetch" href="/assets/js/48.35a455f1.js"><link rel="prefetch" href="/assets/js/49.ce6e2073.js"><link rel="prefetch" href="/assets/js/5.f3d67aee.js"><link rel="prefetch" href="/assets/js/50.343b9412.js"><link rel="prefetch" href="/assets/js/51.b125a57d.js"><link rel="prefetch" href="/assets/js/52.f347c05a.js"><link rel="prefetch" href="/assets/js/53.7507fa89.js"><link rel="prefetch" href="/assets/js/54.c62ffc81.js"><link rel="prefetch" href="/assets/js/55.9a50106f.js"><link rel="prefetch" href="/assets/js/56.eba9873d.js"><link rel="prefetch" href="/assets/js/57.1f9459f2.js"><link rel="prefetch" href="/assets/js/58.f998bd37.js"><link rel="prefetch" href="/assets/js/59.0e79fced.js"><link rel="prefetch" href="/assets/js/6.b9cca5fc.js"><link rel="prefetch" href="/assets/js/60.b77308f4.js"><link rel="prefetch" href="/assets/js/61.a6519545.js"><link rel="prefetch" href="/assets/js/62.86c6db1a.js"><link rel="prefetch" href="/assets/js/63.3785d1e3.js"><link rel="prefetch" href="/assets/js/64.f606d1e0.js"><link rel="prefetch" href="/assets/js/65.1cdfca53.js"><link rel="prefetch" href="/assets/js/66.ea12d6a5.js"><link rel="prefetch" href="/assets/js/67.89d7a16a.js"><link rel="prefetch" href="/assets/js/68.60e5ca88.js"><link rel="prefetch" href="/assets/js/69.132b2a0c.js"><link rel="prefetch" href="/assets/js/7.cf04e132.js"><link rel="prefetch" href="/assets/js/70.8b09bcec.js"><link rel="prefetch" href="/assets/js/71.bda65688.js"><link rel="prefetch" href="/assets/js/72.20933921.js"><link rel="prefetch" href="/assets/js/73.6df3d1fd.js"><link rel="prefetch" href="/assets/js/74.3be4b797.js"><link rel="prefetch" href="/assets/js/75.965d3bda.js"><link rel="prefetch" href="/assets/js/76.900f02e6.js"><link rel="prefetch" href="/assets/js/77.b49bf4ac.js"><link rel="prefetch" href="/assets/js/78.6d8272ec.js"><link rel="prefetch" href="/assets/js/79.2ce4ac2c.js"><link rel="prefetch" href="/assets/js/8.e9e020ed.js"><link rel="prefetch" href="/assets/js/80.84b0fb4d.js"><link rel="prefetch" href="/assets/js/81.64326d95.js"><link rel="prefetch" href="/assets/js/82.dc78da13.js"><link rel="prefetch" href="/assets/js/83.2d39fadf.js"><link rel="prefetch" href="/assets/js/84.d8c4c394.js"><link rel="prefetch" href="/assets/js/85.57495bb7.js"><link rel="prefetch" href="/assets/js/86.5659a0a8.js"><link rel="prefetch" href="/assets/js/87.28c07b7c.js"><link rel="prefetch" href="/assets/js/88.5fa95abf.js"><link rel="prefetch" href="/assets/js/89.3bcb5d71.js"><link rel="prefetch" href="/assets/js/90.62aa07ad.js"><link rel="prefetch" href="/assets/js/91.c2303219.js"><link rel="prefetch" href="/assets/js/92.62ef86fa.js"><link rel="prefetch" href="/assets/js/93.bda1ebba.js"><link rel="prefetch" href="/assets/js/94.1ff855eb.js"><link rel="prefetch" href="/assets/js/96.df6ac428.js"><link rel="prefetch" href="/assets/js/97.d1d57bdd.js"><link rel="prefetch" href="/assets/js/98.9f6360e6.js"><link rel="prefetch" href="/assets/js/99.1c6b5ca9.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.49e7c09c.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.7342807e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.88fdddf1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name can-hide">Bajins</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link router-link-active">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link router-link-active">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Shell</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Shell/" aria-current="page" class="sidebar-link">Shell</a></li><li><a href="/Shell/PowerShell.html" class="sidebar-link">PowerShell</a></li><li><a href="/Shell/PowerShell命令.html" class="sidebar-link">PowerShell命令</a></li><li><a href="/Shell/ShellScript.html" aria-current="page" class="active sidebar-link">ShellScript</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Shell/ShellScript.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/Shell/ShellScript.html#自动交互" class="sidebar-link">自动交互</a></li><li class="sidebar-sub-header"><a href="/Shell/ShellScript.html#清理内存" class="sidebar-link">清理内存</a></li><li class="sidebar-sub-header"><a href="/Shell/ShellScript.html#清理日志" class="sidebar-link">清理日志</a></li><li class="sidebar-sub-header"><a href="/Shell/ShellScript.html#linux之间传输文件" class="sidebar-link">Linux之间传输文件</a></li></ul></li><li><a href="/Shell/ShellWindows.html" class="sidebar-link">ShellWindows</a></li><li><a href="/Shell/Shell命令.html" class="sidebar-link">Shell命令</a></li><li><a href="/Shell/WindowsBatch.html" class="sidebar-link">WindowsBatch</a></li><li><a href="/Shell/WindowsJScript.html" class="sidebar-link">WindowsJScript</a></li><li><a href="/Shell/WindowsScript.html" class="sidebar-link">WindowsScript</a></li><li><a href="/Shell/WindowsVBAScript.html" class="sidebar-link">VBAScript</a></li><li><a href="/Shell/WindowsVBScript.html" class="sidebar-link">WindowsVBScript</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="shellscript"><a href="#shellscript" class="header-anchor">#</a> ShellScript</h1> <p></p><div class="table-of-contents"><ul><li><a href="#flag">Flag</a></li><li><a href="#自动交互">自动交互</a><ul><li><a href="#指令有参数">指令有参数</a></li><li><a href="#指令无参数">指令无参数</a></li></ul></li><li><a href="#清理内存">清理内存</a></li><li><a href="#清理日志">清理日志</a></li><li><a href="#linux之间传输文件">Linux之间传输文件</a></li></ul></div><p></p> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h2> <blockquote><p><code>Shell</code>脚本（<code>shell script</code>），是一种为<code>Shell</code>编写的脚本程序。
+<code>Shell</code>脚本文件的名称可以任意，但为了避免被误以为是普通文件，建议将<code>.sh</code>后缀加上，以表示是一个脚本文件。</p></blockquote> <ul><li><a href="https://github.com/topics/bash" target="_blank" rel="noopener noreferrer">https://github.com/topics/bash<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/Ph0enixKM/Amber" target="_blank" rel="noopener noreferrer">https://github.com/Ph0enixKM/Amber<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>静态分析shell语法规范 <a href="https://github.com/koalaman/shellcheck" target="_blank" rel="noopener noreferrer">https://github.com/koalaman/shellcheck<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://www.shellcheck.net" target="_blank" rel="noopener noreferrer">https://www.shellcheck.net<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://my.oschina.net/2688/blog/736548" target="_blank" rel="noopener noreferrer">shellcheck 规范<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li><a href="https://github.com/ComplianceAsCode/content" target="_blank" rel="noopener noreferrer">https://github.com/ComplianceAsCode/content<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>格式化 <a href="https://github.com/mvdan/sh" target="_blank" rel="noopener noreferrer">https://github.com/mvdan/sh<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>rm替代方案 <a href="https://github.com/qqAys/trash.sh" target="_blank" rel="noopener noreferrer">https://github.com/qqAys/trash.sh<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener noreferrer">Shell 教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="http://c.biancheng.net/shell" target="_blank" rel="noopener noreferrer">Linux Shell脚本学习指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.jianshu.com/p/3782970dec75" target="_blank" rel="noopener noreferrer">Shell命令脚本初步认识，Shell脚本入门<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/setul/article/details/80114020" target="_blank" rel="noopener noreferrer">Shell中if的使用详解_&amp;&amp;与||的使用详解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.jianshu.com/p/c71e85375e88" target="_blank" rel="noopener noreferrer">shell-if判断<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/guodongxiaren/Bash" target="_blank" rel="noopener noreferrer">https://github.com/guodongxiaren/Bash<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/oldratlee/useful-scripts" target="_blank" rel="noopener noreferrer">https://github.com/oldratlee/useful-scripts<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/chen-shang/baseshell" target="_blank" rel="noopener noreferrer">https://github.com/chen-shang/baseshell<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>在shell脚本中，通常将<code>EOF</code>与 <code>&lt;&lt;</code> 结合使用，表示后续的输入作为子命令或子Shell的输入，直到遇到<code>EOF</code>为止，再返回到主Shell。
+<code>EOF</code>只是一个分界符，当然也可以用<code>abcde</code>替换。当shell遇到<code>&lt;&lt;</code>时，它知道下一个词是一个分界符。在该分界符以后的内容都被当作输入，
+直到shell又看到该分界符(位于单独的一行)。此分界符可以是所定义的任何字符串，其实，不一定要用<code>EOF</code>，
+只要是“内容段”中没有出现的字符串，都可以用来替代<code>EOF</code>，完全可以换成abcde之类的字符串，只是一个起始和结束的标志罢了。</p></blockquote> <h2 id="自动交互"><a href="#自动交互" class="header-anchor">#</a> 自动交互</h2> <h3 id="指令有参数"><a href="#指令有参数" class="header-anchor">#</a> 指令有参数</h3> <p><strong>重定向</strong></p> <blockquote><p>shell用重定向作为标准输入的用法是：<code>cmd&lt;&lt;delimiter</code></p> <p>shell会将分界符delimiter之后直到下一个同样的分界符之前的内容作为输入</p></blockquote> <blockquote><p>实现ftp自动登录并运行ls指令的用法如下：其中admin为用户名，password为密码</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">ftp</span> <span class="token parameter variable">-i</span> <span class="token parameter variable">-n</span> <span class="token number">192.168</span>.21.46 <span class="token operator">&lt;&lt;</span><span class="token string">EOF  
+user admin password
+ls  
+EOF</span>
+</code></pre></div><p><strong>管道</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># sudo的-S参数</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'zjk123'</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token parameter variable">-S</span> <span class="token function">cp</span> file1 /etc/hosts
+<span class="token comment"># passwd的-stdin参数</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'password'</span> <span class="token operator">|</span> <span class="token function">passwd</span> <span class="token parameter variable">-stdin</span> username
+</code></pre></div><h3 id="指令无参数"><a href="#指令无参数" class="header-anchor">#</a> 指令无参数</h3> <blockquote><p><code>Expect</code>是由<code>Don Libes</code>基于<code>Tcl</code>（<code>Tool Command Language</code>）的脚本语言，所以你至少要学习一下<code>TCL</code>它的语法。</p></blockquote> <ul><li><a href="https://github.com/search?q=expect" target="_blank" rel="noopener noreferrer">https://github.com/search?q=expect<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><a href="https://www.tcl-lang.org/man" target="_blank" rel="noopener noreferrer">https://www.tcl-lang.org/man<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://www.tcl.tk/man" target="_blank" rel="noopener noreferrer">https://www.tcl.tk/man<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li><a href="https://www.yiibai.com/tcl/tcl_special_variables.html" target="_blank" rel="noopener noreferrer">Tcl教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>tclsh <a href="https://linux.die.net/man/1/expect" target="_blank" rel="noopener noreferrer">expect手册<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="http://blog.leanote.com/post/wkf19911118@gmail.com/shell%E7%BC%96%E7%A8%8B%E4%B9%8Bexpect" target="_blank" rel="noopener noreferrer">shell编程之expect用法<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://man.linuxde.net/expect1" target="_blank" rel="noopener noreferrer">linux expect 自动交互脚本用法<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://einverne.github.io/post/2019/01/expect-command.html" target="_blank" rel="noopener noreferrer">expect 脚本使用<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/boyishachang/article/details/8677936" target="_blank" rel="noopener noreferrer">Expect学习笔记<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><strong>启用选项</strong></p> <table><thead><tr><th>选项</th> <th>说明</th></tr></thead> <tbody><tr><td><code>-c</code></td> <td>执行脚本前先执行的命令，可多次使用。</td></tr> <tr><td><code>-d</code></td> <td>debug模式，可以在运行时输出一些诊断信息，与在脚本开始处使用exp_internal 1相似。</td></tr> <tr><td><code>-D</code></td> <td>启用交换调式器,可设一整数参数。</td></tr> <tr><td><code>-f</code></td> <td>从文件读取命令，仅用于使用#!时。如果文件名为&quot;-&quot;，则从stdin读取(使用&quot;./-&quot;从文件名为-的文件读取)。</td></tr> <tr><td><code>-i</code></td> <td>交互式输入命令，使用&quot;exit&quot;或&quot;EOF&quot;退出输入状态。</td></tr> <tr><td><code>--</code></td> <td>标示选项结束(如果你需要传递与expect选项相似的参数给脚本时)，可放到#!行:#!/usr/bin/expect --。</td></tr> <tr><td><code>-v</code></td> <td>显示expect版本信息</td></tr></tbody></table> <p><strong>命令</strong></p> <table><thead><tr><th>命令</th> <th>说明</th></tr></thead> <tbody><tr><td>$argc</td> <td>参数个数</td></tr> <tr><td>$argv</td> <td>接收的所有参数数组</td></tr> <tr><td>$NAME</td> <td>使用变量</td></tr> <tr><td>close</td> <td>关闭当前进程的连接，-i选项关闭指定句柄的过程</td></tr> <tr><td>debug</td> <td>控制调试器</td></tr> <tr><td>disconnect</td> <td>断开进程连接(进程仍在后台运行)</td></tr> <tr><td>exit</td> <td>退出expect</td></tr> <tr><td>exp_pid</td> <td>获取当前spawn的进程号，-i选项指定spawn进程：setpid [exp_pid –i $spawn_id]</td></tr> <tr><td>exp_send</td> <td>将参数输出到程序中</td></tr> <tr><td>exp_continue</td> <td>当问题不存在时继续回答下边的问题</td></tr> <tr><td>exp_internal</td> <td>调试模式，1（打开）、0（关闭）、-f file（将调试内容写入文件），放在spawn后面</td></tr> <tr><td>expect eof</td> <td>问题回答完毕等待expect进程结束，expect -timeout -1 eof</td></tr> <tr><td>expect -re</td> <td>表示匹配正则表达式</td></tr> <tr><td>expect</td> <td>从进程接收字符串，expect与{之间没有空格或者TAB间隔，会报invalid command name &quot;expect{&quot;</td></tr> <tr><td>expr</td> <td>计算</td></tr> <tr><td>interact</td> <td>执行完成后保持交互状态，否则退出</td></tr> <tr><td>lindex</td> <td>获取参数</td></tr> <tr><td>puts</td> <td>向用户终端发送提示信息</td></tr> <tr><td>send_user</td> <td>把参数输出到标准输出中</td></tr> <tr><td>send_error</td> <td>把参数输出到标准错误输出中</td></tr> <tr><td>send_log</td> <td>把内容输出到log记录文件中</td></tr> <tr><td>send</td> <td>用于向进程发送字符串</td></tr> <tr><td>set NAME value</td> <td>设置变量</td></tr> <tr><td>set timeout -1</td> <td>超时时间，-1为永不超时</td></tr> <tr><td>spawn</td> <td>expect中的监控程序，其运行会监控命令提出的交互式问题，启动新的进程</td></tr> <tr><td>wait</td> <td>等待系统主动返回eof，也就是结束信号后才关闭，wait -nowait</td></tr> <tr><td>log_user</td> <td>指定输出的位置，默认值是1，表示所有输出都放在标准输出中，为0就表示不需要任何输出</td></tr> <tr><td>log_file</td> <td>将输出记录到一个文件中</td></tr></tbody></table> <ul><li><code>send</code>命令有几个可用的参数</li></ul> <blockquote><p><code>-i</code> 指定<code>spawn_id</code>，这个参数用来向不同<code>spawn_id</code>的进程发送命令，是进行多程序控制的关键参数。</p></blockquote> <blockquote><p><code>-s</code> 代表<code>slowly</code>，也就是控制发送的速度，这个参数使用的时候要与<code>expect</code>中的变量<code>send_slow</code>相关联</p></blockquote> <p><strong>特殊字符</strong></p> <table><thead><tr><th>字符</th> <th>说明</th></tr></thead> <tbody><tr><td><code>\r</code></td> <td>表示回车</td></tr> <tr><td><code>\n</code></td> <td>表示换行</td></tr> <tr><td><code>\t</code></td> <td>表示制表符</td></tr> <tr><td><code>\</code></td> <td>需转义 <code>\\\</code></td></tr> <tr><td><code>}</code></td> <td>需转义 <code>\}</code></td></tr> <tr><td><code>[</code></td> <td>需转义 <code>\[</code></td></tr> <tr><td><code>$</code></td> <td>需转义 <code>\\\$</code></td></tr> <tr><td>`</td> <td>需转义 \`</td></tr> <tr><td><code>&quot;</code></td> <td>需转义 <code>\\\&quot;</code></td></tr></tbody></table> <ul><li>方式一</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">push_url</span><span class="token operator">=</span>https://github.com/bajins/bajins.github.io.git
+<span class="token assign-left variable">push_username</span><span class="token operator">=</span>admin
+<span class="token assign-left variable">push_password</span><span class="token operator">=</span>admin
+
+<span class="token comment"># 检索expect是否安装</span>
+<span class="token assign-left variable">is_expect</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">whereis</span> <span class="token function">expect</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">`</span></span>
+<span class="token comment"># 如果没有安装</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$is_expect</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    yum <span class="token parameter variable">-y</span> <span class="token function">install</span> <span class="token function">expect</span> <span class="token operator">&gt;</span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+<span class="token keyword">fi</span>
+
+<span class="token function">expect</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;
+
+# 超时时间-1为永不超时
+set timeout -1
+
+# spawn将开启一个新的进程，或者使用：ssh <span class="token variable">$user</span>@<span class="token variable">$host</span> {your_command}
+# 只有先进入expect环境后才可执行spawn
+spawn git push -f <span class="token variable">${push_url}</span> master
+
+# 判断运行上述命令的输出结果中是否有指定的字符串(不区分大小写)。
+# 若有则立即返回，否则就等待一段时间后返回，等待时长就是开头设置的timeout。
+# 同时向上面的进程发送字符串, 并且自动敲Enter健(<span class="token entity" title="\r">\r</span>)
+expect {
+  <span class="token entity" title="\&quot;">\&quot;</span>*Username*<span class="token entity" title="\&quot;">\&quot;</span> {send <span class="token entity" title="\&quot;">\&quot;</span><span class="token variable">${push_username}</span><span class="token entity" title="\r">\r</span><span class="token entity" title="\&quot;">\&quot;</span>; exp_continue}
+  <span class="token entity" title="\&quot;">\&quot;</span>*Password*<span class="token entity" title="\&quot;">\&quot;</span> {send <span class="token entity" title="\&quot;">\&quot;</span><span class="token variable">${push_password}</span><span class="token entity" title="\r">\r</span><span class="token entity" title="\&quot;">\&quot;</span>;}
+}
+# 问题回答完毕等待expect进程结束
+expect eof
+&quot;</span>
+</code></pre></div><ul><li>方式二</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">push_url</span><span class="token operator">=</span>https://github.com/bajins/bajins.github.io.git
+<span class="token assign-left variable">push_username</span><span class="token operator">=</span>admin
+<span class="token assign-left variable">push_password</span><span class="token operator">=</span>admin
+
+<span class="token comment"># 检索expect是否安装</span>
+<span class="token assign-left variable">is_expect</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">whereis</span> <span class="token function">expect</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">`</span></span>
+<span class="token comment"># 如果没有安装</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$is_expect</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    yum <span class="token parameter variable">-y</span> <span class="token function">install</span> <span class="token function">expect</span> <span class="token operator">&gt;</span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+<span class="token keyword">fi</span>
+
+<span class="token function">expect</span> <span class="token operator">&lt;&lt;-</span><span class="token string">EOF
+    set timeout -1
+
+    spawn git push -f <span class="token variable">${push_url}</span> master
+    
+    #expect &quot;*Username*&quot; {send &quot;<span class="token variable">${push_username}</span><span class="token entity" title="\r">\r</span>&quot;; exp_continue}
+    #expect &quot;*Password*&quot; {send &quot;<span class="token variable">${push_password}</span><span class="token entity" title="\r">\r</span>&quot;}
+    
+    expect {
+      <span class="token entity" title="\&quot;">\&quot;</span>*Username*<span class="token entity" title="\&quot;">\&quot;</span> {send <span class="token entity" title="\&quot;">\&quot;</span><span class="token variable">${push_username}</span><span class="token entity" title="\r">\r</span><span class="token entity" title="\&quot;">\&quot;</span>; exp_continue}
+      <span class="token entity" title="\&quot;">\&quot;</span>*Password*<span class="token entity" title="\&quot;">\&quot;</span> {send <span class="token entity" title="\&quot;">\&quot;</span><span class="token variable">${push_password}</span><span class="token entity" title="\r">\r</span><span class="token entity" title="\&quot;">\&quot;</span>;}
+    }
+    interact
+    
+    # 问题回答完毕等待<span class="token variable"><span class="token variable">`</span><span class="token function">expect</span><span class="token variable">`</span></span>进程结束
+    expect eof
+
+# 由于用的-EOF，这里的EOF可以有空格，tab键
+EOF</span>
+</code></pre></div><ul><li>方式三</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token shebang important">#!/usr/bin/expect</span>
+
+<span class="token builtin class-name">set</span> push_url <span class="token string">&quot;https://github.com/bajins/bajins.github.io.git&quot;</span>
+<span class="token builtin class-name">set</span> push_username <span class="token string">&quot;admin&quot;</span>
+<span class="token builtin class-name">set</span> push_password <span class="token string">&quot;admin&quot;</span>
+
+<span class="token comment"># 超时时间-1为永不超时</span>
+<span class="token builtin class-name">set</span> <span class="token function">timeout</span> <span class="token parameter variable">-1</span>
+
+<span class="token comment"># spawn将开启一个新的进程，或者使用：ssh $user@$host {your_command}</span>
+<span class="token comment"># 只有先进入expect环境后才可执行spawn</span>
+spawn <span class="token function">git</span> push <span class="token parameter variable">-f</span> <span class="token variable">${push_url}</span> master
+
+<span class="token comment"># 判断运行上述命令的输出结果中是否有指定的字符串(不区分大小写)。</span>
+<span class="token comment"># 若有则立即返回，否则就等待一段时间后返回，等待时长就是开头设置的timeout。</span>
+<span class="token function">expect</span> <span class="token string">&quot;*Username*&quot;</span>
+<span class="token comment"># 向上面的进程发送字符串, 并且自动敲Enter健(\r)</span>
+<span class="token comment"># -- 后面的&quot;之间有一个空格</span>
+send -- <span class="token string">&quot;<span class="token variable">$push_username</span><span class="token entity" title="\n">\n</span>&quot;</span>
+
+<span class="token function">expect</span> <span class="token string">&quot;*Password*&quot;</span>
+<span class="token comment"># -- 后面的&quot;之间有一个空格</span>
+send -- <span class="token string">&quot;<span class="token variable">$push_password</span><span class="token entity" title="\n">\n</span>&quot;</span>
+
+<span class="token comment"># 允许用户交互</span>
+interact
+<span class="token comment"># 问题回答完毕等待expect进程结束</span>
+<span class="token function">expect</span> eof
+</code></pre></div><ul><li>获取日期</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">expect</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;
+
+set date [ clock format [ clock seconds ] -format &quot;</span>%Y%m%d<span class="token string">&quot; ]
+set secon [  clock seconds ]
+set yestoday_secon 0
+ 
+#set i [expr {<span class="token variable">$i</span> + 1}]    #expect里的加减法
+set yestoday_secon [expr {<span class="token variable">$secon</span> - 86400} ]
+set yestoday [ clock format [ expr {<span class="token variable">$yestoday_secon</span>} ] -format &quot;</span>%Y%m%d<span class="token string">&quot; ]
+ 
+puts &quot;</span><span class="token punctuation">\</span>n <span class="token function">date</span> <span class="token operator">=</span> <span class="token variable">$date</span><span class="token string">&quot;
+puts &quot;</span><span class="token punctuation">\</span>n secon <span class="token operator">=</span> <span class="token variable">$secon</span><span class="token string">&quot;
+puts &quot;</span><span class="token punctuation">\</span>n yestoday_secon <span class="token operator">=</span> <span class="token variable">$yestoday_secon</span><span class="token string">&quot;
+puts &quot;</span><span class="token punctuation">\</span>n yestoday <span class="token operator">=</span> <span class="token variable">$yestoday</span><span class="token string">&quot;
+
+# 问题回答完毕等待expect进程结束
+expect eof
+&quot;</span>
+</code></pre></div><h2 id="清理内存"><a href="#清理内存" class="header-anchor">#</a> 清理内存</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 获取到的内存配置信息若为0的话，则表示开启了缓存机制</span>
+<span class="token function">cat</span> /proc/sys/vm/drop_caches
+
+<span class="token comment"># drop_caches是让系统清理内存页的缓存，从而得到更多的可用内存</span>
+<span class="token comment"># 释放网页缓存(To free pagecache)</span>
+<span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">&gt;</span> /proc/sys/vm/drop_caches
+
+<span class="token comment"># 释放目录项和索引(To free dentries and inodes)</span>
+<span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">2</span> <span class="token operator">&gt;</span> /proc/sys/vm/drop_caches
+
+<span class="token comment"># 释放网页缓存，目录项和索引（To free pagecache, dentries and inodes）</span>
+<span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">3</span> <span class="token operator">&gt;</span> /proc/sys/vm/drop_caches
+
+<span class="token comment"># 清理/var/cache/yum的headers</span>
+yum clean headers
+
+<span class="token comment"># 清理/var/cache/yum下的软件包</span>
+yum clean packages
+
+<span class="token comment"># 清理软件源</span>
+yum clean metadata
+</code></pre></div><h2 id="清理日志"><a href="#清理日志" class="header-anchor">#</a> 清理日志</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 清除定时任务记录</span>
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/cron
+<span class="token comment"># 清除ftp记录</span>
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/xferlog
+<span class="token comment"># 清除数据库日志</span>
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50'</span> /var/log/mariadb/mariadb.log
+<span class="token comment"># 清除sshd信息</span>
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/secure
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/firewalld
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/httpd/access_log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/httpd/ssl_access_log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/httpd/ssl_error_log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/httpd/ssl_request_log
+<span class="token comment"># 清除系统开机发生的错误</span>
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/messages
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/tuned/tuned.log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/hawkey.log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/yum.log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/dnf.log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/dnf.rpm.log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/ntp.log
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'1,50d'</span> /var/log/audit/audit.log
+
+<span class="token comment"># 清除历史执行命令</span>
+<span class="token function">history</span> <span class="token parameter variable">-cw</span> <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> <span class="token parameter variable">-rf</span> ~/.bash_history
+
+<span class="token comment"># 清除系统登录成功的记录</span>
+<span class="token builtin class-name">echo</span> <span class="token operator">&gt;</span> /var/log/wtmp
+<span class="token comment"># 清除系统登录失败的记录</span>
+<span class="token builtin class-name">echo</span> <span class="token operator">&gt;</span> /var/log/btmp
+<span class="token comment"># 清除最近登录信息</span>
+<span class="token builtin class-name">echo</span> <span class="token operator">&gt;</span> /var/log/lastlog
+
+<span class="token function">rm</span> <span class="token parameter variable">-fr</span> /var/log/*
+
+</code></pre></div><h2 id="linux之间传输文件"><a href="#linux之间传输文件" class="header-anchor">#</a> Linux之间传输文件</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+
+
+<span class="token comment"># 远程IP</span>
+<span class="token assign-left variable">des_ip</span><span class="token operator">=</span><span class="token number">192.168</span>.1.1
+<span class="token comment"># 远程端口</span>
+<span class="token assign-left variable">des_port</span><span class="token operator">=</span><span class="token number">22</span>
+<span class="token comment"># 远程用户</span>
+<span class="token assign-left variable">des_user</span><span class="token operator">=</span>root
+<span class="token comment"># 远程密码</span>
+<span class="token assign-left variable">des_pass</span><span class="token operator">=</span><span class="token number">123456</span>
+<span class="token comment"># 远程文件或文件夹路径</span>
+<span class="token assign-left variable">des_path</span><span class="token operator">=</span>/www/wwwroot/file
+<span class="token comment"># 本地文件或文件夹路径</span>
+<span class="token assign-left variable">local_path</span><span class="token operator">=</span>/www/wwwroot/file
+
+<span class="token comment"># 检索expect是否安装</span>
+<span class="token assign-left variable">is_expect</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">whereis</span> <span class="token function">expect</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span><span class="token variable">`</span></span>
+<span class="token comment"># 如果没有安装</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-n</span> <span class="token string">&quot;<span class="token variable">$is_expect</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    yum <span class="token parameter variable">-y</span> <span class="token function">install</span> <span class="token function">expect</span> <span class="token operator">&gt;</span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+<span class="token keyword">fi</span>
+
+
+<span class="token function">expect</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;
+# 设置拷贝的时间，超时时间-1为永不超时
+set timeout -1
+
+# 本地路径在前，远程在后，是从本地上传到远端
+# spawn scp -P <span class="token variable">${des_port}</span> -p -r <span class="token variable">${local_path}</span> <span class="token variable">${des_user}</span>@<span class="token variable">${des_ip}</span>:<span class="token variable">${des_path}</span>
+# 远程在前，本地路径在后，的是从远端下载到本地
+spawn scp -P <span class="token variable">${des_port}</span> -p -r <span class="token variable">${des_user}</span>@<span class="token variable">${des_ip}</span>:<span class="token variable">${des_path}</span> <span class="token variable">${local_path}</span>
+
+expect {
+  <span class="token entity" title="\&quot;">\&quot;</span>*yes/no*<span class="token entity" title="\&quot;">\&quot;</span> {send <span class="token entity" title="\&quot;">\&quot;</span>yes<span class="token entity" title="\r">\r</span><span class="token entity" title="\&quot;">\&quot;</span>; exp_continue}
+  <span class="token entity" title="\&quot;">\&quot;</span>*password*<span class="token entity" title="\&quot;">\&quot;</span> {send <span class="token entity" title="\&quot;">\&quot;</span><span class="token variable">${des_pass}</span><span class="token entity" title="\r">\r</span><span class="token entity" title="\&quot;">\&quot;</span>;}
+}
+
+# 问题回答完毕等待expect进程结束
+expect eof
+&quot;</span>
+<span class="token builtin class-name">exit</span>
+
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bajins/notes-vuepress/edit/master//Shell/ShellScript.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2025-03-28 04:38:07</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Shell/PowerShell命令.html" class="prev">
+        PowerShell命令
+      </a></span> <span class="next"><a href="/Shell/ShellWindows.html">
+        ShellWindows
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.c8efcbfc.js" defer></script><script src="/assets/js/2.8e983ff4.js" defer></script><script src="/assets/js/1.955a609f.js" defer></script><script src="/assets/js/95.c0b3d405.js" defer></script>
+  </body>
+</html>
