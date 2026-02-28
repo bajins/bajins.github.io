@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>邮箱服务 | Bajins</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="https://tourcoder.com/install-postfix-on-centos-7/
+https://github.com/denghongcai/forsaken-mail
+https://github.com/malaohu/forsaken-mail
+https://github.com/flashmob/go-guerrilla
+https://github.com/PHPMailer
+https://github.com/knadh/listmonk
+https://github.com/postalserver/postal
+https://github.com/albertito/chasquid
+https://github.com/Exim/exim
+https://github.com/vdukhovni/postfix
+https://github.com/postfixadmin/postfixadmin
+https://github.com/mailserver2/mailserver
+https://github.com/docker-mailserver/docker-mailserver
+https://sendmail.org
+https://github.com/marlam/msmtp
+https://sourceforge.net/projects/dkim-milter
+https://sourceforge.net/projects/opendkim
+https://github.com/yesmore/vmail
+https://github.com/mail-in-a-box/mailinabox
+测试邮箱
+邮件营销 https://github.com/aaPanel/BillionMail">
+    <meta name="image" content="https://bajins.com/images/YandexMailDNS.png">
+    <meta name="twitter:title" content="邮箱服务">
+    <meta name="twitter:description" content="https://tourcoder.com/install-postfix-on-centos-7/
+https://github.com/denghongcai/forsaken-mail
+https://github.com/malaohu/forsaken-mail
+https://github.com/flashmob/go-guerrilla
+https://github.com/PHPMailer
+https://github.com/knadh/listmonk
+https://github.com/postalserver/postal
+https://github.com/albertito/chasquid
+https://github.com/Exim/exim
+https://github.com/vdukhovni/postfix
+https://github.com/postfixadmin/postfixadmin
+https://github.com/mailserver2/mailserver
+https://github.com/docker-mailserver/docker-mailserver
+https://sendmail.org
+https://github.com/marlam/msmtp
+https://sourceforge.net/projects/dkim-milter
+https://sourceforge.net/projects/opendkim
+https://github.com/yesmore/vmail
+https://github.com/mail-in-a-box/mailinabox
+测试邮箱
+邮件营销 https://github.com/aaPanel/BillionMail">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bajins.com/images/YandexMailDNS.png">
+    <meta name="twitter:url" content="https://bajins.com/System/%E9%82%AE%E7%AE%B1%E6%9C%8D%E5%8A%A1.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="邮箱服务">
+    <meta property="og:description" content="https://tourcoder.com/install-postfix-on-centos-7/
+https://github.com/denghongcai/forsaken-mail
+https://github.com/malaohu/forsaken-mail
+https://github.com/flashmob/go-guerrilla
+https://github.com/PHPMailer
+https://github.com/knadh/listmonk
+https://github.com/postalserver/postal
+https://github.com/albertito/chasquid
+https://github.com/Exim/exim
+https://github.com/vdukhovni/postfix
+https://github.com/postfixadmin/postfixadmin
+https://github.com/mailserver2/mailserver
+https://github.com/docker-mailserver/docker-mailserver
+https://sendmail.org
+https://github.com/marlam/msmtp
+https://sourceforge.net/projects/dkim-milter
+https://sourceforge.net/projects/opendkim
+https://github.com/yesmore/vmail
+https://github.com/mail-in-a-box/mailinabox
+测试邮箱
+邮件营销 https://github.com/aaPanel/BillionMail">
+    <meta property="og:image" content="https://bajins.com/images/YandexMailDNS.png">
+    <meta property="og:url" content="https://bajins.com/System/%E9%82%AE%E7%AE%B1%E6%9C%8D%E5%8A%A1.html">
+    <meta property="og:site_name" content="bajins">
+    <meta itemprop="name" content="邮箱服务">
+    <meta itemprop="description" content="https://tourcoder.com/install-postfix-on-centos-7/
+https://github.com/denghongcai/forsaken-mail
+https://github.com/malaohu/forsaken-mail
+https://github.com/flashmob/go-guerrilla
+https://github.com/PHPMailer
+https://github.com/knadh/listmonk
+https://github.com/postalserver/postal
+https://github.com/albertito/chasquid
+https://github.com/Exim/exim
+https://github.com/vdukhovni/postfix
+https://github.com/postfixadmin/postfixadmin
+https://github.com/mailserver2/mailserver
+https://github.com/docker-mailserver/docker-mailserver
+https://sendmail.org
+https://github.com/marlam/msmtp
+https://sourceforge.net/projects/dkim-milter
+https://sourceforge.net/projects/opendkim
+https://github.com/yesmore/vmail
+https://github.com/mail-in-a-box/mailinabox
+测试邮箱
+邮件营销 https://github.com/aaPanel/BillionMail">
+    <meta itemprop="image" content="https://bajins.com/images/YandexMailDNS.png">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog
+        ,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive
+        ,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.921daf77.css" as="style"><link rel="preload" href="/assets/js/app.1faa001a.js" as="script"><link rel="preload" href="/assets/js/2.4296a15b.js" as="script"><link rel="preload" href="/assets/js/1.13868f42.js" as="script"><link rel="preload" href="/assets/js/118.d958ab99.js" as="script"><link rel="prefetch" href="/assets/js/100.fb476d17.js"><link rel="prefetch" href="/assets/js/101.65373054.js"><link rel="prefetch" href="/assets/js/102.34afe950.js"><link rel="prefetch" href="/assets/js/103.08e76636.js"><link rel="prefetch" href="/assets/js/104.81b9f765.js"><link rel="prefetch" href="/assets/js/105.d87b9813.js"><link rel="prefetch" href="/assets/js/106.602c6293.js"><link rel="prefetch" href="/assets/js/107.9405c4cf.js"><link rel="prefetch" href="/assets/js/108.ded99788.js"><link rel="prefetch" href="/assets/js/109.ab499760.js"><link rel="prefetch" href="/assets/js/110.789e52aa.js"><link rel="prefetch" href="/assets/js/111.966ae33e.js"><link rel="prefetch" href="/assets/js/112.189d5eb3.js"><link rel="prefetch" href="/assets/js/113.8e20e93c.js"><link rel="prefetch" href="/assets/js/114.b70628d6.js"><link rel="prefetch" href="/assets/js/115.c82a373f.js"><link rel="prefetch" href="/assets/js/116.e34cd637.js"><link rel="prefetch" href="/assets/js/117.cc670f24.js"><link rel="prefetch" href="/assets/js/119.f5be99c9.js"><link rel="prefetch" href="/assets/js/12.a562b374.js"><link rel="prefetch" href="/assets/js/120.8675f97c.js"><link rel="prefetch" href="/assets/js/121.4cdd8db5.js"><link rel="prefetch" href="/assets/js/122.ca783f05.js"><link rel="prefetch" href="/assets/js/123.869d2c73.js"><link rel="prefetch" href="/assets/js/124.fd840642.js"><link rel="prefetch" href="/assets/js/125.74c9f0fa.js"><link rel="prefetch" href="/assets/js/126.3cd314db.js"><link rel="prefetch" href="/assets/js/127.457509ef.js"><link rel="prefetch" href="/assets/js/128.1b98a1c4.js"><link rel="prefetch" href="/assets/js/13.0df2e0a7.js"><link rel="prefetch" href="/assets/js/14.406f3fa2.js"><link rel="prefetch" href="/assets/js/15.71767727.js"><link rel="prefetch" href="/assets/js/16.c3b53708.js"><link rel="prefetch" href="/assets/js/17.37ca37ec.js"><link rel="prefetch" href="/assets/js/18.162669ae.js"><link rel="prefetch" href="/assets/js/19.091120bc.js"><link rel="prefetch" href="/assets/js/20.fb63d007.js"><link rel="prefetch" href="/assets/js/21.1c14567e.js"><link rel="prefetch" href="/assets/js/22.35d51bbe.js"><link rel="prefetch" href="/assets/js/23.825a1fb5.js"><link rel="prefetch" href="/assets/js/24.2e205b7a.js"><link rel="prefetch" href="/assets/js/25.e4fa03d6.js"><link rel="prefetch" href="/assets/js/26.85767710.js"><link rel="prefetch" href="/assets/js/27.d046a28b.js"><link rel="prefetch" href="/assets/js/28.6f83aea0.js"><link rel="prefetch" href="/assets/js/29.eedaa43e.js"><link rel="prefetch" href="/assets/js/3.00255157.js"><link rel="prefetch" href="/assets/js/30.8410e120.js"><link rel="prefetch" href="/assets/js/31.c7609f0f.js"><link rel="prefetch" href="/assets/js/32.5c322ef0.js"><link rel="prefetch" href="/assets/js/33.64cc9fe8.js"><link rel="prefetch" href="/assets/js/34.bcf6d63d.js"><link rel="prefetch" href="/assets/js/35.d726e14f.js"><link rel="prefetch" href="/assets/js/36.26402a9f.js"><link rel="prefetch" href="/assets/js/37.1e0403d6.js"><link rel="prefetch" href="/assets/js/38.2d75f668.js"><link rel="prefetch" href="/assets/js/39.4d8d888f.js"><link rel="prefetch" href="/assets/js/4.a41861e7.js"><link rel="prefetch" href="/assets/js/40.fb37b3d7.js"><link rel="prefetch" href="/assets/js/41.bb9946e4.js"><link rel="prefetch" href="/assets/js/42.cf5a059e.js"><link rel="prefetch" href="/assets/js/43.dc969823.js"><link rel="prefetch" href="/assets/js/44.fae0f835.js"><link rel="prefetch" href="/assets/js/45.c61a83fc.js"><link rel="prefetch" href="/assets/js/46.aaa58bd7.js"><link rel="prefetch" href="/assets/js/47.ce9952ea.js"><link rel="prefetch" href="/assets/js/48.27a679af.js"><link rel="prefetch" href="/assets/js/49.1d46de41.js"><link rel="prefetch" href="/assets/js/5.bbf8e470.js"><link rel="prefetch" href="/assets/js/50.abefa3e0.js"><link rel="prefetch" href="/assets/js/51.8b4021ed.js"><link rel="prefetch" href="/assets/js/52.023ec242.js"><link rel="prefetch" href="/assets/js/53.4ccae60e.js"><link rel="prefetch" href="/assets/js/54.48c46570.js"><link rel="prefetch" href="/assets/js/55.bcde0428.js"><link rel="prefetch" href="/assets/js/56.289a8f5a.js"><link rel="prefetch" href="/assets/js/57.dc4a711d.js"><link rel="prefetch" href="/assets/js/58.add3287e.js"><link rel="prefetch" href="/assets/js/59.baffa02b.js"><link rel="prefetch" href="/assets/js/6.c6438728.js"><link rel="prefetch" href="/assets/js/60.5992001b.js"><link rel="prefetch" href="/assets/js/61.fa8afda9.js"><link rel="prefetch" href="/assets/js/62.9fe383af.js"><link rel="prefetch" href="/assets/js/63.df19c15f.js"><link rel="prefetch" href="/assets/js/64.54698821.js"><link rel="prefetch" href="/assets/js/65.4c482019.js"><link rel="prefetch" href="/assets/js/66.6086e608.js"><link rel="prefetch" href="/assets/js/67.fbfb96e6.js"><link rel="prefetch" href="/assets/js/68.81007873.js"><link rel="prefetch" href="/assets/js/69.0199c159.js"><link rel="prefetch" href="/assets/js/7.afb14c62.js"><link rel="prefetch" href="/assets/js/70.2fcf8ce3.js"><link rel="prefetch" href="/assets/js/71.321b22a1.js"><link rel="prefetch" href="/assets/js/72.379b9ea7.js"><link rel="prefetch" href="/assets/js/73.4f1136ed.js"><link rel="prefetch" href="/assets/js/74.563df937.js"><link rel="prefetch" href="/assets/js/75.5d1ebb4f.js"><link rel="prefetch" href="/assets/js/76.fa2bb98d.js"><link rel="prefetch" href="/assets/js/77.92abe7f3.js"><link rel="prefetch" href="/assets/js/78.c2f60b8d.js"><link rel="prefetch" href="/assets/js/79.7a915e00.js"><link rel="prefetch" href="/assets/js/8.d99bad6b.js"><link rel="prefetch" href="/assets/js/80.81894c77.js"><link rel="prefetch" href="/assets/js/81.1e3e3ce3.js"><link rel="prefetch" href="/assets/js/82.d135f529.js"><link rel="prefetch" href="/assets/js/83.f8454a02.js"><link rel="prefetch" href="/assets/js/84.08db55e8.js"><link rel="prefetch" href="/assets/js/85.3bf464db.js"><link rel="prefetch" href="/assets/js/86.30271d76.js"><link rel="prefetch" href="/assets/js/87.efe1dc5a.js"><link rel="prefetch" href="/assets/js/88.849450cb.js"><link rel="prefetch" href="/assets/js/89.a3f2d9e4.js"><link rel="prefetch" href="/assets/js/90.cc19367e.js"><link rel="prefetch" href="/assets/js/91.359e1a28.js"><link rel="prefetch" href="/assets/js/92.9cef9392.js"><link rel="prefetch" href="/assets/js/93.92a0107b.js"><link rel="prefetch" href="/assets/js/94.c8672212.js"><link rel="prefetch" href="/assets/js/95.9d596948.js"><link rel="prefetch" href="/assets/js/96.56d14cf1.js"><link rel="prefetch" href="/assets/js/97.ac9d011e.js"><link rel="prefetch" href="/assets/js/98.ccae6e29.js"><link rel="prefetch" href="/assets/js/99.dd37c751.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.37b7ea54.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.46952646.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.921daf77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name can-hide">Bajins</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link router-link-active">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link router-link-active">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>System</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/System/" aria-current="page" class="sidebar-link">System</a></li><li><a href="/System/Android.html" class="sidebar-link">Android</a></li><li><a href="/System/CentOS.html" class="sidebar-link">CentOS</a></li><li><a href="/System/IOS.html" class="sidebar-link">IOS</a></li><li><a href="/System/Linux.html" class="sidebar-link">Linux</a></li><li><a href="/System/Linux网络防火墙.html" class="sidebar-link">Linux网络防火墙</a></li><li><a href="/System/Linux配置.html" class="sidebar-link">Linux配置</a></li><li><a href="/System/Nginx.html" class="sidebar-link">Nginx</a></li><li><a href="/System/Windows.html" class="sidebar-link">Windows</a></li><li><a href="/System/Windows软件.html" class="sidebar-link">Windows软件</a></li><li><a href="/System/内网穿透.html" class="sidebar-link">内网穿透</a></li><li><a href="/System/挂载网盘.html" class="sidebar-link">挂载网盘</a></li><li><a href="/System/文件压缩解压.html" class="sidebar-link">文件压缩解压</a></li><li><a href="/System/邮箱服务.html" class="active sidebar-link">邮箱服务</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/System/邮箱服务.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/System/邮箱服务.html#域名邮箱" class="sidebar-link">域名邮箱</a></li><li class="sidebar-sub-header"><a href="/System/邮箱服务.html#邮件服务器" class="sidebar-link">邮件服务器</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="邮箱服务"><a href="#邮箱服务" class="header-anchor">#</a> 邮箱服务</h1> <p></p><div class="table-of-contents"><ul><li><a href="#flag">Flag</a></li><li><a href="#域名邮箱">域名邮箱</a><ul><li><a href="#yandex配置步骤">Yandex配置步骤</a></li></ul></li><li><a href="#邮件服务器">邮件服务器</a><ul><li><a href="#邮件服务器概述">邮件服务器概述</a></li><li><a href="#设置域名解析">设置域名解析</a></li><li><a href="#卸载sendmail">卸载sendmail</a></li><li><a href="#安装-postfix-和dovecot">安装Postfix和Dovecot</a></li><li><a href="#查看版本">查看版本</a></li><li><a href="#修改邮件传输代理">修改邮件传输代理</a></li><li><a href="#查看是否修改成功">查看是否修改成功</a></li><li><a href="#修改postfix配置">修改Postfix配置</a></li><li><a href="#修改dovecot配置">修改Dovecot配置</a></li><li><a href="#修改防火墙配置">修改防火墙配置</a></li><li><a href="#配置用户及权限">配置用户及权限</a></li><li><a href="#启动服务">启动服务</a></li><li><a href="#使用mail测试发信">使用mail测试发信</a></li><li><a href="#使用telnet测试收信">使用telnet测试收信</a></li></ul></li></ul></div><p></p> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h2> <ul><li><a href="https://dkim.org" target="_blank" rel="noopener noreferrer">https://dkim.org<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><a href="https://tourcoder.com/install-postfix-on-centos-7" target="_blank" rel="noopener noreferrer">https://tourcoder.com/install-postfix-on-centos-7/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/denghongcai/forsaken-mail" target="_blank" rel="noopener noreferrer">https://github.com/denghongcai/forsaken-mail<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/malaohu/forsaken-mail" target="_blank" rel="noopener noreferrer">https://github.com/malaohu/forsaken-mail<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/flashmob/go-guerrilla" target="_blank" rel="noopener noreferrer">https://github.com/flashmob/go-guerrilla<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/PHPMailer" target="_blank" rel="noopener noreferrer">https://github.com/PHPMailer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/knadh/listmonk" target="_blank" rel="noopener noreferrer">https://github.com/knadh/listmonk<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/postalserver/postal" target="_blank" rel="noopener noreferrer">https://github.com/postalserver/postal<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/albertito/chasquid" target="_blank" rel="noopener noreferrer">https://github.com/albertito/chasquid<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/Exim/exim" target="_blank" rel="noopener noreferrer">https://github.com/Exim/exim<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/vdukhovni/postfix" target="_blank" rel="noopener noreferrer">https://github.com/vdukhovni/postfix<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/postfixadmin/postfixadmin" target="_blank" rel="noopener noreferrer">https://github.com/postfixadmin/postfixadmin<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/mailserver2/mailserver" target="_blank" rel="noopener noreferrer">https://github.com/mailserver2/mailserver<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/docker-mailserver/docker-mailserver" target="_blank" rel="noopener noreferrer">https://github.com/docker-mailserver/docker-mailserver<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://sendmail.org" target="_blank" rel="noopener noreferrer">https://sendmail.org<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/marlam/msmtp" target="_blank" rel="noopener noreferrer">https://github.com/marlam/msmtp<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://sourceforge.net/projects/dkim-milter" target="_blank" rel="noopener noreferrer">https://sourceforge.net/projects/dkim-milter<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://sourceforge.net/projects/opendkim" target="_blank" rel="noopener noreferrer">https://sourceforge.net/projects/opendkim<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/yesmore/vmail" target="_blank" rel="noopener noreferrer">https://github.com/yesmore/vmail<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/mail-in-a-box/mailinabox" target="_blank" rel="noopener noreferrer">https://github.com/mail-in-a-box/mailinabox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.mail-tester.com" target="_blank" rel="noopener noreferrer">测试邮箱<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>邮件营销 <a href="https://github.com/aaPanel/BillionMail" target="_blank" rel="noopener noreferrer">https://github.com/aaPanel/BillionMail<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="域名邮箱"><a href="#域名邮箱" class="header-anchor">#</a> 域名邮箱</h2> <ul><li><a href="https://www.bt.cn/bbs/thread-32749-1-1.html" target="_blank" rel="noopener noreferrer">宝塔邮局管理器<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.httpsmail.com/hosting" target="_blank" rel="noopener noreferrer">httpsmail<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://mksaas.me/blog/email" target="_blank" rel="noopener noreferrer">使用Gmail+Resend+Cloudflare搭建免费的企业邮箱<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h3 id="yandex配置步骤"><a href="#yandex配置步骤" class="header-anchor">#</a> Yandex配置步骤</h3> <ul><li><a href="https://hky.moe/archives/21" target="_blank" rel="noopener noreferrer">https://hky.moe/archives/21<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><strong>端口</strong></p> <ul><li><code>SMTP</code>：<code>smtp.yandex.com:465 SSL</code></li> <li><code>IMAP</code>：<code>imap.yandex.com:993 SSL</code></li> <li><code>POP3</code>：<code>pop.yandex.com:995 SSL</code></li></ul> <blockquote><p>注意：如果是添加第二个域名（一个域名是一个组织），进入<a href="https://connect.yandex.com/portal/admin" target="_blank" rel="noopener noreferrer">账户管理页面<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，
+然后点击顶部的域名后弹出下拉菜单有一个<code>New organization</code>按钮来添加新域名，然后按照步骤（跳过1、2）操作即可</p></blockquote> <ul><li><p>1、注册账户 <a href="https://mail.yandex.com" target="_blank" rel="noopener noreferrer">https://mail.yandex.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li> <li><p>2、添加域名 <a href="https://connect.yandex.com/pdd" target="_blank" rel="noopener noreferrer">https://connect.yandex.com/pdd/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li> <li><p>3、验证域名所有权</p></li></ul> <blockquote><p>此时已经进入到管理页面，在左侧菜单<code>Domains</code>中点击域名（此时域名右侧是<code>禁止符号</code>）验证域名所有权，
+验证成功后左侧菜单栏会多出几个菜单（这时域名右侧是<code>感叹号</code>）</p></blockquote> <ul><li>4、DNS配置<code>SPF Record</code>、<code>MX</code>、二级域名 <a href="https://connect.yandex.com/portal/admin/customization/dns" target="_blank" rel="noopener noreferrer">https://connect.yandex.com/portal/admin/customization/dns<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>按照上面链接中的DNS配置（或者点击左侧菜单栏<code>DNS management</code>）到自己域名所在服务商添加DNS解析，
+注意末尾的点不要丢了，等待几分钟刷新（域名右侧是<code>绿色的勾</code>）</p></blockquote> <ul><li>5、DNS配置<code>DKIM signature</code> <a href="https://connect.yandex.com/portal/admin/customization/mail" target="_blank" rel="noopener noreferrer">https://connect.yandex.com/portal/admin/customization/mail<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>点击上面的连接（就是左侧<code>Email</code>菜单）进入界面后点击<code>DKIM signatures</code>点击<code>Copy</code>,然后在域名所在服务商添加一条TXT记录DNS解析，
+主机记录（name）为<code>mail._domainkey</code>,值就是刚刚复制的<code>DKIM signatures</code></p></blockquote> <p><img src="/images/YandexMailDNS.png" alt=""></p> <ul><li>6、添加邮箱账户</li></ul> <blockquote><p>点击 <code>Все сотрудники</code>（就是左侧第一个菜单），然后点击页面下方有一个带<code>+</code>的<code>add</code>按钮，
+再点击<code>Add a person</code>，在弹出的页面输入，带<code>*</code>的为必填，填完后就点击<code>橙色的add按钮</code></p></blockquote> <ul><li>7、新添加的账户需要去登录并同意一个协议才能使用</li></ul> <blockquote><p>点击<a href="https://mail.yandex.com" target="_blank" rel="noopener noreferrer">https://mail.yandex.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>登录新账户并点击<code>Complete registration</code>按钮同意协议</p></blockquote> <ul><li>8、pop3/imap无法使用的解决办法</li></ul> <blockquote><p>点击<a href="https://mail.yandex.com/#setup/client" target="_blank" rel="noopener noreferrer">https://mail.yandex.com/#setup/client<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+登陆邮箱按照下图中步骤操作即可，登录后重新点击链接可省略下图中的1、2、3步</p></blockquote> <p><img src="/images/Yandex%E8%A7%A3%E5%86%B3POP3%E6%97%A0%E6%B3%95%E6%94%B6%E5%8F%96%E9%82%AE%E4%BB%B6.png" alt=""></p> <ul><li>9、域名验证不通过解决办法</li></ul> <blockquote><p>进入<a href="https://webmaster.yandex.com/sites" target="_blank" rel="noopener noreferrer">https://webmaster.yandex.com/sites<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>点击没有通过验证域名上的<code>X</code>按钮进行删除，
+然后点击页面顶部的<code>+</code>按钮重新添加域名再验证。</p></blockquote> <blockquote><p>我的域名验证不通过发现是因为：添加不带<code>www</code>的域名，自动添加了<code>www</code>二级域名</p></blockquote> <p><strong>验证码填写</strong></p> <ul><li>使用Google翻译的软键盘</li></ul> <p><img src="/images/google%E7%BF%BB%E8%AF%91%E4%BF%84%E8%AF%AD%E8%BD%AF%E9%94%AE%E7%9B%98.png" alt=""></p> <ul><li>使用<a href="https://zh.wikipedia.org/wiki/%E4%BF%84%E8%AF%AD%E5%AD%97%E6%AF%8D" target="_blank" rel="noopener noreferrer">俄语字母表<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>一个个复制粘贴</li></ul> <h2 id="邮件服务器"><a href="#邮件服务器" class="header-anchor">#</a> 邮件服务器</h2> <h3 id="邮件服务器概述"><a href="#邮件服务器概述" class="header-anchor">#</a> 邮件服务器概述</h3> <ul><li><code>MUA</code>：<code>Mail User Agent</code>，邮件用户代理</li></ul> <blockquote><p>接收邮件所使用的邮件客户端，使用<code>IMAP</code>或<code>POP3</code>协议与服务器通信；</p> <p>如：<code>Outlook</code>、<code>Foxmail</code>、<code>thunderbird</code>、<code>Mac Mail</code>、<code>mutt</code></p></blockquote> <ul><li><code>MTA</code>：<code>Mail Transfer Agent</code>，邮件传输代理代为传递</li></ul> <blockquote><p>通过<code>SMTP</code>协议发送、转发邮件；</p> <p>如：<code>Sendmail</code>、<code>Postfix</code></p></blockquote> <ul><li><code>MDA</code>：<code>Mail Delivery Agent</code>，邮件投递代理</li></ul> <blockquote><p>将<code>MTA</code>接收到的邮件保存到磁盘或指定地方，通常会进行垃圾邮件及病毒扫描；</p> <p>如：<code>procmail</code>、<code>dropmail</code></p></blockquote> <ul><li><code>MRA</code>：<code>Mail Receive Agent</code>，邮件接收代理</li></ul> <blockquote><p>负责实现<code>IMAP</code>与<code>POP</code>3协议，与<code>MUA</code>进行交互；</p> <p>如：<code>dovecot</code></p></blockquote> <ul><li><code>SMTP</code>：<code>Simple Mail Transfer Protocol</code>，传输发送邮件所使用的标准协议；</li> <li><code>IMAP</code>：<code>Internet Message Access Protocol</code>，接收邮件使用的标准协议之一；</li> <li><code>POP3</code>：<code>Post Office Protocol 3</code>，接收邮件使用的标准协议之一。</li></ul> <p><strong>流程</strong></p> <blockquote><p>邮件服务器基本都有<code>MTA</code>，<code>MDA</code>，<code>MRA</code>组成</p></blockquote> <blockquote><p><code>MUA</code>(发件人发送) --&gt; (若干个)<code>MTA</code> --&gt; <code>MDA</code> --&gt; <code>MRA</code> &lt;–- <code>MUA</code>(收件人收取)</p></blockquote> <blockquote><p>协议：<code>MUA</code>到<code>MTA</code>，以及<code>MTA</code>到<code>MTA</code>之间使用<code>SMTP</code>协议，而收邮件时，<code>MUA</code>到<code>MDA</code>之间使用<code>POP3</code>或<code>IMAP</code>协议。</p></blockquote> <ul><li>一、用户利用<code>MUA</code>寄信到<code>MTA</code>。配置<code>MUA</code>时要配上<code>SMTP</code>服务器域名,然后发送邮件。
+<ul><li>比如使用网易账户发送邮件就要在配置<code>smtp.163.com</code>,这样邮件就发送到网易<code>MTA</code>。</li></ul></li> <li>二、 <code>MTA</code>检查收件人服务器如果不是自己则传递到下一跳<code>MTA</code>，直到传递到目的<code>MTA</code>。</li> <li>三、 目的<code>MTA</code>收到邮件后将邮件存储到<code>MDA</code>中，<code>MDA</code>对邮件进行垃圾过滤，病毒查杀。</li> <li>四、 <code>MRA</code>把邮件从<code>MDA</code>收取到用户的收件箱中。</li> <li>五、 <code>MUA</code>收取邮件，此时收取邮件只是将<code>MRA</code>中的邮件下载到本地。</li></ul> <h3 id="设置域名解析"><a href="#设置域名解析" class="header-anchor">#</a> 设置域名解析</h3> <table><thead><tr><th>记录类型</th> <th>主机记录</th> <th>解析线路(isp)</th> <th>记录值</th> <th>MX优先级</th> <th>TTL值</th></tr></thead> <tbody><tr><td>A</td> <td>mail</td> <td>默认</td> <td>服务器IP地址</td> <td>–</td> <td>10 分钟</td></tr> <tr><td>MX</td> <td>@</td> <td>默认</td> <td>mail.域名</td> <td>10</td> <td>10 分钟</td></tr></tbody></table> <h3 id="卸载sendmail"><a href="#卸载sendmail" class="header-anchor">#</a> 卸载sendmail</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum remove <span class="token parameter variable">-y</span> <span class="token function">sendmail</span>
+</code></pre></div><h3 id="安装postfix和dovecot"><a href="#安装postfix和dovecot" class="header-anchor">#</a> 安装<code>Postfix</code>和Dovecot</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> <span class="token parameter variable">-y</span> postfix dovecot
+</code></pre></div><h3 id="查看版本"><a href="#查看版本" class="header-anchor">#</a> 查看版本</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;postfix\|dovecot&quot;</span>
+<span class="token comment"># 或者</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-e</span> postfix <span class="token parameter variable">-e</span> dovecot
+<span class="token comment"># 或者</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">&quot;postfix|dovecot&quot;</span>
+<span class="token comment"># 或者</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">egrep</span> <span class="token string">&quot;postfix|dovecot&quot;</span>
+<span class="token comment"># 或者</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">&quot;/postfix|dovecot/&quot;</span>
+</code></pre></div><h3 id="修改邮件传输代理"><a href="#修改邮件传输代理" class="header-anchor">#</a> 修改邮件传输代理</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>alternatives <span class="token parameter variable">--config</span> mta
+<span class="token comment"># 或者先查看邮件传输代理程序，再设置</span>
+/usr/sbin/alternatives <span class="token parameter variable">--set</span> mta /usr/sbin/sendmail.postfix
+</code></pre></div><blockquote><p>会提示找到几个可用程序，输入自己需要的那个程序的数字即可</p></blockquote> <h3 id="查看是否修改成功"><a href="#查看是否修改成功" class="header-anchor">#</a> 查看是否修改成功</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>alternatives <span class="token parameter variable">--display</span> mta
+</code></pre></div><blockquote><p>第一行显示<code>mta - status is manual.</code>则表示设置成功</p></blockquote> <h3 id="修改postfix配置"><a href="#修改postfix配置" class="header-anchor">#</a> 修改Postfix配置</h3> <ul><li><a href="http://blog.leanote.com/post/colin_xia@yeah.net/postfix-%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%AC%94%E8%AE%B0" target="_blank" rel="noopener noreferrer">http://blog.leanote.com/post/colin_xia@yeah.net/postfix-官方文档笔记<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.cnblogs.com/operationhome/p/9056870.html" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/operationhome/p/9056870.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>在<code>main.cf</code>中配置的值会自动分散到多个指定的配置文件中去</p></blockquote> <p><strong>查看配置</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 输出所有postfix配置项以及默认值</span>
+postconf
+<span class="token comment"># 不输出#开头和空行</span>
+<span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token string">'^#\|^$'</span> /etc/postfix/main.cf
+</code></pre></div><p><strong>编辑配置</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/postfix/main.cf
+</code></pre></div><p><strong>修改以下内容</strong></p> <div class="language-ini extra-class"><pre class="language-ini"><code><span class="token comment"># 75行:主机名</span>
+<span class="token key attr-name">myhostname</span> <span class="token punctuation">=</span> <span class="token value attr-value">mail.example.com</span>
+<span class="token comment"># 83行:设置本地网络的邮件域</span>
+<span class="token key attr-name">mydomain</span> <span class="token punctuation">=</span> <span class="token value attr-value">example.com</span>
+<span class="token comment"># 99行:要外发邮件时发件人的邮件域名，这里取的mydomain变量值</span>
+<span class="token key attr-name">myorigin</span> <span class="token punctuation">=</span> <span class="token value attr-value">$mydomain</span>
+<span class="token comment"># 116行:默认是localhost，修改成all，即监听所有网络接口</span>
+<span class="token key attr-name">inet_interfaces</span> <span class="token punctuation">=</span> <span class="token value attr-value">all</span>
+<span class="token comment"># 119行:网络协议 ipv6、ipv4或者all</span>
+<span class="token key attr-name">inet_protocols</span> <span class="token punctuation">=</span> <span class="token value attr-value">all</span>
+<span class="token comment"># 164行:设置可接收邮件的主机名或域名，来自其他主机名或域名的邮件将拒绝接收</span>
+<span class="token key attr-name">mydestination</span> <span class="token punctuation">=</span> <span class="token value attr-value">$myhostname, localhost.$mydomain, localhost, $mydomain</span>
+<span class="token comment"># 210行:制定接收邮件的规则，可以是hash文件，可以直接注释</span>
+<span class="token key attr-name">local_recipient_maps</span> <span class="token punctuation">=</span>
+<span class="token comment"># 264行:收发客户端的地址</span>
+<span class="token key attr-name">mynetworks</span> <span class="token punctuation">=</span> <span class="token value attr-value">0.0.0.0/0</span>
+<span class="token comment"># 296行:设置可转发来自哪些域名或主机名的邮件</span>
+<span class="token key attr-name">relay_domains</span> <span class="token punctuation">=</span> <span class="token value attr-value">$mydestination</span>
+<span class="token comment"># 419行:邮件存储的位置</span>
+<span class="token key attr-name">home_mailbox</span> <span class="token punctuation">=</span> <span class="token value attr-value">Maildir/</span>
+<span class="token comment"># 572行:指定MUA通过smtp连接postfix时返回的header头信息，定义欢迎信息</span>
+<span class="token key attr-name">smtpd_banner</span> <span class="token punctuation">=</span> <span class="token value attr-value">$myhostname ESMTP $mail_name</span>
+</code></pre></div><p><strong>在文件结尾加入</strong></p> <div class="language-ini extra-class"><pre class="language-ini"><code><span class="token comment"># 启用SMTP认证</span>
+<span class="token key attr-name">smtpd_sasl_type</span> <span class="token punctuation">=</span> <span class="token value attr-value">dovecot</span>
+<span class="token comment"># </span>
+<span class="token key attr-name">smtpd_sasl_path</span> <span class="token punctuation">=</span> <span class="token value attr-value">/var/spool/postfix/private/auth</span>
+<span class="token comment"># 指定postfix使用sasl验证：就是启用smtp并要求进行账号、密码效验</span>
+<span class="token key attr-name">smtpd_sasl_auth_enable</span> <span class="token punctuation">=</span> <span class="token value attr-value">yes</span>
+<span class="token comment"># 指定SMTP认证的本地域名：可以使用''或注释掉，默认为空</span>
+<span class="token key attr-name">smtpd_sasl_local_domain</span> <span class="token punctuation">=</span> <span class="token value attr-value">$myhostname</span>
+<span class="token comment"># 支持非标准验证规定的行为，</span>
+<span class="token comment"># 指定postfix兼容MUA使用不规则的smtp协议，主要针对老版本的outlook</span>
+<span class="token key attr-name">broken_sasl_auth_clients</span> <span class="token punctuation">=</span> <span class="token value attr-value">yes</span>
+<span class="token comment"># 当客户端引发错误时,postfix的初始等待时间 </span>
+<span class="token key attr-name">smtpd_error_sleep_time</span> <span class="token punctuation">=</span> <span class="token value attr-value">0s</span>
+<span class="token comment"># 收件人限制条件</span>
+<span class="token key attr-name">smtpd_recipient_restrictions</span> <span class="token punctuation">=</span> <span class="token value attr-value">permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination,reject_unknown_sender_domain</span>
+<span class="token comment"># 客户端限制</span>
+<span class="token key attr-name">smtpd_client_restrictions</span> <span class="token punctuation">=</span> <span class="token value attr-value">permit_sasl_authenticated</span>
+<span class="token comment"># 取消smtp的匿名登录</span>
+<span class="token key attr-name">smtpd_sasl_security_options</span> <span class="token punctuation">=</span> <span class="token value attr-value">noanonymous</span>
+<span class="token comment"># </span>
+<span class="token key attr-name">proxy_read_maps</span> <span class="token punctuation">=</span> <span class="token value attr-value">$local_recipient_maps $mydestination $virtual_alias_maps $virtual_alias_domains $virtual_mailbox_maps $virtual_mailbox_domains $relay_recipient_maps $relay_domains $canonical_maps $sender_canonical_maps $recipient_canonical_maps $relocated_maps $transport_maps $mynetworks</span>
+<span class="token comment"># 指定通过postfix发送邮件的体积大小，此处表示5M</span>
+<span class="token key attr-name">message_size_limit</span> <span class="token punctuation">=</span> <span class="token value attr-value">5242880</span>
+</code></pre></div><blockquote><p><code>smtpd_recipient_restrictions</code>（收件人限制）有以下可用值：</p> <blockquote><p><code>permit_mynetworks</code>允许本地的网络接收</p> <p><code>permit_sasl_authenticated</code>允许通过<code>SASL</code>验证的用户（也就是<code>smtp</code>链接时通过了账号、密码效验的用户）的所有用户</p> <p><code>reject_unauth_destination</code>拒绝无法认证的目的地</p></blockquote></blockquote> <h3 id="修改dovecot配置"><a href="#修改dovecot配置" class="header-anchor">#</a> 修改Dovecot配置</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/dovecot/dovecot.conf
+</code></pre></div><div class="language-conf extra-class"><pre class="language-text"><code>auth_mechanisms = plain login
+base_dir = /var/run/dovecot/
+debug_log_path = /var/log/dovecot_debug.log
+disable_plaintext_auth = no
+first_valid_uid = 1000
+info_log_path = /var/log/dovecot_info.log
+login_trusted_networks = 0.0.0.0/0
+mail_location = mbox:~/mail:INBOX=/var/mail/%u
+mbox_write_locks = fcntl
+namespace inbox {
+  inbox = yes
+  location = mbox:~/mail:INBOX=/var/mail/%u
+  mailbox Drafts {
+    special_use = \Drafts
+  }
+  mailbox Junk {
+    special_use = \Junk
+  }
+  mailbox Sent {
+    special_use = \Sent
+  }
+  mailbox &quot;Sent Messages&quot; {
+    special_use = \Sent
+  }
+  mailbox Trash {
+    special_use = \Trash
+  }
+  prefix =
+}
+passdb {
+  args = dovecot
+  driver = pam
+}
+service auth {
+  unix_listener /var/spool/postfix/private/auth {
+    mode = 0666
+    user = postfix
+  }
+  unix_listener auth-userdb {
+    group = noreply
+    mode = 0666
+    user = noreply
+  }
+}
+service imap-login {inet_listener imap {
+    port = 143
+  }
+}
+service pop3-login {
+  inet_listener pop3 {
+    port = 110
+  }
+}
+ssl = no
+ssl_cert = &lt;/etc/pki/dovecot/certs/dovecot.pem
+ssl_key = &lt;/etc/pki/dovecot/private/dovecot.pem
+userdb {
+  driver = passwd
+}
+</code></pre></div><ul><li>其实上面的配置文件并非一个，而是修改了<code>/etc/dovecot/conf.d</code>文件夹下的以下几个文件
+<ul><li><code>10-auth.conf</code></li> <li><code>10-ssl.conf</code></li> <li><code>10-mail.conf</code></li> <li><code>10-master.conf</code></li> <li><code>10-logging.conf</code></li></ul></li></ul> <blockquote><p>修改完成以后使用<code>doveconf -n &gt; dovecot-new.conf</code>命令生成一个全新的综合的配置文件。</p></blockquote> <h3 id="修改防火墙配置"><a href="#修改防火墙配置" class="header-anchor">#</a> 修改防火墙配置</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public <span class="token parameter variable">--permanent</span> --add-service<span class="token operator">=</span>imap
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public <span class="token parameter variable">--permanent</span> --add-service<span class="token operator">=</span>smtp
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public <span class="token parameter variable">--permanent</span> --add-service<span class="token operator">=</span>pop3
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">25</span>/tcp <span class="token parameter variable">--permanent</span>
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">25</span>/udp <span class="token parameter variable">--permanent</span>
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">110</span>/tcp <span class="token parameter variable">--permanent</span>
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">110</span>/udp <span class="token parameter variable">--permanent</span>
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">143</span>/tcp <span class="token parameter variable">--permanent</span>
+firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">143</span>/udp <span class="token parameter variable">--permanent</span>
+firewall-cmd <span class="token parameter variable">--reload</span>
+</code></pre></div><h3 id="配置用户及权限"><a href="#配置用户及权限" class="header-anchor">#</a> 配置用户及权限</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 添加用户</span>
+<span class="token function">useradd</span> 用户名
+<span class="token comment"># 设置密码</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;密码&quot;</span> <span class="token operator">|</span> <span class="token function">passwd</span> <span class="token parameter variable">--stdin</span> 用户名
+<span class="token comment"># 授权</span>
+<span class="token function">sudo</span> <span class="token function">chmod</span> 0775 /var/spool/mail/*
+</code></pre></div><h3 id="启动服务"><a href="#启动服务" class="header-anchor">#</a> 启动服务</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 开启postfix服务</span>
+systemctl <span class="token builtin class-name">enable</span> postfix
+<span class="token comment"># 设置postfix开机启动</span>
+<span class="token function">chkconfig</span> postfix on
+<span class="token comment"># 开启dovecot服务</span>
+systemctl <span class="token builtin class-name">enable</span> dovecot
+<span class="token comment"># 设置dovecot开机启动</span>
+<span class="token function">chkconfig</span> dovecot on
+<span class="token comment"># 重启postfix/dovecot</span>
+systemctl restart postfix/dovecot
+<span class="token comment"># 查看postfix/dovecot状态</span>
+systemctl status postfix/dovecot
+</code></pre></div><h3 id="使用mail测试发信"><a href="#使用mail测试发信" class="header-anchor">#</a> 使用mail测试发信</h3> <blockquote><p>未做明确配置时，<code>mail</code>默认将本机作为发信、收信的服务器，所以此步骤中的测试操作在邮件服务器本机完成。</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;邮件内容&quot;</span> <span class="token operator">|</span> mail <span class="token parameter variable">-s</span> <span class="token string">&quot;邮件主题&quot;</span> <span class="token parameter variable">-r</span> 发送人邮件地址 接收人邮件地址
+</code></pre></div><h3 id="使用telnet测试收信"><a href="#使用telnet测试收信" class="header-anchor">#</a> 使用telnet测试收信</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> <span class="token parameter variable">-y</span> telnet
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>telnet 域名 <span class="token number">25</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bajins/notes-vuepress/edit/master//System/邮箱服务.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2026-02-28 02:28:37</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/System/文件压缩解压.html" class="prev">
+        文件压缩解压
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1faa001a.js" defer></script><script src="/assets/js/2.4296a15b.js" defer></script><script src="/assets/js/1.13868f42.js" defer></script><script src="/assets/js/118.d958ab99.js" defer></script>
+  </body>
+</html>

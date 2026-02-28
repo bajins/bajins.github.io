@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx | Bajins</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="https://github.com/hfpp2012/nginx-tutorial
+Nginx 入门指南 https://github.com/xuexb/learn-nginx
+标签: Nginx | 原少子杨
+Nginx HTTP核心模块指令和内置变量中文说明
+nginx 变量使用
+Nginx 从入门到实践，万字详解
+Nginx从入门到实践
+Nginx流控
+Nginx 高性能优化配置实战总结
+nginx 优化的六点方法
+Nginx-性能优化
+博客使用Cloudflare和Nginx的相关配置
+Nginx——Nginx负载均衡
+Nginx--流量限制（最有用的功能之一）">
+    <meta name="twitter:title" content="Nginx">
+    <meta name="twitter:description" content="https://github.com/hfpp2012/nginx-tutorial
+Nginx 入门指南 https://github.com/xuexb/learn-nginx
+标签: Nginx | 原少子杨
+Nginx HTTP核心模块指令和内置变量中文说明
+nginx 变量使用
+Nginx 从入门到实践，万字详解
+Nginx从入门到实践
+Nginx流控
+Nginx 高性能优化配置实战总结
+nginx 优化的六点方法
+Nginx-性能优化
+博客使用Cloudflare和Nginx的相关配置
+Nginx——Nginx负载均衡
+Nginx--流量限制（最有用的功能之一）">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://bajins.com/System/Nginx.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Nginx">
+    <meta property="og:description" content="https://github.com/hfpp2012/nginx-tutorial
+Nginx 入门指南 https://github.com/xuexb/learn-nginx
+标签: Nginx | 原少子杨
+Nginx HTTP核心模块指令和内置变量中文说明
+nginx 变量使用
+Nginx 从入门到实践，万字详解
+Nginx从入门到实践
+Nginx流控
+Nginx 高性能优化配置实战总结
+nginx 优化的六点方法
+Nginx-性能优化
+博客使用Cloudflare和Nginx的相关配置
+Nginx——Nginx负载均衡
+Nginx--流量限制（最有用的功能之一）">
+    <meta property="og:url" content="https://bajins.com/System/Nginx.html">
+    <meta property="og:site_name" content="bajins">
+    <meta itemprop="name" content="Nginx">
+    <meta itemprop="description" content="https://github.com/hfpp2012/nginx-tutorial
+Nginx 入门指南 https://github.com/xuexb/learn-nginx
+标签: Nginx | 原少子杨
+Nginx HTTP核心模块指令和内置变量中文说明
+nginx 变量使用
+Nginx 从入门到实践，万字详解
+Nginx从入门到实践
+Nginx流控
+Nginx 高性能优化配置实战总结
+nginx 优化的六点方法
+Nginx-性能优化
+博客使用Cloudflare和Nginx的相关配置
+Nginx——Nginx负载均衡
+Nginx--流量限制（最有用的功能之一）">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog
+        ,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive
+        ,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.921daf77.css" as="style"><link rel="preload" href="/assets/js/app.1faa001a.js" as="script"><link rel="preload" href="/assets/js/2.4296a15b.js" as="script"><link rel="preload" href="/assets/js/1.13868f42.js" as="script"><link rel="preload" href="/assets/js/111.966ae33e.js" as="script"><link rel="prefetch" href="/assets/js/100.fb476d17.js"><link rel="prefetch" href="/assets/js/101.65373054.js"><link rel="prefetch" href="/assets/js/102.34afe950.js"><link rel="prefetch" href="/assets/js/103.08e76636.js"><link rel="prefetch" href="/assets/js/104.81b9f765.js"><link rel="prefetch" href="/assets/js/105.d87b9813.js"><link rel="prefetch" href="/assets/js/106.602c6293.js"><link rel="prefetch" href="/assets/js/107.9405c4cf.js"><link rel="prefetch" href="/assets/js/108.ded99788.js"><link rel="prefetch" href="/assets/js/109.ab499760.js"><link rel="prefetch" href="/assets/js/110.789e52aa.js"><link rel="prefetch" href="/assets/js/112.189d5eb3.js"><link rel="prefetch" href="/assets/js/113.8e20e93c.js"><link rel="prefetch" href="/assets/js/114.b70628d6.js"><link rel="prefetch" href="/assets/js/115.c82a373f.js"><link rel="prefetch" href="/assets/js/116.e34cd637.js"><link rel="prefetch" href="/assets/js/117.cc670f24.js"><link rel="prefetch" href="/assets/js/118.d958ab99.js"><link rel="prefetch" href="/assets/js/119.f5be99c9.js"><link rel="prefetch" href="/assets/js/12.a562b374.js"><link rel="prefetch" href="/assets/js/120.8675f97c.js"><link rel="prefetch" href="/assets/js/121.4cdd8db5.js"><link rel="prefetch" href="/assets/js/122.ca783f05.js"><link rel="prefetch" href="/assets/js/123.869d2c73.js"><link rel="prefetch" href="/assets/js/124.fd840642.js"><link rel="prefetch" href="/assets/js/125.74c9f0fa.js"><link rel="prefetch" href="/assets/js/126.3cd314db.js"><link rel="prefetch" href="/assets/js/127.457509ef.js"><link rel="prefetch" href="/assets/js/128.1b98a1c4.js"><link rel="prefetch" href="/assets/js/13.0df2e0a7.js"><link rel="prefetch" href="/assets/js/14.406f3fa2.js"><link rel="prefetch" href="/assets/js/15.71767727.js"><link rel="prefetch" href="/assets/js/16.c3b53708.js"><link rel="prefetch" href="/assets/js/17.37ca37ec.js"><link rel="prefetch" href="/assets/js/18.162669ae.js"><link rel="prefetch" href="/assets/js/19.091120bc.js"><link rel="prefetch" href="/assets/js/20.fb63d007.js"><link rel="prefetch" href="/assets/js/21.1c14567e.js"><link rel="prefetch" href="/assets/js/22.35d51bbe.js"><link rel="prefetch" href="/assets/js/23.825a1fb5.js"><link rel="prefetch" href="/assets/js/24.2e205b7a.js"><link rel="prefetch" href="/assets/js/25.e4fa03d6.js"><link rel="prefetch" href="/assets/js/26.85767710.js"><link rel="prefetch" href="/assets/js/27.d046a28b.js"><link rel="prefetch" href="/assets/js/28.6f83aea0.js"><link rel="prefetch" href="/assets/js/29.eedaa43e.js"><link rel="prefetch" href="/assets/js/3.00255157.js"><link rel="prefetch" href="/assets/js/30.8410e120.js"><link rel="prefetch" href="/assets/js/31.c7609f0f.js"><link rel="prefetch" href="/assets/js/32.5c322ef0.js"><link rel="prefetch" href="/assets/js/33.64cc9fe8.js"><link rel="prefetch" href="/assets/js/34.bcf6d63d.js"><link rel="prefetch" href="/assets/js/35.d726e14f.js"><link rel="prefetch" href="/assets/js/36.26402a9f.js"><link rel="prefetch" href="/assets/js/37.1e0403d6.js"><link rel="prefetch" href="/assets/js/38.2d75f668.js"><link rel="prefetch" href="/assets/js/39.4d8d888f.js"><link rel="prefetch" href="/assets/js/4.a41861e7.js"><link rel="prefetch" href="/assets/js/40.fb37b3d7.js"><link rel="prefetch" href="/assets/js/41.bb9946e4.js"><link rel="prefetch" href="/assets/js/42.cf5a059e.js"><link rel="prefetch" href="/assets/js/43.dc969823.js"><link rel="prefetch" href="/assets/js/44.fae0f835.js"><link rel="prefetch" href="/assets/js/45.c61a83fc.js"><link rel="prefetch" href="/assets/js/46.aaa58bd7.js"><link rel="prefetch" href="/assets/js/47.ce9952ea.js"><link rel="prefetch" href="/assets/js/48.27a679af.js"><link rel="prefetch" href="/assets/js/49.1d46de41.js"><link rel="prefetch" href="/assets/js/5.bbf8e470.js"><link rel="prefetch" href="/assets/js/50.abefa3e0.js"><link rel="prefetch" href="/assets/js/51.8b4021ed.js"><link rel="prefetch" href="/assets/js/52.023ec242.js"><link rel="prefetch" href="/assets/js/53.4ccae60e.js"><link rel="prefetch" href="/assets/js/54.48c46570.js"><link rel="prefetch" href="/assets/js/55.bcde0428.js"><link rel="prefetch" href="/assets/js/56.289a8f5a.js"><link rel="prefetch" href="/assets/js/57.dc4a711d.js"><link rel="prefetch" href="/assets/js/58.add3287e.js"><link rel="prefetch" href="/assets/js/59.baffa02b.js"><link rel="prefetch" href="/assets/js/6.c6438728.js"><link rel="prefetch" href="/assets/js/60.5992001b.js"><link rel="prefetch" href="/assets/js/61.fa8afda9.js"><link rel="prefetch" href="/assets/js/62.9fe383af.js"><link rel="prefetch" href="/assets/js/63.df19c15f.js"><link rel="prefetch" href="/assets/js/64.54698821.js"><link rel="prefetch" href="/assets/js/65.4c482019.js"><link rel="prefetch" href="/assets/js/66.6086e608.js"><link rel="prefetch" href="/assets/js/67.fbfb96e6.js"><link rel="prefetch" href="/assets/js/68.81007873.js"><link rel="prefetch" href="/assets/js/69.0199c159.js"><link rel="prefetch" href="/assets/js/7.afb14c62.js"><link rel="prefetch" href="/assets/js/70.2fcf8ce3.js"><link rel="prefetch" href="/assets/js/71.321b22a1.js"><link rel="prefetch" href="/assets/js/72.379b9ea7.js"><link rel="prefetch" href="/assets/js/73.4f1136ed.js"><link rel="prefetch" href="/assets/js/74.563df937.js"><link rel="prefetch" href="/assets/js/75.5d1ebb4f.js"><link rel="prefetch" href="/assets/js/76.fa2bb98d.js"><link rel="prefetch" href="/assets/js/77.92abe7f3.js"><link rel="prefetch" href="/assets/js/78.c2f60b8d.js"><link rel="prefetch" href="/assets/js/79.7a915e00.js"><link rel="prefetch" href="/assets/js/8.d99bad6b.js"><link rel="prefetch" href="/assets/js/80.81894c77.js"><link rel="prefetch" href="/assets/js/81.1e3e3ce3.js"><link rel="prefetch" href="/assets/js/82.d135f529.js"><link rel="prefetch" href="/assets/js/83.f8454a02.js"><link rel="prefetch" href="/assets/js/84.08db55e8.js"><link rel="prefetch" href="/assets/js/85.3bf464db.js"><link rel="prefetch" href="/assets/js/86.30271d76.js"><link rel="prefetch" href="/assets/js/87.efe1dc5a.js"><link rel="prefetch" href="/assets/js/88.849450cb.js"><link rel="prefetch" href="/assets/js/89.a3f2d9e4.js"><link rel="prefetch" href="/assets/js/90.cc19367e.js"><link rel="prefetch" href="/assets/js/91.359e1a28.js"><link rel="prefetch" href="/assets/js/92.9cef9392.js"><link rel="prefetch" href="/assets/js/93.92a0107b.js"><link rel="prefetch" href="/assets/js/94.c8672212.js"><link rel="prefetch" href="/assets/js/95.9d596948.js"><link rel="prefetch" href="/assets/js/96.56d14cf1.js"><link rel="prefetch" href="/assets/js/97.ac9d011e.js"><link rel="prefetch" href="/assets/js/98.ccae6e29.js"><link rel="prefetch" href="/assets/js/99.dd37c751.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.37b7ea54.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.46952646.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.921daf77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name can-hide">Bajins</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link router-link-active">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link router-link-active">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>System</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/System/" aria-current="page" class="sidebar-link">System</a></li><li><a href="/System/Android.html" class="sidebar-link">Android</a></li><li><a href="/System/CentOS.html" class="sidebar-link">CentOS</a></li><li><a href="/System/IOS.html" class="sidebar-link">IOS</a></li><li><a href="/System/Linux.html" class="sidebar-link">Linux</a></li><li><a href="/System/Linux网络防火墙.html" class="sidebar-link">Linux网络防火墙</a></li><li><a href="/System/Linux配置.html" class="sidebar-link">Linux配置</a></li><li><a href="/System/Nginx.html" aria-current="page" class="active sidebar-link">Nginx</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/System/Nginx.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#扩展模块插件" class="sidebar-link">扩展模块插件</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#编译安装" class="sidebar-link">编译安装</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#location" class="sidebar-link">location</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#rewrite语法" class="sidebar-link">rewrite语法</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#判断表达式" class="sidebar-link">判断表达式</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#全局变量" class="sidebar-link">全局变量</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#判断user-agent" class="sidebar-link">判断user_agent</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#proxy-pass指令" class="sidebar-link">proxy_pass指令</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#日志切割" class="sidebar-link">日志切割</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#主配置" class="sidebar-link">主配置</a></li><li class="sidebar-sub-header"><a href="/System/Nginx.html#动静分离配置" class="sidebar-link">动静分离配置</a></li></ul></li><li><a href="/System/Windows.html" class="sidebar-link">Windows</a></li><li><a href="/System/Windows软件.html" class="sidebar-link">Windows软件</a></li><li><a href="/System/内网穿透.html" class="sidebar-link">内网穿透</a></li><li><a href="/System/挂载网盘.html" class="sidebar-link">挂载网盘</a></li><li><a href="/System/文件压缩解压.html" class="sidebar-link">文件压缩解压</a></li><li><a href="/System/邮箱服务.html" class="sidebar-link">邮箱服务</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nginx"><a href="#nginx" class="header-anchor">#</a> Nginx</h1> <p></p><div class="table-of-contents"><ul><li><a href="#flag">Flag</a></li><li><a href="#扩展模块插件">扩展模块插件</a></li><li><a href="#编译安装">编译安装</a></li><li><a href="#location">location</a><ul><li><a href="#语法规则">语法规则</a></li><li><a href="#内部调用">内部调用</a></li><li><a href="#以后缀设置过期时间">以后缀设置过期时间</a></li><li><a href="#禁止访问某个目录">禁止访问某个目录</a></li></ul></li><li><a href="#rewrite语法">rewrite语法</a></li><li><a href="#判断表达式">判断表达式</a></li><li><a href="#全局变量">全局变量</a></li><li><a href="#判断user-agent">判断user_agent</a></li><li><a href="#proxy-pass指令">proxy_pass指令</a></li><li><a href="#日志切割">日志切割</a></li><li><a href="#主配置">主配置</a></li><li><a href="#动静分离配置">动静分离配置</a></li></ul></div><p></p> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h2> <ul><li><a href="https://github.com/nginx" target="_blank" rel="noopener noreferrer">https://github.com/nginx<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener noreferrer">https://nginx.org/en/download.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="http://nginx.org/en/docs" target="_blank" rel="noopener noreferrer">https://nginx.org/en/docs<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li><a href="https://github.com/nginxinc" target="_blank" rel="noopener noreferrer">https://github.com/nginxinc<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/h5bp/server-configs-nginx" target="_blank" rel="noopener noreferrer">https://github.com/h5bp/server-configs-nginx<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/digitalocean/nginxconfig.io" target="_blank" rel="noopener noreferrer">https://github.com/digitalocean/nginxconfig.io<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://www.digitalocean.com/community/tools/nginx" target="_blank" rel="noopener noreferrer">https://www.digitalocean.com/community/tools/nginx<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li><a href="https://github.com/alibaba/tengine" target="_blank" rel="noopener noreferrer">https://github.com/alibaba/tengine<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://github.com/alibaba/tengine-ingress" target="_blank" rel="noopener noreferrer">https://github.com/alibaba/tengine-ingress<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul> <ul><li><a href="https://github.com/hfpp2012/nginx-tutorial" target="_blank" rel="noopener noreferrer">https://github.com/hfpp2012/nginx-tutorial<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>Nginx 入门指南 <a href="https://github.com/xuexb/learn-nginx" target="_blank" rel="noopener noreferrer">https://github.com/xuexb/learn-nginx<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://iziyang.github.io/tags/nginx" target="_blank" rel="noopener noreferrer">标签: Nginx | 原少子杨<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://my.oschina.net/jsan/blog/125861" target="_blank" rel="noopener noreferrer">Nginx HTTP核心模块指令和内置变量中文说明<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/u014296316/article/details/80973530" target="_blank" rel="noopener noreferrer">nginx 变量使用<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.im/post/5ea931866fb9a043815146fb" target="_blank" rel="noopener noreferrer">Nginx 从入门到实践，万字详解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://segmentfault.com/blog/siguoya-nginx" target="_blank" rel="noopener noreferrer">Nginx从入门到实践<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.cnblogs.com/zjfjava/p/10947264.html" target="_blank" rel="noopener noreferrer">Nginx流控<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://segmentfault.com/a/1190000037788252" target="_blank" rel="noopener noreferrer">Nginx 高性能优化配置实战总结<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://zhuanlan.zhihu.com/p/149946545" target="_blank" rel="noopener noreferrer">nginx 优化的六点方法<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6844904122068680711" target="_blank" rel="noopener noreferrer">Nginx-性能优化<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://jayshao.com/cloudflare-nginx-ssl" target="_blank" rel="noopener noreferrer">博客使用Cloudflare和Nginx的相关配置<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/weixin_44623055/article/details/124715177" target="_blank" rel="noopener noreferrer">Nginx——Nginx负载均衡<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/liji133122/article/details/126667277" target="_blank" rel="noopener noreferrer">Nginx--流量限制（最有用的功能之一）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li>开发工具包 <a href="https://github.com/vision5/ngx_devel_kit" target="_blank" rel="noopener noreferrer">https://github.com/vision5/ngx_devel_kit<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/topics/nginx-configuration" target="_blank" rel="noopener noreferrer">https://github.com/topics/nginx-configuration<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/NginxProxyManager/nginx-proxy-manager" target="_blank" rel="noopener noreferrer">https://github.com/NginxProxyManager/nginx-proxy-manager<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>配置验证 <a href="https://github.com/dvershinin/gixy" target="_blank" rel="noopener noreferrer">https://github.com/dvershinin/gixy<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>配置生成 <a href="https://github.com/0xB4LINT/nginxconfig.io" target="_blank" rel="noopener noreferrer">https://github.com/0xB4LINT/nginxconfig.io<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>配置格式化 <a href="https://github.com/vasilevich/nginxbeautifier" target="_blank" rel="noopener noreferrer">https://github.com/vasilevich/nginxbeautifier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/1connect/nginx-config-formatter" target="_blank" rel="noopener noreferrer">https://github.com/slomkowski/nginx-config-formatter<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/nginx-proxy/nginx-proxy" target="_blank" rel="noopener noreferrer">https://github.com/nginx-proxy/nginx-proxy<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/evertramos/nginx-proxy-automation" target="_blank" rel="noopener noreferrer">https://github.com/evertramos/nginx-proxy-automation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/onlyGuo/nginx-gui" target="_blank" rel="noopener noreferrer">https://github.com/onlyGuo/nginx-gui<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>文件服务器 <a href="https://github.com/Naereen/Nginx-Fancyindex-Theme" target="_blank" rel="noopener noreferrer">https://github.com/Naereen/Nginx-Fancyindex-Theme<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/aperezdc/ngx-fancyindex" target="_blank" rel="noopener noreferrer">https://github.com/aperezdc/ngx-fancyindex<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>监控请求 <a href="https://github.com/lebinh/ngxtop" target="_blank" rel="noopener noreferrer">https://github.com/lebinh/ngxtop<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>日志分析 <a href="https://github.com/BeyondXinXin/nixvis" target="_blank" rel="noopener noreferrer">https://github.com/BeyondXinXin/nixvis<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/likaia/nginxpulse" target="_blank" rel="noopener noreferrer">https://github.com/likaia/nginxpulse<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 启动</span>
+nignx <span class="token parameter variable">-c</span> /usr/local/nginx/conf/nginx.conf
+nginx <span class="token parameter variable">-p</span> <span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span><span class="token variable">`</span></span>/<span class="token punctuation">..</span> <span class="token parameter variable">-c</span> conf/nginx.conf
+<span class="token comment"># 快速关闭，可能不保存相关信息，并迅速终止web服务</span>
+nginx <span class="token parameter variable">-s</span> stop
+<span class="token function">kill</span> <span class="token parameter variable">-s</span> quit PID
+<span class="token comment"># 平稳关闭，保存相关信息，有安排的结束web服务</span>
+nginx <span class="token parameter variable">-s</span> quit
+<span class="token comment"># 重新打开日志文件</span>
+nginx <span class="token parameter variable">-s</span> reopen
+<span class="token comment"># 重载配置</span>
+nginx <span class="token parameter variable">-s</span> reload
+<span class="token comment"># 验证配置</span>
+nginx <span class="token parameter variable">-t</span>
+</code></pre></div><h2 id="扩展模块插件"><a href="#扩展模块插件" class="header-anchor">#</a> 扩展模块插件</h2> <ul><li><a href="https://www.nginx.com/resources/wiki/modules" target="_blank" rel="noopener noreferrer">https://www.nginx.com/resources/wiki/modules<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.nginx.com/nginx-wiki/build/dirhtml/modules" target="_blank" rel="noopener noreferrer">https://www.nginx.com/nginx-wiki/build/dirhtml/modules<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/search?q=nginx-module" target="_blank" rel="noopener noreferrer">https://github.com/search?q=nginx-module<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/topics/nginx-module" target="_blank" rel="noopener noreferrer">https://github.com/topics/nginx-module<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li>Lua多种扩展模块 <a href="https://github.com/openresty" target="_blank" rel="noopener noreferrer">https://github.com/openresty<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://openresty.org/cn" target="_blank" rel="noopener noreferrer">https://openresty.org/cn<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://openresty-reference.readthedocs.io" target="_blank" rel="noopener noreferrer">https://openresty-reference.readthedocs.io<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://honeypps.com/architect/introduction-of-openresty" target="_blank" rel="noopener noreferrer">OpenResty 概要及原理科普<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://segmentfault.com/t/openresty" target="_blank" rel="noopener noreferrer">openresty 的动态 - SegmentFault 思否<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.nginx.com/resources/wiki/modules/lua" target="_blank" rel="noopener noreferrer">https://www.nginx.com/resources/wiki/modules/lua<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/moonbingbing/openresty-best-practices" target="_blank" rel="noopener noreferrer">https://github.com/moonbingbing/openresty-best-practices<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/gityf/ngx_lua_thrift" target="_blank" rel="noopener noreferrer">https://github.com/gityf/ngx_lua_thrift<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://zhuanlan.zhihu.com/p/67904411" target="_blank" rel="noopener noreferrer">浅谈OpenResty中的body_filter_by_lua*<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.bilibili.com/read/cv5038242" target="_blank" rel="noopener noreferrer">ngx.re模块和lua正则匹配的区别<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://github.com/openresty/lua-nginx-module#ngxrematch" target="_blank" rel="noopener noreferrer">https://github.com/openresty/lua-nginx-module#ngxrematch<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li><a href="https://www.jianshu.com/p/5167325edb09" target="_blank" rel="noopener noreferrer">Openresty+lua实现动态upstream<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/force_eagle/article/details/51966333" target="_blank" rel="noopener noreferrer">NGINX 结合 lua 动态修改upstream<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li><a href="https://github.com/iresty/nginx-lua-module-zh-wiki" target="_blank" rel="noopener noreferrer">https://github.com/iresty/nginx-lua-module-zh-wiki<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/loveshell/ngx_lua_waf" target="_blank" rel="noopener noreferrer">https://github.com/loveshell/ngx_lua_waf<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/ledgetech/lua-resty-http" target="_blank" rel="noopener noreferrer">https://github.com/ledgetech/lua-resty-http<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/3scale/cors-proxy" target="_blank" rel="noopener noreferrer">https://github.com/3scale/cors-proxy<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/starjun/openstar" target="_blank" rel="noopener noreferrer">https://github.com/starjun/openstar<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/zhouchangxun/ngx_healthcheck_module" target="_blank" rel="noopener noreferrer">https://github.com/zhouchangxun/ngx_healthcheck_module<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/vozlt/nginx-module-vts" target="_blank" rel="noopener noreferrer">https://github.com/vozlt/nginx-module-vts<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://gitee.com/tianhao26/openresty_forwarding_log" target="_blank" rel="noopener noreferrer">https://gitee.com/tianhao26/openresty_forwarding_log<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>心跳检测 <a href="https://github.com/yaoweibin/nginx_upstream_check_module" target="_blank" rel="noopener noreferrer">https://github.com/yaoweibin/nginx_upstream_check_module<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/cuber/ngx_http_google_filter_module" target="_blank" rel="noopener noreferrer">https://github.com/cuber/ngx_http_google_filter_module<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://plusls.github.io/linux/nginx/configure-nginx-google-mirror" target="_blank" rel="noopener noreferrer">Nginx 配置谷歌镜像站<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li>流媒体 <a href="https://github.com/arut/nginx-rtmp-module" target="_blank" rel="noopener noreferrer">https://github.com/arut/nginx-rtmp-module<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="编译安装"><a href="#编译安装" class="header-anchor">#</a> 编译安装</h2> <ul><li><a href="https://juejin.cn/post/6868289389722763272" target="_blank" rel="noopener noreferrer">Nginx 核心模块与配置实践<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><strong>openssl: error while loading shared libraries: libssl.so.1.1: cannot open shared object file</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查找一下libssl.so.1.1的位置，然后链接到/usr/lib64/libssl.so.1.1即可。</span>
+<span class="token function">find</span> / <span class="token parameter variable">-name</span> libssl.so.1.1
+<span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/lib64/libssl.so.1.1  /usr/lib64/libssl.so.1.1
+<span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/lib64/libcrypto.so.1.1  /usr/lib64/libcrypto.so.1.1
+openssl version
+</code></pre></div><p><strong>libssl.so.1.1: cannot open shared object file: No such file or directory</strong></p> <blockquote><p>Centos7 默认提供的 openssl 版本是 1.0.2，报错是因为openssl 库的安装位置不正确或未安装 1.1 以上版本的问题</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#从官网下载，去掉文件名，直接访问链接获取最新的包链接</span>
+<span class="token comment"># wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz</span>
+<span class="token comment">#腾讯云提供的镜像，去掉文件名，直接访问链接获取最新的包链接</span>
+<span class="token function">wget</span> https://mirrors.cloud.tencent.com/openssl/source/openssl-1.1.1k.tar.gz
+<span class="token function">tar</span> <span class="token parameter variable">-xvf</span> openssl-1.1.1k.tar.gz
+<span class="token builtin class-name">cd</span> openssl-1.1.1k
+yum <span class="token parameter variable">-y</span> <span class="token function">install</span> gcc automake autoconf libtool <span class="token function">make</span>
+./config shared <span class="token parameter variable">--openssldir</span><span class="token operator">=</span>/usr/local/openssl <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/usr/local/openssl
+<span class="token function">make</span> clean <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre></div><ul><li><code>openssl version</code> 如果看到版本号还是低版本</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;/usr/local/lib64/&quot;</span> <span class="token operator">&gt;&gt;</span> /etc/ld.so.conf
+ldconfig
+</code></pre></div><ul><li>还是有问题执行以下方式</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 备份</span>
+<span class="token function">mv</span> /usr/bin/openssl /usr/bin/openssl.old
+<span class="token function">mv</span> /usr/lib/openssl /usr/lib/openssl.old
+<span class="token comment"># 创建软链接</span>
+<span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/openssl/bin/openssl /usr/bin/openssl
+<span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/openssl/include/openssl /usr/include/openssl
+<span class="token comment"># 写配置</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;/usr/local/openssl/lib&quot;</span> <span class="token operator">&gt;&gt;</span> /etc/ld.so.conf
+ldconfig <span class="token parameter variable">-v</span>
+</code></pre></div><h2 id="location"><a href="#location" class="header-anchor">#</a> location</h2> <h3 id="语法规则"><a href="#语法规则" class="header-anchor">#</a> 语法规则</h3> <div class="language-conf extra-class"><pre class="language-text"><code>location [=|~|~*|^~] /uri/ {
+        ····· 
+}
+</code></pre></div><ul><li>修饰符含义</li></ul> <table><thead><tr><th>规则</th> <th>说明</th></tr></thead> <tbody><tr><td><code>!~*</code></td> <td>不区分大小写，但不匹配的正则</td></tr> <tr><td><code>!~</code></td> <td>区分大小写，但不匹配的正则</td></tr> <tr><td><code>/</code></td> <td>通用匹配，任何请求都会匹配到</td></tr> <tr><td><code>@</code></td> <td>定义一个内部命名的匹配（<a href="https://blog.sometimesnaive.org/article/72" target="_blank" rel="noopener noreferrer">等阶于<code>internal</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>），适用于<code>error_page</code>,<code>try_files</code></td></tr> <tr><td><code>^~</code></td> <td>uri以某个常规字符串开头，如请求为<code>/static/20%/aa</code>，匹配规则<code>^~ /static/ /aa</code></td></tr> <tr><td><code>~*</code></td> <td>不区分大小写的正则匹配</td></tr> <tr><td><code>~</code></td> <td>区分大小写的正则匹配</td></tr> <tr><td><code>=</code></td> <td>精确匹配</td></tr></tbody></table> <ul><li>当我们有多个<code>location</code>配置的情况下，其匹配顺序为</li></ul> <ol><li>带有<code>=</code>的精确匹配优先</li> <li>没有修饰符的精确匹配</li> <li>正则表达式按照他们在配置文件中定义的顺序</li> <li>带有<code>^~</code>修饰符的，开头匹配</li> <li>带有<code>~</code>、<code>~*</code>修饰符的，如果正则表达式与<code>URI</code>匹配</li> <li>没有修饰符的，如果指定字符串与<code>URI</code>开头匹配</li></ol> <p><strong>示例</strong></p> <ul><li><a href="https://mp.weixin.qq.com/s/eMXrIaTRpoyZdPsoF_tMCQ" target="_blank" rel="noopener noreferrer">nginx的root和alias详解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language- extra-class"><pre class="language-text"><code># 匹配网站根，通过域名访问网站首页比较频繁，使用这个会加速处理，官网如是说。
+# 这里是直接转发给后端应用服务器了，也可以是一个静态首页
+location = / {
+   #匹配http://localhost/
+}
+location = /login {
+   #匹配http://localhost/login
+}
+# 第二个必选规则是处理静态文件请求，这是 nginx 作为 http 服务器的强项
+# 有两种配置模式，目录匹配或后缀匹配,任选其一或搭配使用
+location ^~ /static/ {
+   #匹配http://localhost/static/a.html，http://localhost/static/c.png
+}
+location ~ \.(gif|jpg|png|js|css)$ {
+   #匹配http://localhost/a.gif, http://localhost/b.jpg
+}
+location ~* \.png$ {
+   #http://localhost/a.PNG
+}
+location !~ \.xhtml$ {
+   #匹配http://localhost/a.XHTML
+}
+location !~* \.xhtml$ {
+   #匹配http://localhost/a.jsp
+}
+# 通用规则，用来转发动态请求到后端应用服务器
+# 非静态文件请求就默认是动态请求
+location / {
+   #匹配http://localhost/register，http://localhost/category/id/1111
+}
+</code></pre></div><h3 id="内部调用"><a href="#内部调用" class="header-anchor">#</a> 内部调用</h3> <p><strong><code>internal</code></strong></p> <blockquote><p><code>internal</code> 指令用于指定只允许来自本地 <code>Nginx</code> 的内部调用，来自外部的访问会直接返回 <code>404 not found</code> 状态。</p></blockquote> <div class="language-conf extra-class"><pre class="language-text"><code># 定义一个内部调用location
+location /internal/ {
+    internal;
+    # https://nginx.org/en/docs/http/ngx_http_proxy_module.html
+    proxy_pass http://192.168.1.110:8091;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header REMOTE-HOST $remote_addr;
+    # 修改响应头中的&quot;Location&quot;和&quot;Refresh&quot;字段
+    # 解决https-&gt;nginx-&gt;http-&gt;tomcat重定向问题
+    proxy_redirect ~^http://([^:]+)(:\d+)?(.*)$ https://$1$3;
+}
+# 使用rewrite 内部重定向，其中 last 或 break 均可提供内部重定向。
+location / {
+    rewrite .* /internal/ last;
+}
+# 利用 Openresty 的 ngx.exec 模块
+location / {
+    access_by_lua_block {
+        return ngx.exec(&quot;/internal/&quot;)
+    }
+}
+</code></pre></div><p><strong><code>location @name</code></strong></p> <blockquote><p>命名location中不能再嵌套其它的命名location。</p></blockquote> <div class="language-conf extra-class"><pre class="language-text"><code># 匹配静态文件
+location ~ .*\.(htm|html|js|css|jpg|png|gif|eot|svg|ttf|woff|woff2)$ {
+    # 如果文件不存在
+    #if (!-f $request_filename) {
+        #content_by_lua_block {
+                #ngx.exec(&quot;@pass&quot;);
+        #}
+    #}
+    root /www/wwwroot/api;
+    # 按顺序检查文件是否存在，返回第一个找到的文件。结尾的斜线表示为文件夹 -$uri/。
+    # 如果所有的文件都找不到，会进行一个内部重定向到最后一个参数
+    try_files $uri $uri/ @pass;
+}
+# 通用匹配
+location / {
+    # 或者使用`ngx.exec`主要实现的是内部的重定向
+    # `ngx.redirect`是外部重定向
+    content_by_lua_block {
+        ngx.exec(&quot;@pass&quot;);
+    }
+}
+location @pass {
+    # https://nginx.org/en/docs/http/ngx_http_proxy_module.html
+    proxy_pass http://192.168.1.110:8091;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header REMOTE-HOST $remote_addr;
+    # 修改响应头中的&quot;Location&quot;和&quot;Refresh&quot;字段
+    # 解决https-&gt;nginx-&gt;http-&gt;tomcat重定向问题
+    proxy_redirect ~^http://([^:]+)(:\d+)?(.*)$  https://$1$3;
+}
+</code></pre></div><h3 id="以后缀设置过期时间"><a href="#以后缀设置过期时间" class="header-anchor">#</a> 以后缀设置过期时间</h3> <div class="language-conf extra-class"><pre class="language-text"><code>location ~* \.(js|css|jpg|jpeg|gif|png|swf)$ {
+    if (-f $request_filename) {
+        expires 1h;
+        break;
+    }
+}
+</code></pre></div><h3 id="禁止访问某个目录"><a href="#禁止访问某个目录" class="header-anchor">#</a> 禁止访问某个目录</h3> <div class="language-conf extra-class"><pre class="language-text"><code>location ~* \.(txt|doc)${
+    root /data/www/wwwroot/linuxtone/test;
+    deny all;
+}
+</code></pre></div><h2 id="rewrite语法"><a href="#rewrite语法" class="header-anchor">#</a> rewrite语法</h2> <ul><li><a href="https://blog.csdn.net/weixin_40792878/article/details/83316519" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/weixin_40792878/article/details/83316519<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>该指令通过正则表达式的使用来改变URI.可以同时存在一个或者多个指令，按照顺序一次对URL进行匹配和处理。</p></blockquote> <blockquote><p>该指令可以在<code>server</code>块或者<code>location</code>块中配置</p></blockquote> <ul><li>语法：<code>rewrite regex replacement [flag];</code> <ul><li><code>rewrite</code>是实现URL重定向的重要指令。</li> <li><code>regex</code>用来匹配URI的正则表达式；</li> <li><code>replacement</code>匹配成功后用来替换URI中被截取内容的字符串，默认情况如果该字符串包含“http://”、&quot;https://&quot;开头，则不会继续向下对URI进行其他处理。直接返回重写的URI给客户端</li> <li><code>flag</code>用来设置rewrite对URI的处理行为,包含如下数据：</li></ul></li></ul> <table><thead><tr><th>标记符号</th> <th>说明</th></tr></thead> <tbody><tr><td>last</td> <td>终止在本location块中处理接收到的URI，并将此处重写的URI作为新的URI使用其他location进行处理。（只是终止当前location的处理）</td></tr> <tr><td>break</td> <td>将此处重写的URI作为一个新的URI在当前location中继续执行，并不会将新的URI转向其他location。</td></tr> <tr><td>redirect</td> <td>将重写后的URI返回个客户端，状态码是302，表明临时重定向，主要用在replacement字符串不以“http://”，“ https://”或“ $scheme” 开头；</td></tr> <tr><td>permanent</td> <td>将重写的URI返回客户端，状态码为301,指明是永久重定向；</td></tr></tbody></table> <p><strong>Redirect</strong></p> <div class="language-conf extra-class"><pre class="language-text"><code>rewrite ^(.*) http://example.com$1 redirect;
+</code></pre></div><p><strong>防盗链</strong></p> <div class="language- extra-class"><pre class="language-text"><code>location ~* \.(gif|jpg|swf)$ {
+    valid_referers none blocked start.igrow.cn sta.igrow.cn;
+    if ($invalid_referer) {
+        rewrite ^/ http://$host/logo.png;
+    }
+}
+</code></pre></div><h2 id="判断表达式"><a href="#判断表达式" class="header-anchor">#</a> 判断表达式</h2> <table><thead><tr><th>表达式</th> <th>说明</th></tr></thead> <tbody><tr><td><code>-d</code> 和 <code>!-d</code></td> <td>用来判断是否存在目录</td></tr> <tr><td><code>-e</code> 和 <code>!-e</code></td> <td>用来判断是否存在文件或目录</td></tr> <tr><td><code>-f</code> 和 <code>!-f</code></td> <td>用来判断是否存在文件</td></tr> <tr><td><code>-x</code> 和 <code>!-x</code></td> <td>用来判断文件是否可执行</td></tr></tbody></table> <h2 id="全局变量"><a href="#全局变量" class="header-anchor">#</a> 全局变量</h2> <p><strong>常见变量</strong></p> <table><thead><tr><th>变量</th> <th>作用</th></tr></thead> <tbody><tr><td><code>$arg_名称</code></td> <td>URL 中某个具体参数的值</td></tr> <tr><td><code>$args</code></td> <td>这个变量等于请求行中(GET请求)的参数，同$query_string</td></tr> <tr><td><code>$body_bytes_sent</code></td> <td>传输给客户端的字节数，响应头不计算在内；这个变量和Apache的mod_log_config模块中的&quot;%B&quot;参数保持兼容</td></tr> <tr><td><code>$bytes_sent</code></td> <td>传输给客户端的字节数</td></tr> <tr><td><code>$content_length</code></td> <td>HTTP 请求中标识包体长度的Content-Length头部的值，头部没有这个则为空</td></tr> <tr><td><code>$content_type</code></td> <td>标识请求包体类型的Content-Type 头部的值</td></tr> <tr><td><code>$cookie_名称</code></td> <td>客户端请求Header头中的cookie变量，前缀&quot;$cookie_&quot;加上cookie名称的变量，该变量的值即为cookie名称的值</td></tr> <tr><td><code>$document_root</code></td> <td>当前请求在root指令中指定的值。</td></tr> <tr><td><code>$document_uri</code></td> <td>与uri完全相同</td></tr> <tr><td><code>$host</code></td> <td>请求主机头字段，否则为服务器名称。</td></tr> <tr><td><code>$http_cookie</code></td> <td>客户端cookie信息</td></tr> <tr><td><code>$http_host</code></td> <td>请求地址，即浏览器中你输入的地址（IP或域名）</td></tr> <tr><td><code>$http_referer</code></td> <td>url跳转来源,用来记录从那个页面链接访问过来的</td></tr> <tr><td><code>$http_user_agent</code></td> <td>客户端agent信息</td></tr> <tr><td><code>$http_x_forwarded_for</code></td> <td>当前端有代理服务器时，设置web节点记录客户端地址的配置，此参数生效的前提是代理服务器也要进行相关的x_forwarded_for设置</td></tr> <tr><td><code>$http_名称</code></td> <td>匹配任意请求头字段；变量名中的后半部分名称可以替换成任意请求头字段，如在配置文件中需要获取http请求头：&quot;Accept-Language&quot;，$http_accept_language即可</td></tr> <tr><td><code>$https</code></td> <td>如果开启了SSL安全模式，值为&quot;on&quot;，否则为空字符串。</td></tr> <tr><td><code>$is_args</code></td> <td>如果已经设置$args，则该变量的值为&quot;？&quot;，否则为&quot;&quot;。</td></tr> <tr><td><code>$limit_rate</code></td> <td>这个变量可以限制连接速率。</td></tr> <tr><td><code>$pipe</code></td> <td>如果请求来自管道通信，值为&quot;p&quot;，否则为&quot;.&quot;</td></tr> <tr><td><code>$query_string</code></td> <td>与args变量完全相同</td></tr> <tr><td><code>$realpath_root</code></td> <td>当前请求的文档根目录或别名的真实路径，会将所有符号连接转换为真实路径</td></tr> <tr><td><code>$remote_user</code></td> <td>有HTTP Basic Authentication 协议传入的用户名，已经经过Auth Basic Module验证的用户名。</td></tr> <tr><td><code>$request_body_file</code></td> <td>客户端请求主体信息的临时文件名。</td></tr> <tr><td><code>$request_body</code></td> <td>客户端的请求主体：此变量可在location中使用，将请求主体通过proxy_pass，fastcgi_pass，uwsgi_pass和scgi_pass传递给下一级的代理服务器</td></tr> <tr><td><code>$request_filename</code></td> <td>当前请求的文件路径，由root或alias指令与URI请求生成。</td></tr> <tr><td><code>$request_length</code></td> <td>所有请求内容的大小，包括请求行，头部，包体等</td></tr> <tr><td><code>$request_method</code></td> <td>客户端请求的动作，通常为GET或POST。</td></tr> <tr><td><code>$request_uri</code></td> <td>包含请求参数的原始URI，不包含主机名，如：&quot;/?dir=DeveloperTool&quot;。</td></tr> <tr><td><code>$request</code></td> <td>原始的url请求，含有方法和协议版本</td></tr> <tr><td><code>$scheme</code></td> <td>HTTP协议 HTTP 或者 HTTPS</td></tr> <tr><td><code>$sent_http_名称</code></td> <td>可以设置任意http响应头字段；变量名中的后半部分名称可以替换成任意响应头字段，如需要设置响应头Content-length，$sent_http_content_length即可</td></tr> <tr><td><code>$status</code></td> <td>HTTP响应代码</td></tr> <tr><td><code>$uri</code></td> <td>请求的URI，不包含主机名，不包含?后的参数</td></tr></tbody></table> <blockquote><p><code>$request_body_file</code> 将客户端请求主体保存在临时文件中。文件处理结束后，此文件需删除。如果需要执意开启此功能，
+需要设置<code>client_body_in_file_only</code>。如果将次文件传递给后端的代理服务器，需要禁用<code>request body</code>，
+即设置<code>proxy_pass_request_body off</code>，<code>fastcgi_pass_request_body off</code>，
+<code>uwsgi_pass_request_body off</code>，<code>scgi_pass_request_body off</code></p></blockquote> <p><strong>TCP相关变量</strong></p> <table><thead><tr><th>变量</th> <th>作用</th></tr></thead> <tbody><tr><td><code>$binary_remote_addr</code></td> <td>客户端地质的整型格式，对于IPv4是4字节</td></tr> <tr><td><code>$connection_requests</code></td> <td>当前连接上执行过的请求数，对keepalive 有意义</td></tr> <tr><td><code>$connection</code></td> <td>递增的连接序号</td></tr> <tr><td><code>$proxy_protocol_addr</code></td> <td>若使用了proxy_protocol 协议则返回协议中的地址</td></tr> <tr><td><code>$proxy_protocol_port</code></td> <td>若使用了proxy_protocol 协议则返回协议中的端口</td></tr> <tr><td><code>$remote_addr</code></td> <td>客户端地址</td></tr> <tr><td><code>$remote_port</code></td> <td>客户端端口</td></tr> <tr><td><code>$server_addr</code></td> <td>服务器端地址(本端地址)，在完成一次系统调用后可以确定这个值。</td></tr> <tr><td><code>$server_port</code></td> <td>请求到达服务器的端口号。</td></tr> <tr><td><code>$server_protocol</code></td> <td>请求使用的协议，通常是HTTP/1.0或HTTP/1.1。</td></tr> <tr><td><code>$TCP_INFO</code></td> <td>tcp内核层参数（$tcpinfo_rtt,$tcpinfo_rttvar,$tcpinfo_snd_cwnd,$tcpinfo_rcv_space）</td></tr></tbody></table> <p><strong>处理请求过程中产生的变量</strong></p> <table><thead><tr><th>变量</th> <th>作用</th></tr></thead> <tbody><tr><td><code>$request_completion</code></td> <td>若请求处理完则返回OK，否则为空</td></tr> <tr><td><code>$request_id</code></td> <td>以16禁止输出的请求标识id，随即生成</td></tr> <tr><td><code>$request_time</code></td> <td>请求处理到现在的耗时</td></tr> <tr><td><code>$server_name</code></td> <td>匹配上的请求server_name</td></tr></tbody></table> <p><strong>系统变量</strong></p> <table><thead><tr><th>变量</th> <th>作用</th></tr></thead> <tbody><tr><td><code>$hostname</code></td> <td>与系统上输出hostname 一致</td></tr> <tr><td><code>$pid</code></td> <td>所属worker进程的id</td></tr> <tr><td><code>$time_local</code></td> <td>以本地时间的标准输出</td></tr> <tr><td><code>$time_iso8601</code></td> <td>服务器时间的ISO 8610格式</td></tr> <tr><td><code>$msec</code></td> <td>当前的Unix时间戳</td></tr> <tr><td><code>$nginx_version</code></td> <td>nginx版本</td></tr></tbody></table> <h2 id="判断user-agent"><a href="#判断user-agent" class="header-anchor">#</a> 判断user_agent</h2> <div class="language-conf extra-class"><pre class="language-text"><code># 设置变量
+set $mobile_user_agent &quot;(MIDP)|(WAP)|(UP.Browser)|(Smartphone)
+|(Obigo)|(Mobile)|(AU.Browser)|(wxd.Mms)|(WxdB.Browser)|(CLDC)
+|(UP.Link)|(KM.Browser)|(UCWEB)|(SEMC-Browser)|(Mini)|(Symbian)
+|(Palm)|(Nokia)|(Panasonic)|(MOT-)|(SonyEricsson)|(NEC-)|(Alcatel)
+|(Ericsson)|(BENQ)|(BenQ)|(Amoisonic)|(Amoi-)|(Capitel)|(PHILIPS)
+|(SAMSUNG)|(Lenovo)|(Mitsu)|(Motorola)|(SHARP)|(WAPPER)|(LG-)
+|(LG/)|(EG900)|(CECT)|(Compal)|(kejian)|(Bird)|(BIRD)|(G900/V1.0)
+|(Arima)|(CTL)|(TDG)|(Daxian)|(DAXIAN)|(DBTEL)|(Eastcom)|(EASTCOM)
+|(PANTECH)|(Dopod)|(Haier)|(HAIER)|(KONKA)|(KEJIAN)|(LENOVO)
+|(Soutec)|(SOUTEC)|(SAGEM)|(SEC-)|(SED-)|(EMOL-)|(INNO55)
+|(ZTE)|(iPhone)|(Android)|(Windows CE)|(Wget)|(Java)|(curl)|(Opera)&quot;;
+
+# 判断是否为移动端访问
+if ( $http_user_agent ~ &quot;$mobile_user_agent&quot; ) {
+    # 重写URI作为一个新的URI在当前location中继续执行。
+    # 目的是在if块中proxy_pass不能带URI
+    rewrite ^ /URI参数$1 break;
+    proxy_pass https://127.0.0.1;
+    #proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header REMOTE-HOST $remote_addr;
+}
+</code></pre></div><div class="language-conf extra-class"><pre class="language-text"><code># cloudflare 默认会在header里面加上’HTTP_CF_IPCOUNTRY’
+# 禁止某些国家, user agent 的访问，配置在http（全局）
+map $http_cf_ipcountry $allow {
+    default yes;
+    US no;
+    CA no;
+    UK no;
+    AU no;
+}
+# 在server或location中配置
+if ($allow = no) {
+    return 403;
+}
+</code></pre></div><h2 id="proxy-pass指令"><a href="#proxy-pass指令" class="header-anchor">#</a> proxy_pass指令</h2> <blockquote><p>nginx无法在<code>proxy_pass</code>指令中处理所需的URI部分，因为位于指定的位置（因此是错误消息）。
+这是因为nginx是以模块化的方式构建的，每个配置块都是由各个模块在各个阶段读取的。</p></blockquote> <ul><li><code>proxy_pass</code>在以下情况下，指令中不能有URI ：
+<ul><li>正则表达式位置</li> <li>命名的地点</li> <li>if 块</li></ul></li></ul> <blockquote><p>解决方案可见<a href="#%E5%88%A4%E6%96%ADuser-agent">判断<code>user_agent</code></a></p></blockquote> <ul><li><code>proxy_set_header</code> 设置请求头信息给上游服务器</li> <li><code>add_header</code> 设置响应头信息给浏览器</li></ul> <h2 id="日志切割"><a href="#日志切割" class="header-anchor">#</a> 日志切割</h2> <blockquote><p>在<code>nginx.conf</code>中配置<code>log_format</code>（可以配置在<code>server</code>中），含义是配置了一个名为<code>main</code>的日志格式化的规则，应用在了<code>access_log</code>的日志上</p></blockquote> <p><strong>使用到<code>timeiso8601</code>内嵌变量来获取时间配置日志循环</strong></p> <ul><li><a href="https://github.com/jingsam/jingsam.github.io/blob/source/source/_posts/2019-01-15-nginx-access-log.md" target="_blank" rel="noopener noreferrer">简单搞定Nginx日志分割<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-conf extra-class"><pre class="language-text"><code># 可能出现if条件不成立的情况，推荐在http块中使用map
+if ($time_iso8601 ~ &quot;^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})&quot;) {
+    set $year $1;
+    set $month $2;
+    set $day $3;
+    set $hour $4;
+    set $minutes $5;
+    set $seconds $6;
+}
+access_log logs/$year-$month-$day-$hour$minutes$seconds-access.log main;
+
+# Perl语法
+if ($time_iso8601 ~ &quot;^(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2})&quot;) {}
+access_log logs/$year-$month-$day-access.log main;
+
+# http块中不允许使用if，使用map替代
+map $time_iso8601 $logdate {
+    '~^(?&lt;ymd&gt;\d{4}-\d{2}-\d{2}-\d{6})'   $ymd;
+    default                               'nodate';
+}
+access_log logs/access_${logdate}.log;
+</code></pre></div><p><strong>日志归档程序logrotate</strong></p> <ul><li><a href="https://github.com/fordmason/cronolog" target="_blank" rel="noopener noreferrer">https://github.com/fordmason/cronolog<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/logrotate/logrotate" target="_blank" rel="noopener noreferrer">https://github.com/logrotate/logrotate<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/logrotate.d/nginx
+</code></pre></div><blockquote><p><code>kill -USR1 cat /usr/local/nginx/logs/nginx.pid</code> 向nginx主进程发送USR1信号用于重新读取日志文件</p></blockquote> <div class="language-conf extra-class"><pre class="language-text"><code>/home/nginx/logs/*.log { # 目录下所有以.log结尾的文件
+    daily # 按天切割
+    #dateformat %Y%m%d # 切割后文件后缀，不能使用log，否则会使文件进行继续切割
+    #extension .log # 切割文件后缀
+    rotate 7 # 保留天数
+    #create 0640 root root   # 切割后日志权限
+    missingok
+    dateext
+    notifempty
+    sharedscripts
+    prerotate
+        if [ -d /etc/logrotate.d/nginx ]; then \  # 判断切割文件
+            run-parts /etc/logrotate.d/nginx; \
+        fi \
+    endscript
+    postrotate
+        [ -e /usr/local/nginx/logs/nginx.pid ] &amp;&amp; kill -USR1 `cat /home/nginx/logs/nginx.pid`
+    endscript
+    postrotate
+        [ ! -f /var/nginx.pid ] || kill -USR1 `cat /home/nginx/logs/nginx.pid`
+    endscript
+}
+</code></pre></div><h2 id="主配置"><a href="#主配置" class="header-anchor">#</a> 主配置</h2> <ul><li><a href="https://blog.csdn.net/DeliaPu/article/details/108647180" target="_blank" rel="noopener noreferrer">Nginx配置文件解析<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.cnblogs.com/wxxjianchi/p/13582252.html" target="_blank" rel="noopener noreferrer">nginx - HowOldAreYou - 博客园<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-conf extra-class"><pre class="language-text"><code>
+user www www;
+worker_processes auto;
+error_log /logs/nginx_error.log crit;
+pid /logs/nginx.pid;
+worker_rlimit_nofile 51200;
+events {
+    use epoll;
+    worker_connections 51200;
+    multi_accept on;
+}
+http {
+    # 扩展名与文件类型映射表
+    include mime.types;
+    #include luawaf.conf;
+    include proxy.conf;
+    include /vhost/*.conf;
+    # 默认类型
+    default_type application/octet-stream;
+    server_names_hash_bucket_size 512;
+    # 设置请求缓冲
+    client_header_buffer_size 32k;
+    large_client_header_buffers 4 32k;
+    client_max_body_size 500m;
+    # 开启高效文件传输模式，sendfile指令指定nginx是否调用sendfile函数来输出文件，对于普通应用设为 on，
+    # 如果用来进行下载等应用磁盘 IO重负载应用，可设置为off，以平衡磁盘与网络I/O处理速度，
+    # 降低系统的负载。注意：如果图片显示不正常把这个改成off。
+    sendfile on;
+    tcp_nopush on;
+    # 设置连接超时时间，单位是秒
+    keepalive_timeout 60;
+    tcp_nodelay on;
+    fastcgi_connect_timeout 300;
+    fastcgi_send_timeout 300;
+    fastcgi_read_timeout 300;
+    fastcgi_buffer_size 64k;
+    fastcgi_buffers 4 64k;
+    fastcgi_busy_buffers_size 128k;
+    fastcgi_temp_file_write_size 256k;
+    fastcgi_intercept_errors on;
+    # 开启gzip压缩
+    gzip on;
+    gzip_min_length 1k;
+    gzip_buffers 4 16k;
+    gzip_http_version 1.1;
+    gzip_comp_level 2;
+    gzip_types text/plain application/javascript application/x-javascript text/javascript text/css application/xml;
+    gzip_vary on;
+    gzip_proxied expired no-cache no-store private auth;
+    gzip_disable &quot;MSIE [1-6]\.&quot;;
+    limit_conn_zone $binary_remote_addr zone=perip:10m;
+    limit_conn_zone $server_name zone=perserver:10m;
+    server_tokens off;
+    # 关闭日志
+    access_log off;
+    # 输出日志
+    #error_log /dev/null;
+}
+</code></pre></div><h2 id="动静分离配置"><a href="#动静分离配置" class="header-anchor">#</a> 动静分离配置</h2> <p><strong>静态文件在本地</strong></p> <div class="language-conf extra-class"><pre class="language-text"><code>server {
+    listen 80;
+    listen 443 ssl http2;
+    server_name www.woetu.com woetu.com;
+    index index.html index.htm default.htm default.html;
+    root html;
+    # SSL-START SSL相关配置，请勿删除或修改下一行带注释的404规则
+    #error_page 404/404.html;
+    # HTTP_TO_HTTPS_START
+    if ($server_port !~ 443) {
+        rewrite ^(/.*)$ https://$host$1 permanent;
+    }
+    # HTTP_TO_HTTPS_END
+    ssl_certificate /etc/letsencrypt/live/www/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/www/privkey.pem;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+    ssl_prefer_server_ciphers on;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+    error_page 497 https://$host$request_uri;
+    # SSL-END
+    # ERROR-PAGE-START  错误页配置，可以注释、删除或修改
+    error_page 404 /404.html;
+    error_page 502 /502.html;
+    # ERROR-PAGE-END
+    # PROXY-START/
+    # 配置首页，这里必须要有一个=号
+    location =/ {
+        index index.html index.htm;
+    }
+    # 拦截静态文件后缀
+    location ~ .*\.(htm|html|js|css|jpg|png|gif|eot|svg|ttf|woff|woff2)$ {
+        # 配置静态资源地址
+        root /home/html/index;
+    }
+    # 拦截静态文件后缀
+    #location ~ \.(htm|html|js|css|jpg|png|gif|eot|svg|ttf|woff|woff2)$ {
+    # 配置静态资源地址
+    #        root /home/html/index;
+    #}
+    # 动态请求转发
+    location ~.*$ {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header REMOTE-HOST $remote_addr;
+        # 解决https-&gt;nginx-&gt;http-&gt;tomcat重定向问题
+        proxy_redirect ~^http://([^:]+)(:\d+)?(.*)$ https://$1$3;
+    }
+    # PROXY-END/
+    # 禁止访问的文件或目录
+    location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md) {
+        return 404;
+    }
+    # 一键申请SSL证书验证目录相关设置
+    location ~ \.well-known {
+        allow all;
+    }
+    access_log /logs/wwwlog;
+    error_log /logs/wwwlog;
+}
+</code></pre></div><p><strong>静态文件在镜像存储</strong></p> <div class="language-conf extra-class"><pre class="language-text"><code>#PROXY-START/
+location = / {
+    #rewrite (.*) $1index.html;
+    index /index.html;
+}
+# 拦截静态文件后缀
+location ~ .*\.(htm|html|js|css|jpg|png|gif|eot|svg|ttf|woff|woff2)$|/static/ {
+    # 配置静态资源地址
+    #root ./vhost/html;
+	root &quot;/index&quot;;
+	# 将此处重写的URI作为一个新的URI在当前location中继续执行，并不会将新的URI转向其他location
+	rewrite ^(.*)$ /index/$1 break;
+	
+	proxy_pass https://test.cos.ap-hongkong.myqcloud.com;
+    #proxy_set_header Host $host;
+	proxy_set_header Host test.cos.ap-hongkong.myqcloud.com;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header REMOTE-HOST $remote_addr;
+    
+    add_header X-Cache $upstream_cache_status;
+    
+    #Set Nginx Cache
+    add_header Cache-Control no-cache;
+}
+location / {
+    proxy_pass http://127.0.0.1:8081;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header REMOTE-HOST $remote_addr;
+    
+    add_header X-Cache $upstream_cache_status;
+    
+    #Set Nginx Cache
+    add_header Cache-Control no-cache;
+    #expires 12h;
+}
+
+#PROXY-END/
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bajins/notes-vuepress/edit/master//System/Nginx.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2026-02-28 02:28:37</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/System/Linux配置.html" class="prev">
+        Linux配置
+      </a></span> <span class="next"><a href="/System/Windows.html">
+        Windows
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1faa001a.js" defer></script><script src="/assets/js/2.4296a15b.js" defer></script><script src="/assets/js/1.13868f42.js" defer></script><script src="/assets/js/111.966ae33e.js" defer></script>
+  </body>
+</html>

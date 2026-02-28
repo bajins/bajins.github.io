@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL存储过程 | Bajins</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="CREATE DEFINER=root@% PROCEDURE select_review ( IN gs BIGINT,IN rid BIGINT,OUT result VARCHAR(255))
+BEGIN">
+    <meta name="twitter:title" content="MySQL存储过程">
+    <meta name="twitter:description" content="CREATE DEFINER=root@% PROCEDURE select_review ( IN gs BIGINT,IN rid BIGINT,OUT result VARCHAR(255))
+BEGIN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://bajins.com/DBS/MySQL%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MySQL存储过程">
+    <meta property="og:description" content="CREATE DEFINER=root@% PROCEDURE select_review ( IN gs BIGINT,IN rid BIGINT,OUT result VARCHAR(255))
+BEGIN">
+    <meta property="og:url" content="https://bajins.com/DBS/MySQL%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.html">
+    <meta property="og:site_name" content="bajins">
+    <meta itemprop="name" content="MySQL存储过程">
+    <meta itemprop="description" content="CREATE DEFINER=root@% PROCEDURE select_review ( IN gs BIGINT,IN rid BIGINT,OUT result VARCHAR(255))
+BEGIN">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog
+        ,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive
+        ,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.921daf77.css" as="style"><link rel="preload" href="/assets/js/app.1faa001a.js" as="script"><link rel="preload" href="/assets/js/2.4296a15b.js" as="script"><link rel="preload" href="/assets/js/1.13868f42.js" as="script"><link rel="preload" href="/assets/js/28.6f83aea0.js" as="script"><link rel="prefetch" href="/assets/js/100.fb476d17.js"><link rel="prefetch" href="/assets/js/101.65373054.js"><link rel="prefetch" href="/assets/js/102.34afe950.js"><link rel="prefetch" href="/assets/js/103.08e76636.js"><link rel="prefetch" href="/assets/js/104.81b9f765.js"><link rel="prefetch" href="/assets/js/105.d87b9813.js"><link rel="prefetch" href="/assets/js/106.602c6293.js"><link rel="prefetch" href="/assets/js/107.9405c4cf.js"><link rel="prefetch" href="/assets/js/108.ded99788.js"><link rel="prefetch" href="/assets/js/109.ab499760.js"><link rel="prefetch" href="/assets/js/110.789e52aa.js"><link rel="prefetch" href="/assets/js/111.966ae33e.js"><link rel="prefetch" href="/assets/js/112.189d5eb3.js"><link rel="prefetch" href="/assets/js/113.8e20e93c.js"><link rel="prefetch" href="/assets/js/114.b70628d6.js"><link rel="prefetch" href="/assets/js/115.c82a373f.js"><link rel="prefetch" href="/assets/js/116.e34cd637.js"><link rel="prefetch" href="/assets/js/117.cc670f24.js"><link rel="prefetch" href="/assets/js/118.d958ab99.js"><link rel="prefetch" href="/assets/js/119.f5be99c9.js"><link rel="prefetch" href="/assets/js/12.a562b374.js"><link rel="prefetch" href="/assets/js/120.8675f97c.js"><link rel="prefetch" href="/assets/js/121.4cdd8db5.js"><link rel="prefetch" href="/assets/js/122.ca783f05.js"><link rel="prefetch" href="/assets/js/123.869d2c73.js"><link rel="prefetch" href="/assets/js/124.fd840642.js"><link rel="prefetch" href="/assets/js/125.74c9f0fa.js"><link rel="prefetch" href="/assets/js/126.3cd314db.js"><link rel="prefetch" href="/assets/js/127.457509ef.js"><link rel="prefetch" href="/assets/js/128.1b98a1c4.js"><link rel="prefetch" href="/assets/js/13.0df2e0a7.js"><link rel="prefetch" href="/assets/js/14.406f3fa2.js"><link rel="prefetch" href="/assets/js/15.71767727.js"><link rel="prefetch" href="/assets/js/16.c3b53708.js"><link rel="prefetch" href="/assets/js/17.37ca37ec.js"><link rel="prefetch" href="/assets/js/18.162669ae.js"><link rel="prefetch" href="/assets/js/19.091120bc.js"><link rel="prefetch" href="/assets/js/20.fb63d007.js"><link rel="prefetch" href="/assets/js/21.1c14567e.js"><link rel="prefetch" href="/assets/js/22.35d51bbe.js"><link rel="prefetch" href="/assets/js/23.825a1fb5.js"><link rel="prefetch" href="/assets/js/24.2e205b7a.js"><link rel="prefetch" href="/assets/js/25.e4fa03d6.js"><link rel="prefetch" href="/assets/js/26.85767710.js"><link rel="prefetch" href="/assets/js/27.d046a28b.js"><link rel="prefetch" href="/assets/js/29.eedaa43e.js"><link rel="prefetch" href="/assets/js/3.00255157.js"><link rel="prefetch" href="/assets/js/30.8410e120.js"><link rel="prefetch" href="/assets/js/31.c7609f0f.js"><link rel="prefetch" href="/assets/js/32.5c322ef0.js"><link rel="prefetch" href="/assets/js/33.64cc9fe8.js"><link rel="prefetch" href="/assets/js/34.bcf6d63d.js"><link rel="prefetch" href="/assets/js/35.d726e14f.js"><link rel="prefetch" href="/assets/js/36.26402a9f.js"><link rel="prefetch" href="/assets/js/37.1e0403d6.js"><link rel="prefetch" href="/assets/js/38.2d75f668.js"><link rel="prefetch" href="/assets/js/39.4d8d888f.js"><link rel="prefetch" href="/assets/js/4.a41861e7.js"><link rel="prefetch" href="/assets/js/40.fb37b3d7.js"><link rel="prefetch" href="/assets/js/41.bb9946e4.js"><link rel="prefetch" href="/assets/js/42.cf5a059e.js"><link rel="prefetch" href="/assets/js/43.dc969823.js"><link rel="prefetch" href="/assets/js/44.fae0f835.js"><link rel="prefetch" href="/assets/js/45.c61a83fc.js"><link rel="prefetch" href="/assets/js/46.aaa58bd7.js"><link rel="prefetch" href="/assets/js/47.ce9952ea.js"><link rel="prefetch" href="/assets/js/48.27a679af.js"><link rel="prefetch" href="/assets/js/49.1d46de41.js"><link rel="prefetch" href="/assets/js/5.bbf8e470.js"><link rel="prefetch" href="/assets/js/50.abefa3e0.js"><link rel="prefetch" href="/assets/js/51.8b4021ed.js"><link rel="prefetch" href="/assets/js/52.023ec242.js"><link rel="prefetch" href="/assets/js/53.4ccae60e.js"><link rel="prefetch" href="/assets/js/54.48c46570.js"><link rel="prefetch" href="/assets/js/55.bcde0428.js"><link rel="prefetch" href="/assets/js/56.289a8f5a.js"><link rel="prefetch" href="/assets/js/57.dc4a711d.js"><link rel="prefetch" href="/assets/js/58.add3287e.js"><link rel="prefetch" href="/assets/js/59.baffa02b.js"><link rel="prefetch" href="/assets/js/6.c6438728.js"><link rel="prefetch" href="/assets/js/60.5992001b.js"><link rel="prefetch" href="/assets/js/61.fa8afda9.js"><link rel="prefetch" href="/assets/js/62.9fe383af.js"><link rel="prefetch" href="/assets/js/63.df19c15f.js"><link rel="prefetch" href="/assets/js/64.54698821.js"><link rel="prefetch" href="/assets/js/65.4c482019.js"><link rel="prefetch" href="/assets/js/66.6086e608.js"><link rel="prefetch" href="/assets/js/67.fbfb96e6.js"><link rel="prefetch" href="/assets/js/68.81007873.js"><link rel="prefetch" href="/assets/js/69.0199c159.js"><link rel="prefetch" href="/assets/js/7.afb14c62.js"><link rel="prefetch" href="/assets/js/70.2fcf8ce3.js"><link rel="prefetch" href="/assets/js/71.321b22a1.js"><link rel="prefetch" href="/assets/js/72.379b9ea7.js"><link rel="prefetch" href="/assets/js/73.4f1136ed.js"><link rel="prefetch" href="/assets/js/74.563df937.js"><link rel="prefetch" href="/assets/js/75.5d1ebb4f.js"><link rel="prefetch" href="/assets/js/76.fa2bb98d.js"><link rel="prefetch" href="/assets/js/77.92abe7f3.js"><link rel="prefetch" href="/assets/js/78.c2f60b8d.js"><link rel="prefetch" href="/assets/js/79.7a915e00.js"><link rel="prefetch" href="/assets/js/8.d99bad6b.js"><link rel="prefetch" href="/assets/js/80.81894c77.js"><link rel="prefetch" href="/assets/js/81.1e3e3ce3.js"><link rel="prefetch" href="/assets/js/82.d135f529.js"><link rel="prefetch" href="/assets/js/83.f8454a02.js"><link rel="prefetch" href="/assets/js/84.08db55e8.js"><link rel="prefetch" href="/assets/js/85.3bf464db.js"><link rel="prefetch" href="/assets/js/86.30271d76.js"><link rel="prefetch" href="/assets/js/87.efe1dc5a.js"><link rel="prefetch" href="/assets/js/88.849450cb.js"><link rel="prefetch" href="/assets/js/89.a3f2d9e4.js"><link rel="prefetch" href="/assets/js/90.cc19367e.js"><link rel="prefetch" href="/assets/js/91.359e1a28.js"><link rel="prefetch" href="/assets/js/92.9cef9392.js"><link rel="prefetch" href="/assets/js/93.92a0107b.js"><link rel="prefetch" href="/assets/js/94.c8672212.js"><link rel="prefetch" href="/assets/js/95.9d596948.js"><link rel="prefetch" href="/assets/js/96.56d14cf1.js"><link rel="prefetch" href="/assets/js/97.ac9d011e.js"><link rel="prefetch" href="/assets/js/98.ccae6e29.js"><link rel="prefetch" href="/assets/js/99.dd37c751.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.37b7ea54.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.46952646.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.921daf77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name can-hide">Bajins</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/DBS/" class="nav-link router-link-active">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/DBS/" class="nav-link router-link-active">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>DBS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/DBS/" aria-current="page" class="sidebar-link">DBS</a></li><li><a href="/DBS/MySQL.html" class="sidebar-link">MySQL</a></li><li><a href="/DBS/MySQL事件.html" class="sidebar-link">MySQL事件</a></li><li><a href="/DBS/MySQL备份恢复.html" class="sidebar-link">MySQL备份恢复</a></li><li><a href="/DBS/MySQL存储过程.html" class="active sidebar-link">MySQL存储过程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/DBS/MySQL存储过程.html#创建游标存储过程" class="sidebar-link">创建游标存储过程</a></li><li class="sidebar-sub-header"><a href="/DBS/MySQL存储过程.html#循环" class="sidebar-link">循环</a></li><li class="sidebar-sub-header"><a href="/DBS/MySQL存储过程.html#异常处理" class="sidebar-link">异常处理</a></li><li class="sidebar-sub-header"><a href="/DBS/MySQL存储过程.html#插入或更新upsert" class="sidebar-link">插入或更新upsert</a></li></ul></li><li><a href="/DBS/MySQL安装配置.html" class="sidebar-link">MySQL安装配置</a></li><li><a href="/DBS/Oracle.html" class="sidebar-link">Oracle</a></li><li><a href="/DBS/PostgreSQL.html" class="sidebar-link">PostgreSQL</a></li><li><a href="/DBS/mysql-udf安装.html" class="sidebar-link">mysql-udf安装</a></li><li><a href="/DBS/关系型SQL标准.html" class="sidebar-link">关系型SQL标准</a></li><li><a href="/DBS/关系型数据库.html" class="sidebar-link">关系型数据库</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mysql存储过程"><a href="#mysql存储过程" class="header-anchor">#</a> MySQL存储过程</h1> <p></p><div class="table-of-contents"><ul><li><a href="#创建游标存储过程">创建游标存储过程</a><ul><li><a href="#调用存储过程-查询返回结果">调用存储过程，查询返回结果</a></li><li><a href="#多次调用存储过程-并拼接结果">多次调用存储过程，并拼接结果</a></li></ul></li><li><a href="#循环">循环</a></li><li><a href="#异常处理">异常处理</a></li><li><a href="#插入或更新upsert">插入或更新upsert</a></li></ul></div><p></p> <h2 id="创建游标存储过程"><a href="#创建游标存储过程" class="header-anchor">#</a> 创建游标存储过程</h2> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">-- 将语句的结束符号从分号;临时改为两个$$(可以是自定义)</span>
+<span class="token keyword">DELIMITER</span> $$
+<span class="token keyword">USE</span> <span class="token identifier"><span class="token punctuation">`</span>table_name<span class="token punctuation">`</span></span>$$
+<span class="token comment">-- 判断删除存储过程</span>
+<span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> select_review$$
+<span class="token comment">-- IN输入参数 OUT输出参数</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">DEFINER</span><span class="token operator">=</span><span class="token identifier"><span class="token punctuation">`</span>root<span class="token punctuation">`</span></span><span class="token variable">@`%`</span> <span class="token keyword">PROCEDURE</span> select_review <span class="token punctuation">(</span> <span class="token operator">IN</span> gs <span class="token keyword">BIGINT</span><span class="token punctuation">,</span><span class="token operator">IN</span> rid <span class="token keyword">BIGINT</span><span class="token punctuation">,</span><span class="token keyword">OUT</span> result <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span class="token keyword">BEGIN</span>
+
+	<span class="token keyword">DECLARE</span> _email <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">DECLARE</span> i <span class="token keyword">INT</span><span class="token punctuation">;</span>
+	<span class="token keyword">DECLARE</span> r <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">DECLARE</span> s <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token comment">-- 遍历数据结束标志</span>
+	<span class="token keyword">DECLARE</span> done <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">FALSE</span><span class="token punctuation">;</span>
+	<span class="token comment">-- 游标</span>
+	<span class="token keyword">DECLARE</span> r_name <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> email <span class="token keyword">FROM</span> company c <span class="token keyword">JOIN</span> u_user u <span class="token keyword">ON</span> c<span class="token punctuation">.</span>id<span class="token operator">=</span>u<span class="token punctuation">.</span>company_id <span class="token keyword">JOIN</span> u_user_role ur <span class="token keyword">ON</span> u<span class="token punctuation">.</span>id<span class="token operator">=</span>ur<span class="token punctuation">.</span>uid <span class="token keyword">WHERE</span> ur<span class="token punctuation">.</span>rid<span class="token operator">=</span>rid <span class="token operator">AND</span> c<span class="token punctuation">.</span>id<span class="token operator">=</span>gs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">-- 设定捕捉异常的结束标志</span>
+	<span class="token keyword">DECLARE</span> <span class="token keyword">CONTINUE</span> <span class="token keyword">HANDLER</span> <span class="token keyword">FOR</span> SQLWARNING<span class="token punctuation">,</span> <span class="token operator">NOT</span> FOUND<span class="token punctuation">,</span> SQLEXCEPTION <span class="token keyword">SET</span> done <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">;</span>
+	<span class="token comment">-- 统计循环条数并赋值给变量i</span>
+	<span class="token comment">-- 赋值多列使用：列名1 ,列名2 INTO 变量名1,变量名2</span>
+	<span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>nickname<span class="token punctuation">)</span> <span class="token keyword">INTO</span> i <span class="token keyword">FROM</span> company c <span class="token keyword">JOIN</span> u_user u <span class="token keyword">ON</span> c<span class="token punctuation">.</span>id<span class="token operator">=</span>u<span class="token punctuation">.</span>company_id <span class="token keyword">JOIN</span> u_user_role ur <span class="token keyword">ON</span> u<span class="token punctuation">.</span>id<span class="token operator">=</span>ur<span class="token punctuation">.</span>uid <span class="token keyword">WHERE</span> ur<span class="token punctuation">.</span>rid<span class="token operator">=</span>rid <span class="token operator">AND</span> c<span class="token punctuation">.</span>id<span class="token operator">=</span>gs<span class="token punctuation">;</span>
+	
+	<span class="token comment">-- 打开游标</span>
+	<span class="token keyword">OPEN</span> r_name<span class="token punctuation">;</span>
+	<span class="token comment">-- 自定义循环体开始</span>
+	rLoop:<span class="token keyword">LOOP</span>
+		<span class="token comment">-- 取值 赋值给变量，多个以,号分割</span>
+		<span class="token comment">-- FETCH NEXT FROM r_name INTO _email,password1,name1;</span>
+		<span class="token keyword">FETCH</span> r_name <span class="token keyword">INTO</span> _email<span class="token punctuation">;</span>
+				
+		<span class="token keyword">SET</span> s<span class="token operator">=</span>s<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">-- 循环一次加1</span>
+		<span class="token keyword">IF</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">then</span>
+			<span class="token keyword">SET</span> r<span class="token operator">=</span>CONCAT<span class="token punctuation">(</span><span class="token string">'[{&quot;Push_MC&quot;:&quot;'</span><span class="token punctuation">,</span>_email<span class="token punctuation">,</span><span class="token string">'&quot;}]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">ELSEIF</span><span class="token punctuation">(</span>s<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">THEN</span>
+			<span class="token keyword">SET</span> r<span class="token operator">=</span>CONCAT<span class="token punctuation">(</span><span class="token string">'[{&quot;Push_MC&quot;:&quot;'</span><span class="token punctuation">,</span>_email<span class="token punctuation">,</span><span class="token string">'&quot;},'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">ELSEIF</span><span class="token punctuation">(</span>s<span class="token operator">=</span>i<span class="token punctuation">)</span> <span class="token keyword">THEN</span>
+			<span class="token keyword">SET</span> r<span class="token operator">=</span>CONCAT<span class="token punctuation">(</span>r<span class="token punctuation">,</span><span class="token string">'{&quot;Push_MC&quot;:&quot;'</span><span class="token punctuation">,</span>_email<span class="token punctuation">,</span><span class="token string">'&quot;}]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">ELSE</span>
+			<span class="token keyword">SET</span> r<span class="token operator">=</span>CONCAT<span class="token punctuation">(</span>r<span class="token punctuation">,</span><span class="token string">'{&quot;Push_MC&quot;:&quot;'</span><span class="token punctuation">,</span>_email<span class="token punctuation">,</span><span class="token string">'&quot;},'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">-- 判断是否继续循环</span>
+		<span class="token comment">-- IF done OR s=i THEN</span>
+		<span class="token keyword">IF</span> s<span class="token operator">=</span>i <span class="token keyword">THEN</span>
+			<span class="token keyword">LEAVE</span> rLoop<span class="token punctuation">;</span><span class="token comment">-- 结束循环</span>
+			<span class="token comment">-- ITERATE rLoop;-- 跳过继续循环</span>
+		<span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+		
+	<span class="token keyword">END</span> <span class="token keyword">LOOP</span> rLoop<span class="token punctuation">;</span><span class="token comment">-- 结束自定义循环体</span>
+	<span class="token keyword">CLOSE</span> r_name<span class="token punctuation">;</span><span class="token comment">-- 关闭游标</span>
+		<span class="token keyword">SET</span> result<span class="token operator">=</span>r<span class="token punctuation">;</span><span class="token comment">-- 返回结果</span>
+	<span class="token comment">-- 自定义异常</span>
+	<span class="token comment">-- SIGNAL SQLSTATE 'HY000' SET MESSAGE_TEXT = '错误！' ;</span>
+<span class="token comment">-- 使用自定义结束标志结束</span>
+<span class="token keyword">END</span>$$
+<span class="token comment">-- 还原结束标志</span>
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span>
+</code></pre></div><h3 id="调用存储过程-查询返回结果"><a href="#调用存储过程-查询返回结果" class="header-anchor">#</a> 调用存储过程，查询返回结果</h3> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">-- 调用存储过程，@sum变量为返回结果</span>
+<span class="token keyword">call</span> select_review<span class="token punctuation">(</span>输入参数一<span class="token punctuation">,</span>输入参数二<span class="token punctuation">,</span><span class="token variable">@sum</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 查询返回结果</span>
+<span class="token keyword">select</span> <span class="token variable">@sum</span> e<span class="token punctuation">;</span>
+</code></pre></div><h3 id="多次调用存储过程-并拼接结果"><a href="#多次调用存储过程-并拼接结果" class="header-anchor">#</a> 多次调用存储过程，并拼接结果</h3> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">-- 调用存储过程，@sum变量为返回结果</span>
+<span class="token keyword">call</span> select_review<span class="token punctuation">(</span>输入参数一<span class="token punctuation">,</span>输入参数二<span class="token punctuation">,</span><span class="token variable">@sum</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 定义变量接收拼接返回结果</span>
+<span class="token keyword">SET</span> <span class="token variable">@e</span><span class="token operator">=</span>CONCAT<span class="token punctuation">(</span><span class="token string">'['</span><span class="token punctuation">,</span><span class="token variable">@sum</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">call</span> select_review<span class="token punctuation">(</span>输入参数一<span class="token punctuation">,</span>输入参数二<span class="token punctuation">,</span><span class="token variable">@sum</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">SET</span> <span class="token variable">@e</span><span class="token operator">=</span>CONCAT<span class="token punctuation">(</span><span class="token variable">@e</span><span class="token punctuation">,</span><span class="token string">','</span><span class="token punctuation">,</span><span class="token variable">@sum</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">SET</span> <span class="token variable">@declaration</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> email <span class="token keyword">FROM</span> u_user <span class="token keyword">WHERE</span> id<span class="token operator">=</span><span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">SET</span> <span class="token variable">@e</span><span class="token operator">=</span>CONCAT<span class="token punctuation">(</span><span class="token variable">@e</span><span class="token punctuation">,</span><span class="token string">',{&quot;Push_MC&quot;:&quot;'</span><span class="token punctuation">,</span><span class="token variable">@declaration</span><span class="token punctuation">,</span><span class="token string">'&quot;}]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 查询最终拼接结果</span>
+<span class="token keyword">SELECT</span> <span class="token variable">@e</span> e<span class="token punctuation">;</span>
+</code></pre></div><h2 id="循环"><a href="#循环" class="header-anchor">#</a> 循环</h2> <blockquote><p><code>LOOP</code>、<code>WHILE</code>、<code>REPEAT</code></p></blockquote> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token comment">-- 将语句的结束符号从分号;临时改为两个$$(可以是自定义)</span>
+<span class="token keyword">DELIMITER</span> $$
+<span class="token keyword">USE</span> <span class="token identifier"><span class="token punctuation">`</span>table_name<span class="token punctuation">`</span></span>$$
+<span class="token comment">-- 判断删除存储过程</span>
+<span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token identifier"><span class="token punctuation">`</span>add_year_month_info<span class="token punctuation">`</span></span>$$
+
+<span class="token keyword">CREATE</span> <span class="token keyword">DEFINER</span><span class="token operator">=</span><span class="token identifier"><span class="token punctuation">`</span>yc<span class="token punctuation">`</span></span><span class="token variable">@`%`</span> <span class="token keyword">PROCEDURE</span> <span class="token identifier"><span class="token punctuation">`</span>add_year_month_info<span class="token punctuation">`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+		<span class="token comment">/*
+		CALL add_year_month_info()
+		*/</span>
+		
+		<span class="token comment">-- 统计循环次数变量</span>
+		<span class="token keyword">DECLARE</span> i <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token comment">-- 需要循环次数变量</span>
+		<span class="token keyword">DECLARE</span> a <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token number">12</span><span class="token punctuation">;</span>
+		<span class="token comment">-- 设定捕捉异常的结束标志</span>
+		<span class="token comment">-- DECLARE CONTINUE HANDLER FOR SQLWARNING, NOT FOUND, SQLEXCEPTION SET done = TRUE;</span>
+		
+		<span class="token comment">-- 自定义LOOP循环体开始</span>
+		rLoop:<span class="token keyword">LOOP</span>
+			<span class="token comment">-- 判断是否继续循环</span>
+			<span class="token keyword">IF</span> <span class="token punctuation">(</span>i<span class="token operator">&gt;</span>a<span class="token punctuation">)</span> <span class="token keyword">THEN</span>
+				<span class="token comment">-- 结束循环，意思同boeak</span>
+				<span class="token keyword">LEAVE</span> rLoop<span class="token punctuation">;</span>
+				<span class="token comment">-- 跳过继续循环</span>
+				<span class="token comment">-- ITERATE rLoop;</span>
+			<span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+			<span class="token comment">-- 循环一次加1</span>
+			<span class="token keyword">SET</span> i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+			
+			<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token keyword">USER</span> <span class="token keyword">WHERE</span> id<span class="token operator">=</span>i<span class="token punctuation">;</span>
+			
+		<span class="token comment">-- 结束自定义循环体</span>
+		<span class="token keyword">END</span> <span class="token keyword">LOOP</span> rLoop<span class="token punctuation">;</span>
+		
+		<span class="token comment">-- 恢复初始值</span>
+		<span class="token keyword">SET</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">-- WHILE循环开始</span>
+		<span class="token keyword">WHILE</span> i<span class="token operator">&lt;=</span>a <span class="token keyword">DO</span>
+			<span class="token keyword">SET</span> i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+			
+			<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token keyword">USER</span> <span class="token keyword">WHERE</span> id<span class="token operator">=</span>i<span class="token punctuation">;</span>
+			
+		<span class="token comment">-- 循环结束</span>
+		<span class="token keyword">END</span> <span class="token keyword">WHILE</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">-- 恢复初始值</span>
+		<span class="token keyword">SET</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">-- REPEAT循环开始</span>
+		<span class="token keyword">REPEAT</span>
+			<span class="token keyword">SET</span> i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+			
+			<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> <span class="token keyword">USER</span> <span class="token keyword">WHERE</span> id<span class="token operator">=</span>i<span class="token punctuation">;</span>
+			
+		<span class="token comment">-- 循环结束</span>
+		UNTIL i<span class="token operator">&gt;</span>a <span class="token keyword">END</span> <span class="token keyword">REPEAT</span><span class="token punctuation">;</span>
+	<span class="token comment">-- 使用自定义结束标志结束</span>
+	<span class="token keyword">END</span>$$
+
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span>
+</code></pre></div><h2 id="异常处理"><a href="#异常处理" class="header-anchor">#</a> 异常处理</h2> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">DELIMITER</span> $$
+<span class="token comment">-- 判断删除存储过程</span>
+<span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> err<span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> err<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token keyword">BEGIN</span>
+	<span class="token keyword">DECLARE</span> code <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token string">'00000'</span><span class="token punctuation">;</span>
+	<span class="token keyword">DECLARE</span> msg <span class="token keyword">TEXT</span><span class="token punctuation">;</span>
+	<span class="token keyword">DECLARE</span> errno <span class="token keyword">INT</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">-- EXIT：发生错误时退出当前代码块</span>
+	<span class="token comment">-- DECLARE EXIT HANDLER FOR SQLEXCEPTION,SQLWARNING,NOT FOUND</span>
+	
+	<span class="token comment">/*CONTINUE: 发送错误时继续执行后续代码
+	SQLWARNING是对所有以01开头的SQLSTATE代码的速记
+	NOT FOUND是对所有以02开头的SQLSTATE代码的速记
+	SQLEXCEPTION是对所有没有被SQLWARNING或NOT FOUND捕获的SQLSTATE代码的速记*/</span>
+	<span class="token keyword">DECLARE</span> <span class="token keyword">CONTINUE</span>  <span class="token keyword">HANDLER</span> <span class="token keyword">FOR</span> SQLEXCEPTION<span class="token punctuation">,</span>SQLWARNING<span class="token punctuation">,</span><span class="token operator">NOT</span> FOUND
+	
+	<span class="token keyword">BEGIN</span> <span class="token comment">-- 捕获到异常时执行的代码块</span>
+	<span class="token comment">-- 赋值错误代码给code变量，赋值错误信息给msg变量</span>
+	GET DIAGNOSTICS CONDITION <span class="token number">1</span> code <span class="token operator">=</span> RETURNED_SQLSTATE<span class="token punctuation">,</span>errno <span class="token operator">=</span> MYSQL_ERRNO<span class="token punctuation">,</span> msg <span class="token operator">=</span> MESSAGE_TEXT<span class="token punctuation">;</span>
+	<span class="token comment">-- 保存错误信息到日志表中</span>
+	<span class="token comment">-- INSERT INTO sql_log(errno,code,description,create_time,message) VALUES(errno,code,'存储过程：err',NOW(),msg);</span>
+	
+	<span class="token keyword">SELECT</span> CONCAT<span class="token punctuation">(</span><span class="token string">&quot;ERROR &quot;</span><span class="token punctuation">,</span> errno<span class="token punctuation">,</span><span class="token string">'['</span><span class="token punctuation">,</span> code<span class="token punctuation">,</span> <span class="token string">'] '</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span> sqlerrm<span class="token punctuation">;</span>
+		
+	<span class="token keyword">END</span><span class="token punctuation">;</span>
+	<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> a<span class="token punctuation">;</span>
+	
+<span class="token keyword">END</span> $$
+<span class="token keyword">DELIMITER</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">CALL</span> err<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="插入或更新upsert"><a href="#插入或更新upsert" class="header-anchor">#</a> 插入或更新upsert</h2> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">delimiter</span> $
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> merge_a_to_b <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">BEGIN</span>
+<span class="token comment">-- 定义需要插入从a表插入b表的过程变量</span>
+<span class="token keyword">DECLARE</span> _ID <span class="token keyword">VARCHAR</span> <span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">DECLARE</span> _NAME <span class="token keyword">VARCHAR</span> <span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 游标遍历数据结束标志</span>
+<span class="token keyword">DECLARE</span> done <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">FALSE</span><span class="token punctuation">;</span>
+<span class="token comment">-- 游标指向a表结果集第一条-1位置</span>
+<span class="token keyword">DECLARE</span> cur_account <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span> <span class="token keyword">SELECT</span> ID<span class="token punctuation">,</span> NAME <span class="token keyword">FROM</span> test_a<span class="token punctuation">;</span>
+<span class="token comment">-- 游标指向a表结果集最后一条加1位置 设置结束标志</span>
+<span class="token keyword">DECLARE</span> <span class="token keyword">CONTINUE</span> <span class="token keyword">HANDLER</span> <span class="token keyword">FOR</span> <span class="token operator">NOT</span> FOUND  <span class="token keyword">SET</span> done <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">;</span>
+<span class="token comment">-- 打开游标</span>
+<span class="token keyword">OPEN</span> cur_account<span class="token punctuation">;</span>
+<span class="token comment">-- 遍历游标</span>
+read_loop :
+<span class="token keyword">LOOP</span>
+<span class="token comment">--  取值a表当前位置数据到临时变量</span>
+	<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> cur_account <span class="token keyword">INTO</span> _ID<span class="token punctuation">,</span>_NAME<span class="token punctuation">;</span>
+
+<span class="token comment">-- 如果取值结束 跳出循环</span>
+<span class="token keyword">IF</span> done <span class="token keyword">THEN</span> <span class="token keyword">LEAVE</span> read_loop<span class="token punctuation">;</span> 
+<span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 当前数据做 对比 如果b表存在则更新时间 不存在则插入</span>
+<span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token punctuation">(</span> <span class="token keyword">SELECT</span> <span class="token number">1</span> <span class="token keyword">FROM</span> TEST_B <span class="token keyword">WHERE</span> ID <span class="token operator">=</span> _ID <span class="token operator">AND</span> NAME<span class="token operator">=</span>_NAME <span class="token punctuation">)</span> 
+	<span class="token keyword">THEN</span>
+		<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> TEST_B <span class="token punctuation">(</span>ID<span class="token punctuation">,</span> NAME<span class="token punctuation">,</span>operatime<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span>_ID<span class="token punctuation">,</span>_NAME<span class="token punctuation">,</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">ELSE</span> 
+		<span class="token keyword">UPDATE</span> TEST_B  <span class="token keyword">set</span> operatime <span class="token operator">=</span> <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">WHERE</span> ID <span class="token operator">=</span> _ID <span class="token operator">AND</span> NAME<span class="token operator">=</span>_NAME<span class="token punctuation">;</span>
+<span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+
+<span class="token keyword">END</span> <span class="token keyword">LOOP</span><span class="token punctuation">;</span>
+<span class="token keyword">CLOSE</span> cur_account<span class="token punctuation">;</span>
+
+<span class="token keyword">END</span> $
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bajins/notes-vuepress/edit/master//DBS/MySQL存储过程.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2026-02-28 02:28:37</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/DBS/MySQL备份恢复.html" class="prev">
+        MySQL备份恢复
+      </a></span> <span class="next"><a href="/DBS/MySQL安装配置.html">
+        MySQL安装配置
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1faa001a.js" defer></script><script src="/assets/js/2.4296a15b.js" defer></script><script src="/assets/js/1.13868f42.js" defer></script><script src="/assets/js/28.6f83aea0.js" defer></script>
+  </body>
+</html>

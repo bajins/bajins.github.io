@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux配置 | Bajins</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="换源 https://github.com/SuperManito/LinuxMirrors
+广告拦截 https://github.com/pi-hole/pi-hole
+在 Linux 上安装字体：综合指南">
+    <meta name="twitter:title" content="Linux配置">
+    <meta name="twitter:description" content="换源 https://github.com/SuperManito/LinuxMirrors
+广告拦截 https://github.com/pi-hole/pi-hole
+在 Linux 上安装字体：综合指南">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://bajins.com/System/Linux%E9%85%8D%E7%BD%AE.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Linux配置">
+    <meta property="og:description" content="换源 https://github.com/SuperManito/LinuxMirrors
+广告拦截 https://github.com/pi-hole/pi-hole
+在 Linux 上安装字体：综合指南">
+    <meta property="og:url" content="https://bajins.com/System/Linux%E9%85%8D%E7%BD%AE.html">
+    <meta property="og:site_name" content="bajins">
+    <meta itemprop="name" content="Linux配置">
+    <meta itemprop="description" content="换源 https://github.com/SuperManito/LinuxMirrors
+广告拦截 https://github.com/pi-hole/pi-hole
+在 Linux 上安装字体：综合指南">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog
+        ,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive
+        ,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.921daf77.css" as="style"><link rel="preload" href="/assets/js/app.1faa001a.js" as="script"><link rel="preload" href="/assets/js/2.4296a15b.js" as="script"><link rel="preload" href="/assets/js/1.13868f42.js" as="script"><link rel="preload" href="/assets/js/110.789e52aa.js" as="script"><link rel="prefetch" href="/assets/js/100.fb476d17.js"><link rel="prefetch" href="/assets/js/101.65373054.js"><link rel="prefetch" href="/assets/js/102.34afe950.js"><link rel="prefetch" href="/assets/js/103.08e76636.js"><link rel="prefetch" href="/assets/js/104.81b9f765.js"><link rel="prefetch" href="/assets/js/105.d87b9813.js"><link rel="prefetch" href="/assets/js/106.602c6293.js"><link rel="prefetch" href="/assets/js/107.9405c4cf.js"><link rel="prefetch" href="/assets/js/108.ded99788.js"><link rel="prefetch" href="/assets/js/109.ab499760.js"><link rel="prefetch" href="/assets/js/111.966ae33e.js"><link rel="prefetch" href="/assets/js/112.189d5eb3.js"><link rel="prefetch" href="/assets/js/113.8e20e93c.js"><link rel="prefetch" href="/assets/js/114.b70628d6.js"><link rel="prefetch" href="/assets/js/115.c82a373f.js"><link rel="prefetch" href="/assets/js/116.e34cd637.js"><link rel="prefetch" href="/assets/js/117.cc670f24.js"><link rel="prefetch" href="/assets/js/118.d958ab99.js"><link rel="prefetch" href="/assets/js/119.f5be99c9.js"><link rel="prefetch" href="/assets/js/12.a562b374.js"><link rel="prefetch" href="/assets/js/120.8675f97c.js"><link rel="prefetch" href="/assets/js/121.4cdd8db5.js"><link rel="prefetch" href="/assets/js/122.ca783f05.js"><link rel="prefetch" href="/assets/js/123.869d2c73.js"><link rel="prefetch" href="/assets/js/124.fd840642.js"><link rel="prefetch" href="/assets/js/125.74c9f0fa.js"><link rel="prefetch" href="/assets/js/126.3cd314db.js"><link rel="prefetch" href="/assets/js/127.457509ef.js"><link rel="prefetch" href="/assets/js/128.1b98a1c4.js"><link rel="prefetch" href="/assets/js/13.0df2e0a7.js"><link rel="prefetch" href="/assets/js/14.406f3fa2.js"><link rel="prefetch" href="/assets/js/15.71767727.js"><link rel="prefetch" href="/assets/js/16.c3b53708.js"><link rel="prefetch" href="/assets/js/17.37ca37ec.js"><link rel="prefetch" href="/assets/js/18.162669ae.js"><link rel="prefetch" href="/assets/js/19.091120bc.js"><link rel="prefetch" href="/assets/js/20.fb63d007.js"><link rel="prefetch" href="/assets/js/21.1c14567e.js"><link rel="prefetch" href="/assets/js/22.35d51bbe.js"><link rel="prefetch" href="/assets/js/23.825a1fb5.js"><link rel="prefetch" href="/assets/js/24.2e205b7a.js"><link rel="prefetch" href="/assets/js/25.e4fa03d6.js"><link rel="prefetch" href="/assets/js/26.85767710.js"><link rel="prefetch" href="/assets/js/27.d046a28b.js"><link rel="prefetch" href="/assets/js/28.6f83aea0.js"><link rel="prefetch" href="/assets/js/29.eedaa43e.js"><link rel="prefetch" href="/assets/js/3.00255157.js"><link rel="prefetch" href="/assets/js/30.8410e120.js"><link rel="prefetch" href="/assets/js/31.c7609f0f.js"><link rel="prefetch" href="/assets/js/32.5c322ef0.js"><link rel="prefetch" href="/assets/js/33.64cc9fe8.js"><link rel="prefetch" href="/assets/js/34.bcf6d63d.js"><link rel="prefetch" href="/assets/js/35.d726e14f.js"><link rel="prefetch" href="/assets/js/36.26402a9f.js"><link rel="prefetch" href="/assets/js/37.1e0403d6.js"><link rel="prefetch" href="/assets/js/38.2d75f668.js"><link rel="prefetch" href="/assets/js/39.4d8d888f.js"><link rel="prefetch" href="/assets/js/4.a41861e7.js"><link rel="prefetch" href="/assets/js/40.fb37b3d7.js"><link rel="prefetch" href="/assets/js/41.bb9946e4.js"><link rel="prefetch" href="/assets/js/42.cf5a059e.js"><link rel="prefetch" href="/assets/js/43.dc969823.js"><link rel="prefetch" href="/assets/js/44.fae0f835.js"><link rel="prefetch" href="/assets/js/45.c61a83fc.js"><link rel="prefetch" href="/assets/js/46.aaa58bd7.js"><link rel="prefetch" href="/assets/js/47.ce9952ea.js"><link rel="prefetch" href="/assets/js/48.27a679af.js"><link rel="prefetch" href="/assets/js/49.1d46de41.js"><link rel="prefetch" href="/assets/js/5.bbf8e470.js"><link rel="prefetch" href="/assets/js/50.abefa3e0.js"><link rel="prefetch" href="/assets/js/51.8b4021ed.js"><link rel="prefetch" href="/assets/js/52.023ec242.js"><link rel="prefetch" href="/assets/js/53.4ccae60e.js"><link rel="prefetch" href="/assets/js/54.48c46570.js"><link rel="prefetch" href="/assets/js/55.bcde0428.js"><link rel="prefetch" href="/assets/js/56.289a8f5a.js"><link rel="prefetch" href="/assets/js/57.dc4a711d.js"><link rel="prefetch" href="/assets/js/58.add3287e.js"><link rel="prefetch" href="/assets/js/59.baffa02b.js"><link rel="prefetch" href="/assets/js/6.c6438728.js"><link rel="prefetch" href="/assets/js/60.5992001b.js"><link rel="prefetch" href="/assets/js/61.fa8afda9.js"><link rel="prefetch" href="/assets/js/62.9fe383af.js"><link rel="prefetch" href="/assets/js/63.df19c15f.js"><link rel="prefetch" href="/assets/js/64.54698821.js"><link rel="prefetch" href="/assets/js/65.4c482019.js"><link rel="prefetch" href="/assets/js/66.6086e608.js"><link rel="prefetch" href="/assets/js/67.fbfb96e6.js"><link rel="prefetch" href="/assets/js/68.81007873.js"><link rel="prefetch" href="/assets/js/69.0199c159.js"><link rel="prefetch" href="/assets/js/7.afb14c62.js"><link rel="prefetch" href="/assets/js/70.2fcf8ce3.js"><link rel="prefetch" href="/assets/js/71.321b22a1.js"><link rel="prefetch" href="/assets/js/72.379b9ea7.js"><link rel="prefetch" href="/assets/js/73.4f1136ed.js"><link rel="prefetch" href="/assets/js/74.563df937.js"><link rel="prefetch" href="/assets/js/75.5d1ebb4f.js"><link rel="prefetch" href="/assets/js/76.fa2bb98d.js"><link rel="prefetch" href="/assets/js/77.92abe7f3.js"><link rel="prefetch" href="/assets/js/78.c2f60b8d.js"><link rel="prefetch" href="/assets/js/79.7a915e00.js"><link rel="prefetch" href="/assets/js/8.d99bad6b.js"><link rel="prefetch" href="/assets/js/80.81894c77.js"><link rel="prefetch" href="/assets/js/81.1e3e3ce3.js"><link rel="prefetch" href="/assets/js/82.d135f529.js"><link rel="prefetch" href="/assets/js/83.f8454a02.js"><link rel="prefetch" href="/assets/js/84.08db55e8.js"><link rel="prefetch" href="/assets/js/85.3bf464db.js"><link rel="prefetch" href="/assets/js/86.30271d76.js"><link rel="prefetch" href="/assets/js/87.efe1dc5a.js"><link rel="prefetch" href="/assets/js/88.849450cb.js"><link rel="prefetch" href="/assets/js/89.a3f2d9e4.js"><link rel="prefetch" href="/assets/js/90.cc19367e.js"><link rel="prefetch" href="/assets/js/91.359e1a28.js"><link rel="prefetch" href="/assets/js/92.9cef9392.js"><link rel="prefetch" href="/assets/js/93.92a0107b.js"><link rel="prefetch" href="/assets/js/94.c8672212.js"><link rel="prefetch" href="/assets/js/95.9d596948.js"><link rel="prefetch" href="/assets/js/96.56d14cf1.js"><link rel="prefetch" href="/assets/js/97.ac9d011e.js"><link rel="prefetch" href="/assets/js/98.ccae6e29.js"><link rel="prefetch" href="/assets/js/99.dd37c751.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.37b7ea54.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.46952646.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.921daf77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name can-hide">Bajins</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link router-link-active">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link router-link-active">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>System</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/System/" aria-current="page" class="sidebar-link">System</a></li><li><a href="/System/Android.html" class="sidebar-link">Android</a></li><li><a href="/System/CentOS.html" class="sidebar-link">CentOS</a></li><li><a href="/System/IOS.html" class="sidebar-link">IOS</a></li><li><a href="/System/Linux.html" class="sidebar-link">Linux</a></li><li><a href="/System/Linux网络防火墙.html" class="sidebar-link">Linux网络防火墙</a></li><li><a href="/System/Linux配置.html" class="active sidebar-link">Linux配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/System/Linux配置.html#源码安装卸载" class="sidebar-link">源码安装卸载</a></li><li class="sidebar-sub-header"><a href="/System/Linux配置.html#初次配置" class="sidebar-link">初次配置</a></li><li class="sidebar-sub-header"><a href="/System/Linux配置.html#开机启动" class="sidebar-link">开机启动</a></li><li class="sidebar-sub-header"><a href="/System/Linux配置.html#修改为root登录" class="sidebar-link">修改为root登录</a></li><li class="sidebar-sub-header"><a href="/System/Linux配置.html#挂载存储卷" class="sidebar-link">挂载存储卷</a></li><li class="sidebar-sub-header"><a href="/System/Linux配置.html#扩容" class="sidebar-link">扩容</a></li></ul></li><li><a href="/System/Nginx.html" class="sidebar-link">Nginx</a></li><li><a href="/System/Windows.html" class="sidebar-link">Windows</a></li><li><a href="/System/Windows软件.html" class="sidebar-link">Windows软件</a></li><li><a href="/System/内网穿透.html" class="sidebar-link">内网穿透</a></li><li><a href="/System/挂载网盘.html" class="sidebar-link">挂载网盘</a></li><li><a href="/System/文件压缩解压.html" class="sidebar-link">文件压缩解压</a></li><li><a href="/System/邮箱服务.html" class="sidebar-link">邮箱服务</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="linux配置"><a href="#linux配置" class="header-anchor">#</a> Linux配置</h1> <p></p><div class="table-of-contents"><ul><li><a href="#源码安装卸载">源码安装卸载</a><ul><li><a href="#checkinstall">checkinstall</a></li></ul></li><li><a href="#初次配置">初次配置</a><ul><li><a href="#修改时区为亚洲上海">修改时区为亚洲上海</a></li><li><a href="#安装简体中文语言包">安装简体中文语言包</a></li><li><a href="#设置中文utf8编码">设置中文utf8编码</a></li><li><a href="#安装字体">安装字体</a></li><li><a href="#设置vim">设置VIM</a></li><li><a href="#ssh会话执行文件">SSH会话执行文件</a></li></ul></li><li><a href="#开机启动">开机启动</a></li><li><a href="#修改为root登录">修改为root登录</a></li><li><a href="#挂载存储卷">挂载存储卷</a><ul><li><a href="#基本概念">基本概念</a></li><li><a href="#物理卷命令">物理卷命令</a></li><li><a href="#卷组命令">卷组命令</a></li><li><a href="#卷组扩充与缩小">卷组扩充与缩小</a></li><li><a href="#卷组合并与拆分">卷组合并与拆分</a></li><li><a href="#卷组输入与输出">卷组输入与输出</a></li><li><a href="#逻辑卷命令">逻辑卷命令</a></li><li><a href="#逻辑卷创建与删除">逻辑卷创建与删除</a></li><li><a href="#逻辑卷扩充与缩小">逻辑卷扩充与缩小</a></li><li><a href="#逻辑卷管理命令">逻辑卷管理命令</a></li><li><a href="#挂载">挂载</a></li></ul></li><li><a href="#扩容">扩容</a></li></ul></div><p></p> <h1 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h1> <ul><li>换源 <a href="https://github.com/SuperManito/LinuxMirrors" target="_blank" rel="noopener noreferrer">https://github.com/SuperManito/LinuxMirrors<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>广告拦截 <a href="https://github.com/pi-hole/pi-hole" target="_blank" rel="noopener noreferrer">https://github.com/pi-hole/pi-hole<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://linuxiac.com/how-to-install-fonts-on-linux" target="_blank" rel="noopener noreferrer">在 Linux 上安装字体：综合指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看/bin/sh指向的解释器</span>
+<span class="token function">ls</span> /bin/sh <span class="token parameter variable">-al</span>
+<span class="token comment"># 重新配置dash，并选择“no”，即不使用dash</span>
+<span class="token function">sudo</span> dpkg-reconfigure dash
+</code></pre></div><h2 id="源码安装卸载"><a href="#源码安装卸载" class="header-anchor">#</a> 源码安装卸载</h2> <blockquote><p>编译时的路径如果指定了<code>--prefix /usr/local/xxx</code> 直接<code>rm -rf /usr/local/xxx</code>即可。</p> <p>没指定路径，那就到源码路径执行make uninstall，如果最初的编译文件夹被删除了，还可以重新下载、编译，然后删除</p></blockquote> <p><strong>如果源码被删除就查找并删除</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">find</span> / <span class="token parameter variable">-name</span> 软件名称
+</code></pre></div><h3 id="checkinstall"><a href="#checkinstall" class="header-anchor">#</a> checkinstall</h3> <blockquote><p>通过<code>checkinstall</code>管理编译安装过程</p></blockquote> <p><strong>使用<code>checkinstall</code>编译安装</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>./configure
+<span class="token function">make</span>
+checkinstall
+</code></pre></div><ul><li>CheckInstall会完成以下任务</li></ul> <ol><li>调用<code>make install</code>，然后用<code>installwatch</code>监视、记录整个安装过程中添加的文件</li> <li>等到安装完成，把记录的文件打包，根据不同的系统创建安装包：<code>.rpm</code>或<code>.deb</code> <ul><li>注：安装包会保存在源代码目录，以便复制到其它机器安装，省去重复编译的麻烦。</li></ul></li> <li>移除<code>make install</code>安装的文件</li> <li>调用系统安装工具来安装第2步创建的安装包：<code>rpm -i</code>或<code>dpkg -i</code></li></ol> <p><strong>卸载<code>checkinstall</code>安装的软件</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>CentOS: <span class="token function">rpm</span> <span class="token parameter variable">-e</span> package_name
+Ubuntu: dpkg <span class="token parameter variable">-r</span> package_name
+</code></pre></div><h2 id="初次配置"><a href="#初次配置" class="header-anchor">#</a> 初次配置</h2> <h3 id="修改时区为亚洲上海"><a href="#修改时区为亚洲上海" class="header-anchor">#</a> 修改时区为亚洲上海</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">ln</span> <span class="token parameter variable">-sf</span> /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre></div><h3 id="安装简体中文语言包"><a href="#安装简体中文语言包" class="header-anchor">#</a> 安装简体中文语言包</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#查看系统当前使用语言包</span>
+locale
+<span class="token comment">#查看系统拥有语言包</span>
+locale <span class="token parameter variable">-a</span>
+</code></pre></div><blockquote><p>如果没有zh_CN.utf8就需要安装简体中文语言包</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> kde-l10n-Chinese
+<span class="token comment">#glibc-common软件包包括用于GNU libc库的常见二进制文件，以及国家语言（locale）支持。</span>
+yum <span class="token parameter variable">-y</span> reinstall glibc-common
+yum <span class="token parameter variable">-y</span> groupinstall chinese-support
+</code></pre></div><h3 id="设置中文utf8编码"><a href="#设置中文utf8编码" class="header-anchor">#</a> 设置中文utf8编码</h3> <p><strong>临时</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span>zh_CN.UTF-8
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LANGUAGE</span></span><span class="token operator">=</span>zh_CN.UTF-8
+</code></pre></div><p><strong>长久</strong></p> <ul><li>CenOS7修改<code>vi /etc/locale.conf</code></li> <li>CentOS6修改<code>vi /etc/sysconfig/i18n</code></li> <li>Ubuntu修改<code>vi /etc/default/locale</code> <ul><li><a href="https://blog.csdn.net/qu_learner/article/details/104030765" target="_blank" rel="noopener noreferrer">Ubuntu修改编码格式为中文<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.utf8&quot;</span>
+<span class="token assign-left variable"><span class="token environment constant">LANGUAGE</span></span><span class="token operator">=</span><span class="token string">&quot;zh_CN.UTF-8:zh_CN.utf8:zh_CN&quot;</span>
+<span class="token assign-left variable">SUPPORTED</span><span class="token operator">=</span><span class="token string">&quot;zh_CN.utf8:zh_CN:zh:en_US.utf8:en_US:en&quot;</span>
+<span class="token assign-left variable">SYSFONT</span><span class="token operator">=</span><span class="token string">&quot;lat0-sun16&quot;</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>localectl set-locale <span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span>zh_CN.utf8
+</code></pre></div><h3 id="安装字体"><a href="#安装字体" class="header-anchor">#</a> 安装字体</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 安装字体配置和字体索引指令</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> fontconfig mkfontscale
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token parameter variable">-y</span> <span class="token function">install</span> fontconfig xfonts-utils
+<span class="token comment"># 查看字体</span>
+fc-list
+<span class="token comment"># 查看系统中已经安装的中文字体</span>
+fc-list :lang<span class="token operator">=</span>zh
+<span class="token comment"># 进入C:\Windows\Fonts把MSYH.TTF（微软雅黑字体文件）和simhei.tty（黑体常规）文件</span>
+<span class="token comment"># 上传到linux服务器/usr/share/fonts/my_fonts下</span>
+
+<span class="token comment"># 建立字体索引信息</span>
+mkfontscale
+mkfontdir
+<span class="token comment"># 更新字体缓存</span>
+fc-cache
+</code></pre></div><h3 id="设置vim"><a href="#设置vim" class="header-anchor">#</a> 设置VIM</h3> <p><strong>解决中文乱码问题</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/vim/vimrc
+<span class="token comment"># 在开头或者末尾添加</span>
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">fileencodings</span><span class="token operator">=</span>utf-8,gbk,utf-16le,cp1252,iso-8859-15,ucs-bom
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">termencoding</span><span class="token operator">=</span>utf-8
+<span class="token builtin class-name">set</span> <span class="token assign-left variable">encoding</span><span class="token operator">=</span>utf-8
+</code></pre></div><p><strong>显示行号</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/vimrc
+<span class="token function">vi</span> /etc/virc
+<span class="token comment"># 在开头或者末尾添加</span>
+<span class="token builtin class-name">set</span> number
+</code></pre></div><h3 id="ssh会话执行文件"><a href="#ssh会话执行文件" class="header-anchor">#</a> SSH会话执行文件</h3> <ul><li><code>/etc/motd</code> 可以在里面加入自己喜欢的任何欢迎信息，这段信息将会在登录成功后显示</li> <li><code>/etc/profile</code> 中设定的变量(全局)的可以作用于任何用户</li> <li><code>/.bashrc</code> 设定的变量(局部)只能继承<code>/etc/profile</code>中的变量,他们是”父子”关系</li> <li><code>/~/.bash_profile</code> 当前用户登录时执行</li> <li><code>/~/.bash_logout</code> 当前用户每次退出系统(退出shell)时执行</li> <li><code>/~/.bashrc</code> 当前用户登录时以及每次打开新的shell时,该文件被读取</li></ul> <ul><li><code>export key=value</code> 设置变量</li> <li><code>source 文件路径</code> 刷新配置文件，立即执行（变量、程序、脚本）</li> <li><code>PATH=$PATH:</code> 全局变量，不同值之间用<code>:</code>分割，存储在<code>~/.bash_profile</code>里</li></ul> <blockquote><p>为每一个运行bash shell的用户执行此文件.当bash shell被打开时, 该文件被读取（即每次新开一个终端，都会执行bashrc）。</p> <p>只要在同一个shell界面，不管多少用户登录都只执行一次</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/profile
+</code></pre></div><blockquote><p>此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行. 并从<code>/etc/profile.d</code>目录的配置文件中搜集shell的设置。</p> <p>如果进入shell用普通用户登录后，再用su进入root用户那么将会被执行两次</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/bashrc
+</code></pre></div><p><strong>欢迎信息</strong></p> <ul><li><a href="https://github.com/taills/sysinfo" target="_blank" rel="noopener noreferrer">https://github.com/taills/sysinfo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>输入<kbd>shift</kbd> + <kbd>g</kbd>（就是大写的<code>G</code>）跳转到末尾添加以下内容</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token string">'=========================================================='</span>
+<span class="token comment"># 查看系统发行版信息</span>
+<span class="token function">sed</span> <span class="token parameter variable">-n</span> <span class="token parameter variable">-e</span> <span class="token string">'s/PRETTY_NAME=//gp'</span> /etc/os-release
+<span class="token comment"># 查询内核版本</span>
+<span class="token function">cat</span> /proc/version
+<span class="token builtin class-name">echo</span> <span class="token string">'=========================================================='</span>
+<span class="token comment"># 查询目前所有文件系统的可用空间及使用情形</span>
+<span class="token function">df</span> <span class="token parameter variable">-Th</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'=========================================================='</span>
+<span class="token comment"># 查询内存使用情况</span>
+<span class="token function">free</span> <span class="token parameter variable">-h</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'=========================================================='</span>
+<span class="token comment"># 切换到home文件夹</span>
+<span class="token builtin class-name">cd</span> /home
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看系统发行版信息</span>
+<span class="token function">cat</span> /etc/*release
+<span class="token function">cat</span> /etc/os-release
+<span class="token function">cat</span> /usr/lib/os-release
+<span class="token comment"># 输出NAME和VERSION</span>
+<span class="token builtin class-name">source</span> /etc/os-release <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token variable">$PRETTY_NAME</span>
+<span class="token function">sed</span> <span class="token parameter variable">-n</span> <span class="token parameter variable">-e</span> <span class="token string">'s/PRETTY_NAME=//gp'</span> /etc/os-release
+<span class="token function">cat</span> /etc/os-release <span class="token operator">|</span> <span class="token function">grep</span> ^PRETTY_NAME<span class="token operator">=</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token parameter variable">-F</span><span class="token operator">=</span> <span class="token string">'{print $2}'</span>
+<span class="token comment"># 输出NAME部分</span>
+<span class="token function">sed</span> <span class="token parameter variable">-n</span> <span class="token parameter variable">-e</span> <span class="token string">'/PRETTY_NAME/ s/^.*=\|&quot;\| .*//gp'</span> /etc/os-release
+<span class="token function">cat</span> /etc/os-release <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;PRETTY_NAME&quot;</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/PRETTY_NAME=//g'</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/[&quot;]//g'</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1}'</span>
+<span class="token function">cat</span> /etc/issue
+<span class="token function">cat</span> /etc/issue.net
+<span class="token comment"># 查询内核版本</span>
+<span class="token function">cat</span> /proc/version
+<span class="token function">cat</span> /proc/sys/kernel/ostype /proc/sys/kernel/osrelease
+<span class="token function">dmesg</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'Linux version'</span>
+<span class="token function">uname</span> <span class="token parameter variable">-sr</span>
+<span class="token comment"># 查看cpu相关信息（型号、主频、内核）</span>
+<span class="token function">cat</span> /proc/cpuinfo
+<span class="token comment"># 查看CPU信息（型号）</span>
+<span class="token function">cat</span> /proc/cpuinfo <span class="token operator">|</span> <span class="token function">grep</span> name <span class="token operator">|</span> <span class="token function">cut</span> <span class="token parameter variable">-f2</span> -d: <span class="token operator">|</span> <span class="token function">uniq</span> <span class="token parameter variable">-c</span>
+<span class="token comment"># 查看物理CPU个数</span>
+<span class="token function">cat</span> /proc/cpuinfo<span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;physical id&quot;</span><span class="token operator">|</span> <span class="token function">sort</span><span class="token operator">|</span> <span class="token function">uniq</span><span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span>
+<span class="token function">grep</span> <span class="token string">'physical id'</span> /proc/cpuinfo <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-u</span>
+<span class="token comment"># 查看每个物理CPU中core的个数(即核数)</span>
+<span class="token function">cat</span> /proc/cpuinfo<span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;cpu cores&quot;</span><span class="token operator">|</span> <span class="token function">uniq</span>
+<span class="token function">grep</span> <span class="token string">'core id'</span> /proc/cpuinfo <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-u</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span>
+<span class="token comment"># 查看逻辑CPU的个数</span>
+<span class="token function">cat</span> /proc/cpuinfo<span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;processor&quot;</span><span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span>
+<span class="token function">grep</span> <span class="token string">'processor'</span> /proc/cpuinfo <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-u</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span>
+</code></pre></div><h2 id="开机启动"><a href="#开机启动" class="header-anchor">#</a> 开机启动</h2> <p><strong>添加命令到<code>/etc/rc.local</code>文件末尾</strong></p> <blockquote><p>编辑<code>/etc/rc.local</code>或者<code>/etc/rc.d/rc.local</code>（前者是后者的软连接）文件，
+按<kbd>Shift</kbd> + <kbd>g</kbd>（就是大写的G）跳转到末尾添加运行命令</p> <blockquote><p>执行的程序需要写绝对路径，添加到系统环境变量的除外</p></blockquote></blockquote> <blockquote><p>为防止启动执行失败，最好执行一次<code>chmod +x /etc/rc.d/rc.local</code>进行授权</p></blockquote> <p><strong>crontab</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">crontab</span> <span class="token parameter variable">-e</span>
+@reboot 运行程序命令
+</code></pre></div><p><strong>脚本文件放在<code>/etc/profile.d/</code>目录下</strong></p> <ul><li><code>chkconfig</code></li></ul> <ol><li>创建软连接或者复制脚本到<code>/etc/init.d/</code>或者<code>/etc/rc.d/init.d/</code>（前者是后者的软连接）下</li></ol> <blockquote><p>注意脚本文件开头一定要添加以下几行代码，否侧会提示<code>chkconfig</code>不支持</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token shebang important">#!/bin/sh</span>
+<span class="token comment"># - 64 36 分别代表运行级别，启动优先权，关闭优先权</span>
+<span class="token comment"># chkconfig: - 64 36</span>
+<span class="token comment"># description: Supervisor Server</span>
+<span class="token comment"># processname: supervisord</span>
+</code></pre></div><ol start="2"><li>添加启动项</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chkconfig</span> <span class="token parameter variable">--add</span> 脚本名
+<span class="token function">chkconfig</span> 脚本名 on
+</code></pre></div><ol start="3"><li>检查是否设置成功</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chkconfig</span> <span class="token parameter variable">--list</span> <span class="token operator">|</span> <span class="token function">grep</span> 脚本名
+</code></pre></div><h2 id="修改为root登录"><a href="#修改为root登录" class="header-anchor">#</a> 修改为root登录</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 重置root密码，其他账户都一样按此方法修改root为指定账户即可</span>
+<span class="token function">sudo</span> <span class="token function">passwd</span> root
+<span class="token builtin class-name">echo</span> root:密码 <span class="token operator">|</span><span class="token function">sudo</span> chpasswd root
+<span class="token comment"># 切换到root账号</span>
+<span class="token function">su</span>
+<span class="token function">sudo</span> <span class="token parameter variable">-i</span>
+<span class="token comment"># 强制删除用户（会同时删除相关目录）</span>
+<span class="token function">userdel</span> <span class="token parameter variable">-rf</span> name
+</code></pre></div><p><strong>修改sshd_config中的参数</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 编辑sshd_config文件</span>
+<span class="token function">vi</span> /etc/ssh/sshd_config
+</code></pre></div><ul><li><code>PermitRootLogin</code> 修改为<code>yes</code> 允许远程root用户登入</li> <li><code>PasswordAuthentication</code> 修改为<code>yes</code> 允许使用用户名密码方式登入</li></ul> <p><strong>或者执行命令直接修改</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># -r 支持扩展表达式，-i 直接修改文件内容</span>
+<span class="token function">sudo</span> <span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/^#\?Port.*/Port 22/g'</span> /etc/ssh/sshd_config<span class="token punctuation">;</span>
+<span class="token function">sudo</span> <span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/^#\?PermitRootLogin.*/PermitRootLogin yes/g'</span> /etc/ssh/sshd_config<span class="token punctuation">;</span>
+<span class="token function">sudo</span> <span class="token function">sed</span> <span class="token parameter variable">-ri</span> <span class="token string">'s/^#?(PasswordAuthentication)\s+(yes|no)/\1 yes/'</span> /etc/ssh/sshd_config<span class="token punctuation">;</span>
+<span class="token comment"># 修改authorized_keys文件（即ssh证书），把ssh-rsa之前的内容都删除掉（酌情执行）</span>
+<span class="token function">sudo</span> <span class="token function">sed</span> <span class="token parameter variable">-ri</span> <span class="token string">'s/^/#/;s/sleep 10&quot;\s+/&amp;\n/'</span> /root/.ssh/authorized_keys<span class="token punctuation">;</span>
+</code></pre></div><p><strong>重启ssh</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">service</span> sshd restart
+<span class="token function">sudo</span> <span class="token function">service</span> <span class="token function">ssh</span> --full-restart
+</code></pre></div><h2 id="挂载存储卷"><a href="#挂载存储卷" class="header-anchor">#</a> 挂载存储卷</h2> <ul><li><a href="https://github.com/chenjian158978/chenjian.github.io/blob/master/_posts/2017-05-10-Play%20Disk%20On%20Linux.md" target="_blank" rel="noopener noreferrer">玩转Linux之硬盘分区格式化挂载与合并<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h3 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h3> <p>1、 物理卷—–PV（Physical Volume）
+物理卷在逻辑卷管理中处于最底层，它可以是实际物理硬盘上的分区，也可以是整个物理硬盘。</p> <p>2、 卷组——–VG（Volumne Group）
+卷组建立在物理卷之上，一个卷组中至少要包括一个物理卷，在卷组建立之后可动态添加物理卷到卷组中。一个逻辑卷管理系统工程中可以只有一个卷组，也可以拥有多个卷组。</p> <p>3、 逻辑卷—–LV（Logical Volume）
+逻辑卷建立在卷组之上，卷组中的未分配空间可以用于建立新的逻辑卷，逻辑卷建立后可以动态地扩展和缩小空间。系统中的多个逻辑卷要以属于同一个卷组，也可以属于不同的多个卷组。</p> <p>4、 物理区域–PE（Physical Extent）
+物理区域是物理卷中可用于分配的最小存储单元，物理区域的大小可根据实际情况在建立物理卷时指定。物理区域大小一旦确定将不能更改，同一卷组中的所有物理卷的物理区域大小需要一致。</p> <p>5、 逻辑区域―LE（Logical Extent）
+逻辑区域是逻辑卷中可用于分配的最小存储单元，逻辑区域的大小取决于逻辑卷所在卷组中的物理区域的大小。</p> <p>6、 卷组描述区域—–（Volume Group Descriptor Area）
+卷组描述区域存在于每个物理卷中，用于描述物理卷本身、物理卷所属卷组、卷组中的逻辑卷及逻辑卷中物理区域的分配等所有信息，卷组描述区域是在使用pvcreate建立物理卷时建立的。</p> <h3 id="物理卷命令"><a href="#物理卷命令" class="header-anchor">#</a> 物理卷命令</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>pvscan <span class="token comment">#在系统的所有磁盘中搜索已存在的物理卷</span>
+pvdisplay 物理卷全路径名称 <span class="token comment">#用于显示指定物理卷的属性。</span>
+pvdata 物理卷全路径名称 <span class="token comment">#用于显示物理卷的卷组描述区域信息，用于调试目的。</span>
+pvchange Cx<span class="token operator">|</span>--allocation <span class="token punctuation">{</span>y<span class="token operator">|</span>n<span class="token punctuation">}</span> 物理卷全路径名 <span class="token comment">#用于改变物理卷的分配许可设置物理卷的创建与删除命令</span>
+pvcreate 设备全路径名 <span class="token parameter variable">-ff</span> <span class="token comment">#用于在磁盘或磁盘分区上创建物理卷初始化信息，以便对该物理卷进行逻辑卷管理。</span>
+pvmove 源物理卷全路径我<span class="token punctuation">[</span>目的物理卷全路径名<span class="token punctuation">]</span> <span class="token comment">#用于把某物理卷中的数据转移到同卷组中其他的特刊卷中。</span>
+</code></pre></div><h3 id="卷组命令"><a href="#卷组命令" class="header-anchor">#</a> 卷组命令</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>vgscan <span class="token comment">#检测系统中所有磁盘</span>
+vgck <span class="token punctuation">[</span>卷组名<span class="token punctuation">]</span> <span class="token comment">#用于检查卷组中卷组描述区域信息的一致性。</span>
+vgdisplay <span class="token punctuation">[</span>卷组名<span class="token punctuation">]</span> <span class="token comment">#显示卷组的属性信息</span>
+vgrename 原卷组名 新卷组名
+vgchange <span class="token parameter variable">-a</span> y<span class="token operator">|</span>n <span class="token punctuation">[</span>卷组名<span class="token punctuation">]</span> <span class="token comment">#改变卷组的相应属性。是否可分配</span>
+vgchange <span class="token parameter variable">-l</span> 最大逻辑卷数 <span class="token comment">#卷组可容纳最大逻辑卷数</span>
+vgchange <span class="token parameter variable">-x</span> y<span class="token operator">|</span>n <span class="token punctuation">[</span>卷组名<span class="token punctuation">]</span> <span class="token comment">#卷是否有效</span>
+vgmknodes <span class="token punctuation">[</span>卷组名<span class="token operator">|</span>卷组路径<span class="token punctuation">]</span> <span class="token comment">#用于建立（重新建立）已有卷组目录和其中的设备文件卷组配置的备份与恢复命令</span>
+vgcfgbackup <span class="token punctuation">[</span>卷组名<span class="token punctuation">]</span> <span class="token comment">#把卷组中的VGDA信息备份到“/etc/lvmconf”目录中的文件</span>
+vgcfgrestore <span class="token parameter variable">-n</span> 卷组名 物理卷全路命名 <span class="token comment">#从备份文件中必得指定物理卷的信息卷组的建立与删除命令</span>
+vgcreate 卷组名 物理卷全路径名<span class="token punctuation">[</span>物理卷全路径名<span class="token punctuation">]</span>
+vgmove 卷组名
+</code></pre></div><h3 id="卷组扩充与缩小"><a href="#卷组扩充与缩小" class="header-anchor">#</a> 卷组扩充与缩小</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>vgextend 卷组名 物理卷全路径名<span class="token punctuation">[</span>物理卷全路径名<span class="token punctuation">]</span>
+vgreduce 卷组名 物理卷全路径名<span class="token punctuation">[</span>物理卷全路径名<span class="token punctuation">]</span>
+</code></pre></div><h3 id="卷组合并与拆分"><a href="#卷组合并与拆分" class="header-anchor">#</a> 卷组合并与拆分</h3> <ul><li><a href="https://juejin.cn/post/7343156956666445859" target="_blank" rel="noopener noreferrer">linux磁盘挂载，硬盘空间合并<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>vgsplit 现有卷组 新卷组 物理卷全路径名<span class="token punctuation">[</span>物理卷全路径名<span class="token punctuation">]</span>
+</code></pre></div><h3 id="卷组输入与输出"><a href="#卷组输入与输出" class="header-anchor">#</a> 卷组输入与输出</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>vgexport 卷组名
+vgimport 卷组名 卷组中的物理卷<span class="token punctuation">[</span>卷组中的物理卷<span class="token punctuation">]</span>
+</code></pre></div><h3 id="逻辑卷命令"><a href="#逻辑卷命令" class="header-anchor">#</a> 逻辑卷命令</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>lvscan
+lvdisplay 逻辑卷全路径名<span class="token punctuation">[</span>逻辑卷全路径名<span class="token punctuation">]</span>
+lvrename 旧逻辑卷全路径名 新逻辑卷全路径名
+lvrename 卷组名 旧逻辑卷名 新逻辑卷名
+lvchange
+e2fsadm <span class="token parameter variable">-L</span> +<span class="token operator">|</span>- 逻辑卷增减量 逻辑卷全路径名
+</code></pre></div><h3 id="逻辑卷创建与删除"><a href="#逻辑卷创建与删除" class="header-anchor">#</a> 逻辑卷创建与删除</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>lvcreate
+lvremove
+</code></pre></div><h3 id="逻辑卷扩充与缩小"><a href="#逻辑卷扩充与缩小" class="header-anchor">#</a> 逻辑卷扩充与缩小</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>lvextend -L<span class="token operator">|</span>--size +逻辑卷大小增量 逻辑卷全路径名
+lvreduce q -L<span class="token operator">|</span>--size +逻辑卷减小量 逻辑卷全路径名
+</code></pre></div><h3 id="逻辑卷管理命令"><a href="#逻辑卷管理命令" class="header-anchor">#</a> 逻辑卷管理命令</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>lvmdiskscan <span class="token comment">#检测所有的SCSI、IDE等存储设备</span>
+lvmchange -R<span class="token operator">|</span>--reset <span class="token comment">#复位逻辑卷管理器</span>
+lvmsadc <span class="token punctuation">[</span>日志文件全路径名<span class="token punctuation">]</span> <span class="token comment">#收信逻辑卷管理器读写统计信息，保存到日志文件中。</span>
+lvmsar 日志文件全路径名 <span class="token comment">#从lvmsadc命令生成的日志文件中读取并报告逻辑卷管理器的读写统计信息。</span>
+</code></pre></div><h3 id="挂载"><a href="#挂载" class="header-anchor">#</a> 挂载</h3> <blockquote><p>直接挂载。但是是用逻辑卷的名称挂载。硬盘上的数据还在。</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看物理卷 pvscan</span>
+pvs
+<span class="token comment"># 查看卷组 vgdisplay</span>
+vgs
+<span class="token comment"># vgcreate vg名字 需要加入这个vg的pv分区</span>
+<span class="token comment"># vgextend  vg名称  pv分区</span>
+<span class="token comment"># 激活逻辑卷</span>
+vgchange <span class="token parameter variable">-ay</span> /dev/VolGroup00
+<span class="token comment"># vgdisplay</span>
+<span class="token comment"># 创建分区</span>
+lvcreate <span class="token parameter variable">-L</span> 分区大小+单位  <span class="token parameter variable">-n</span>  lv分区名称   vg名称
+<span class="token comment"># 删除分区</span>
+lvremove 分区位置<span class="token punctuation">(</span>/dev/disk_lvm/name<span class="token punctuation">)</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看服务器物理分区，逻辑卷的信息</span>
+<span class="token function">fdisk</span> <span class="token parameter variable">-l</span>
+<span class="token comment"># 查看逻辑卷的具体信息</span>
+lvdisplay
+<span class="token comment"># 直接格式化分区</span>
+<span class="token function">mkfs</span> <span class="token parameter variable">-t</span> ext4 <span class="token parameter variable">-c</span> /dev/sdb1
+<span class="token comment"># 挂载硬盘</span>
+<span class="token function">mount</span> /dev/sdb1 /mnt
+<span class="token comment"># 开机自动挂载，不备份且启动时检查顺序（根分区通常为0 1）</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;/dev/sdb1 /mnt ext4 defaults 0 2&quot;</span> <span class="token operator">&gt;&gt;</span> /etc/fstab
+<span class="token builtin class-name">echo</span> <span class="token string">'/dev/sdb1 /mnt ext4 defaults 0 2'</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> <span class="token parameter variable">-a</span> /etc/fstab
+<span class="token comment"># 检查fstab语法</span>
+<span class="token function">sudo</span> findmnt <span class="token parameter variable">--verify</span>
+</code></pre></div><h2 id="扩容"><a href="#扩容" class="header-anchor">#</a> 扩容</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看磁盘挂载信息</span>
+<span class="token function">df</span> <span class="token parameter variable">-Th</span>
+<span class="token comment"># 列出系统上所有的磁盘</span>
+lsblk <span class="token parameter variable">-f</span>
+lsblk <span class="token parameter variable">-lp</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token string">&quot;ro,rm&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> part <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $1}'</span>
+<span class="token comment"># 列出设备的uuid</span>
+blkid
+<span class="token function">sudo</span> blkid <span class="token parameter variable">-s</span> UUID <span class="token parameter variable">-s</span> TYPE <span class="token parameter variable">-o</span> value /dev/sdb1
+<span class="token comment"># 查询文件系统状态</span>
+dumpe2fs
+<span class="token comment"># 扩容</span>
+lvextend <span class="token parameter variable">-L</span> 50G /dev/mapper/ubuntu--vg-ubuntu--lv
+<span class="token comment"># 全部空间都给这个盘</span>
+lvextend <span class="token parameter variable">-l</span> +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+<span class="token comment"># 重新计算磁盘大小</span>
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bajins/notes-vuepress/edit/master//System/Linux配置.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2026-02-28 02:28:37</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/System/Linux网络防火墙.html" class="prev">
+        Linux网络防火墙
+      </a></span> <span class="next"><a href="/System/Nginx.html">
+        Nginx
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1faa001a.js" defer></script><script src="/assets/js/2.4296a15b.js" defer></script><script src="/assets/js/1.13868f42.js" defer></script><script src="/assets/js/110.789e52aa.js" defer></script>
+  </body>
+</html>

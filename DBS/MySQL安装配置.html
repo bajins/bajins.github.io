@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL安装配置 | Bajins</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="https://github.com/mysql
+https://dev.mysql.com/downloads">
+    <meta name="image" content="https://bajins.com/images/MySQL-glibc%E4%B8%8B%E8%BD%BD.png">
+    <meta name="twitter:title" content="MySQL安装配置">
+    <meta name="twitter:description" content="https://github.com/mysql
+https://dev.mysql.com/downloads">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bajins.com/images/MySQL-glibc%E4%B8%8B%E8%BD%BD.png">
+    <meta name="twitter:url" content="https://bajins.com/DBS/MySQL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MySQL安装配置">
+    <meta property="og:description" content="https://github.com/mysql
+https://dev.mysql.com/downloads">
+    <meta property="og:image" content="https://bajins.com/images/MySQL-glibc%E4%B8%8B%E8%BD%BD.png">
+    <meta property="og:url" content="https://bajins.com/DBS/MySQL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html">
+    <meta property="og:site_name" content="bajins">
+    <meta itemprop="name" content="MySQL安装配置">
+    <meta itemprop="description" content="https://github.com/mysql
+https://dev.mysql.com/downloads">
+    <meta itemprop="image" content="https://bajins.com/images/MySQL-glibc%E4%B8%8B%E8%BD%BD.png">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog
+        ,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive
+        ,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.921daf77.css" as="style"><link rel="preload" href="/assets/js/app.1faa001a.js" as="script"><link rel="preload" href="/assets/js/2.4296a15b.js" as="script"><link rel="preload" href="/assets/js/1.13868f42.js" as="script"><link rel="preload" href="/assets/js/29.eedaa43e.js" as="script"><link rel="prefetch" href="/assets/js/100.fb476d17.js"><link rel="prefetch" href="/assets/js/101.65373054.js"><link rel="prefetch" href="/assets/js/102.34afe950.js"><link rel="prefetch" href="/assets/js/103.08e76636.js"><link rel="prefetch" href="/assets/js/104.81b9f765.js"><link rel="prefetch" href="/assets/js/105.d87b9813.js"><link rel="prefetch" href="/assets/js/106.602c6293.js"><link rel="prefetch" href="/assets/js/107.9405c4cf.js"><link rel="prefetch" href="/assets/js/108.ded99788.js"><link rel="prefetch" href="/assets/js/109.ab499760.js"><link rel="prefetch" href="/assets/js/110.789e52aa.js"><link rel="prefetch" href="/assets/js/111.966ae33e.js"><link rel="prefetch" href="/assets/js/112.189d5eb3.js"><link rel="prefetch" href="/assets/js/113.8e20e93c.js"><link rel="prefetch" href="/assets/js/114.b70628d6.js"><link rel="prefetch" href="/assets/js/115.c82a373f.js"><link rel="prefetch" href="/assets/js/116.e34cd637.js"><link rel="prefetch" href="/assets/js/117.cc670f24.js"><link rel="prefetch" href="/assets/js/118.d958ab99.js"><link rel="prefetch" href="/assets/js/119.f5be99c9.js"><link rel="prefetch" href="/assets/js/12.a562b374.js"><link rel="prefetch" href="/assets/js/120.8675f97c.js"><link rel="prefetch" href="/assets/js/121.4cdd8db5.js"><link rel="prefetch" href="/assets/js/122.ca783f05.js"><link rel="prefetch" href="/assets/js/123.869d2c73.js"><link rel="prefetch" href="/assets/js/124.fd840642.js"><link rel="prefetch" href="/assets/js/125.74c9f0fa.js"><link rel="prefetch" href="/assets/js/126.3cd314db.js"><link rel="prefetch" href="/assets/js/127.457509ef.js"><link rel="prefetch" href="/assets/js/128.1b98a1c4.js"><link rel="prefetch" href="/assets/js/13.0df2e0a7.js"><link rel="prefetch" href="/assets/js/14.406f3fa2.js"><link rel="prefetch" href="/assets/js/15.71767727.js"><link rel="prefetch" href="/assets/js/16.c3b53708.js"><link rel="prefetch" href="/assets/js/17.37ca37ec.js"><link rel="prefetch" href="/assets/js/18.162669ae.js"><link rel="prefetch" href="/assets/js/19.091120bc.js"><link rel="prefetch" href="/assets/js/20.fb63d007.js"><link rel="prefetch" href="/assets/js/21.1c14567e.js"><link rel="prefetch" href="/assets/js/22.35d51bbe.js"><link rel="prefetch" href="/assets/js/23.825a1fb5.js"><link rel="prefetch" href="/assets/js/24.2e205b7a.js"><link rel="prefetch" href="/assets/js/25.e4fa03d6.js"><link rel="prefetch" href="/assets/js/26.85767710.js"><link rel="prefetch" href="/assets/js/27.d046a28b.js"><link rel="prefetch" href="/assets/js/28.6f83aea0.js"><link rel="prefetch" href="/assets/js/3.00255157.js"><link rel="prefetch" href="/assets/js/30.8410e120.js"><link rel="prefetch" href="/assets/js/31.c7609f0f.js"><link rel="prefetch" href="/assets/js/32.5c322ef0.js"><link rel="prefetch" href="/assets/js/33.64cc9fe8.js"><link rel="prefetch" href="/assets/js/34.bcf6d63d.js"><link rel="prefetch" href="/assets/js/35.d726e14f.js"><link rel="prefetch" href="/assets/js/36.26402a9f.js"><link rel="prefetch" href="/assets/js/37.1e0403d6.js"><link rel="prefetch" href="/assets/js/38.2d75f668.js"><link rel="prefetch" href="/assets/js/39.4d8d888f.js"><link rel="prefetch" href="/assets/js/4.a41861e7.js"><link rel="prefetch" href="/assets/js/40.fb37b3d7.js"><link rel="prefetch" href="/assets/js/41.bb9946e4.js"><link rel="prefetch" href="/assets/js/42.cf5a059e.js"><link rel="prefetch" href="/assets/js/43.dc969823.js"><link rel="prefetch" href="/assets/js/44.fae0f835.js"><link rel="prefetch" href="/assets/js/45.c61a83fc.js"><link rel="prefetch" href="/assets/js/46.aaa58bd7.js"><link rel="prefetch" href="/assets/js/47.ce9952ea.js"><link rel="prefetch" href="/assets/js/48.27a679af.js"><link rel="prefetch" href="/assets/js/49.1d46de41.js"><link rel="prefetch" href="/assets/js/5.bbf8e470.js"><link rel="prefetch" href="/assets/js/50.abefa3e0.js"><link rel="prefetch" href="/assets/js/51.8b4021ed.js"><link rel="prefetch" href="/assets/js/52.023ec242.js"><link rel="prefetch" href="/assets/js/53.4ccae60e.js"><link rel="prefetch" href="/assets/js/54.48c46570.js"><link rel="prefetch" href="/assets/js/55.bcde0428.js"><link rel="prefetch" href="/assets/js/56.289a8f5a.js"><link rel="prefetch" href="/assets/js/57.dc4a711d.js"><link rel="prefetch" href="/assets/js/58.add3287e.js"><link rel="prefetch" href="/assets/js/59.baffa02b.js"><link rel="prefetch" href="/assets/js/6.c6438728.js"><link rel="prefetch" href="/assets/js/60.5992001b.js"><link rel="prefetch" href="/assets/js/61.fa8afda9.js"><link rel="prefetch" href="/assets/js/62.9fe383af.js"><link rel="prefetch" href="/assets/js/63.df19c15f.js"><link rel="prefetch" href="/assets/js/64.54698821.js"><link rel="prefetch" href="/assets/js/65.4c482019.js"><link rel="prefetch" href="/assets/js/66.6086e608.js"><link rel="prefetch" href="/assets/js/67.fbfb96e6.js"><link rel="prefetch" href="/assets/js/68.81007873.js"><link rel="prefetch" href="/assets/js/69.0199c159.js"><link rel="prefetch" href="/assets/js/7.afb14c62.js"><link rel="prefetch" href="/assets/js/70.2fcf8ce3.js"><link rel="prefetch" href="/assets/js/71.321b22a1.js"><link rel="prefetch" href="/assets/js/72.379b9ea7.js"><link rel="prefetch" href="/assets/js/73.4f1136ed.js"><link rel="prefetch" href="/assets/js/74.563df937.js"><link rel="prefetch" href="/assets/js/75.5d1ebb4f.js"><link rel="prefetch" href="/assets/js/76.fa2bb98d.js"><link rel="prefetch" href="/assets/js/77.92abe7f3.js"><link rel="prefetch" href="/assets/js/78.c2f60b8d.js"><link rel="prefetch" href="/assets/js/79.7a915e00.js"><link rel="prefetch" href="/assets/js/8.d99bad6b.js"><link rel="prefetch" href="/assets/js/80.81894c77.js"><link rel="prefetch" href="/assets/js/81.1e3e3ce3.js"><link rel="prefetch" href="/assets/js/82.d135f529.js"><link rel="prefetch" href="/assets/js/83.f8454a02.js"><link rel="prefetch" href="/assets/js/84.08db55e8.js"><link rel="prefetch" href="/assets/js/85.3bf464db.js"><link rel="prefetch" href="/assets/js/86.30271d76.js"><link rel="prefetch" href="/assets/js/87.efe1dc5a.js"><link rel="prefetch" href="/assets/js/88.849450cb.js"><link rel="prefetch" href="/assets/js/89.a3f2d9e4.js"><link rel="prefetch" href="/assets/js/90.cc19367e.js"><link rel="prefetch" href="/assets/js/91.359e1a28.js"><link rel="prefetch" href="/assets/js/92.9cef9392.js"><link rel="prefetch" href="/assets/js/93.92a0107b.js"><link rel="prefetch" href="/assets/js/94.c8672212.js"><link rel="prefetch" href="/assets/js/95.9d596948.js"><link rel="prefetch" href="/assets/js/96.56d14cf1.js"><link rel="prefetch" href="/assets/js/97.ac9d011e.js"><link rel="prefetch" href="/assets/js/98.ccae6e29.js"><link rel="prefetch" href="/assets/js/99.dd37c751.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.37b7ea54.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.46952646.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.921daf77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name can-hide">Bajins</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/DBS/" class="nav-link router-link-active">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/DBS/" class="nav-link router-link-active">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>DBS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/DBS/" aria-current="page" class="sidebar-link">DBS</a></li><li><a href="/DBS/MySQL.html" class="sidebar-link">MySQL</a></li><li><a href="/DBS/MySQL事件.html" class="sidebar-link">MySQL事件</a></li><li><a href="/DBS/MySQL备份恢复.html" class="sidebar-link">MySQL备份恢复</a></li><li><a href="/DBS/MySQL存储过程.html" class="sidebar-link">MySQL存储过程</a></li><li><a href="/DBS/MySQL安装配置.html" class="active sidebar-link">MySQL安装配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/DBS/MySQL安装配置.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/DBS/MySQL安装配置.html#windows版安装" class="sidebar-link">Windows版安装</a></li><li class="sidebar-sub-header"><a href="/DBS/MySQL安装配置.html#centos安装" class="sidebar-link">CentOS安装</a></li><li class="sidebar-sub-header"><a href="/DBS/MySQL安装配置.html#配置" class="sidebar-link">配置</a></li></ul></li><li><a href="/DBS/Oracle.html" class="sidebar-link">Oracle</a></li><li><a href="/DBS/PostgreSQL.html" class="sidebar-link">PostgreSQL</a></li><li><a href="/DBS/mysql-udf安装.html" class="sidebar-link">mysql-udf安装</a></li><li><a href="/DBS/关系型SQL标准.html" class="sidebar-link">关系型SQL标准</a></li><li><a href="/DBS/关系型数据库.html" class="sidebar-link">关系型数据库</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mysql安装配置"><a href="#mysql安装配置" class="header-anchor">#</a> MySQL安装配置</h1> <p></p><div class="table-of-contents"><ul><li><a href="#flag">Flag</a></li><li><a href="#windows版安装">Windows版安装</a></li><li><a href="#centos安装">CentOS安装</a><ul><li><a href="#yum安装">yum安装</a></li><li><a href="#编译安装">编译安装</a></li></ul></li><li><a href="#配置">配置</a><ul><li><a href="#yum安装配置">yum安装配置</a></li><li><a href="#宝塔面板安装配置">宝塔面板安装配置</a></li></ul></li></ul></div><p></p> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h2> <ul><li><a href="https://github.com/mysql" target="_blank" rel="noopener noreferrer">https://github.com/mysql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://dev.mysql.com/downloads" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/downloads<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><a href="https://segmentfault.com/a/1190000044667101" target="_blank" rel="noopener noreferrer">如何选择适合的 MySQL Connector/J 版本<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.cnblogs.com/zxeao/p/16921457.html" target="_blank" rel="noopener noreferrer">MySQL JDBC驱动版本与数据库版本的对应关系及注意事项<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/xunxue1523/article/details/105524758" target="_blank" rel="noopener noreferrer">mysql-connector-java与mysql以及JDK的对应版本<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://linuxize.com/post/how-to-install-mysql-on-ubuntu-20-04" target="_blank" rel="noopener noreferrer">如何在 Ubuntu 20.04 上安装 MySQL<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.cnblogs.com/cnwcl/p/13785655.html" target="_blank" rel="noopener noreferrer">ubuntu20 使用命令安装 mysql<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://segmentfault.com/a/1190000039203507" target="_blank" rel="noopener noreferrer">ubuntu20 安装和配置mysql8.0.23<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.jianshu.com/p/9e69e0e38665" target="_blank" rel="noopener noreferrer">ubuntu20安装mysql8<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/lduzhenlin/article/details/113243476" target="_blank" rel="noopener noreferrer">ubuntu20.04安装mysql8.0<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>在MySQL 8.0上，<code>auth_socket</code>默认情况下，root用户通过插件进行身份验证。该auth_socket插件对localhost通过Unix套接字文件
+从进行连接的用户进行身份验证。这意味着您不能通过提供密码来以root用户身份进行身份验证。</p></blockquote> <h2 id="windows版安装"><a href="#windows版安装" class="header-anchor">#</a> Windows版安装</h2> <blockquote><p>这里是介绍免安装版的Mysql</p></blockquote> <ol><li>安装服务：<code>mysqld --install</code> 如果执行错误需要安装C++运行库</li> <li>初始化：<code>mysqld --initialize --console</code> 会产生一个随机密码
+<ul><li><code>mysqld –initialize-insecure</code> 初始化数据库，并设置默认root密码为空</li> <li><code>mysqladmin -u root password 密码&quot;;</code> 创建root用户的密码</li></ul></li> <li>开启服务：<code>net start mysql</code></li> <li>关闭服务：<code>net stop mysql</code></li> <li>登录mysql：<code>mysql -u root -p</code></li> <li>修改密码：<code>alter user 'root'@'localhost' identified by '密码';</code></li> <li>标记删除mysql服务：<code>sc delete mysql</code></li></ol> <h2 id="centos安装"><a href="#centos安装" class="header-anchor">#</a> CentOS安装</h2> <h3 id="yum安装"><a href="#yum安装" class="header-anchor">#</a> yum安装</h3> <ul><li><a href="https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.imzhengfei.com/centos-7-an-zhuang-pei-zhi-mysql" target="_blank" rel="noopener noreferrer">https://blog.imzhengfei.com/centos-7-an-zhuang-pei-zhi-mysql/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>首先<code>CentOS7</code>默认已经不支持<code>mysql</code>，因为收费了你懂得，所以内部集成了<code>mariadb</code>，
+而安装<code>mysql</code>的话会和<code>mariadb</code>的文件冲突，所以需要先卸载掉<code>mariadb</code>，以下为卸载<code>mariadb</code>，安装<code>mysql</code>的步骤。</p></blockquote> <p><strong>卸载</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看软件包</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> <span class="token string">&quot;mariadb\|mysql&quot;</span>
+<span class="token comment"># --nodeps强制卸载</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">--nodeps</span> mariadb-libs-5.5.56-2.el7.x86_64
+
+<span class="token comment"># 检测系统是否存在mysql</span>
+yum list installed <span class="token operator">|</span> <span class="token function">grep</span> mysql
+<span class="token comment"># 删除mysql依赖项</span>
+yum remove <span class="token parameter variable">-y</span> mysql mysql-server mysql-libs mysql-server
+</code></pre></div><ul><li>查找残留目录</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">whereis</span> mysql
+</code></pre></div><p><strong>安装依赖</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> libaio glibc
+</code></pre></div><p><strong>下载yum源</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># MySQL 8.0</span>
+<span class="token function">wget</span> https://repo.mysql.com//mysql80-community-release-el7-1.noarch.rpm
+</code></pre></div><p><strong>安装yum源</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> localinstall mysql80-community-release-el7-1.noarch.rpm
+</code></pre></div><p><strong>查看所有版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum repolist all <span class="token operator">|</span> <span class="token function">grep</span> mysql
+</code></pre></div><blockquote><p>可以看到这里默认启用了<code>MySQL 8.0 Community Server</code>，而我们需要安装的是<code>MySQL 5.7 Community Server</code></p></blockquote> <p><strong>修改源设置</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/yum.repos.d/mysql-community.repo
+</code></pre></div><ul><li>找到mysql57-community节点</li></ul> <blockquote><p>将<code>enabled=0</code>改成<code>enabled=1</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>mysql57-community<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>MySQL <span class="token number">5.7</span> Community Server
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://repo.mysql.com/yum/mysql-5.7-community/el/7/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
+</code></pre></div><ul><li>找到<code>mysql80-community</code>节点</li></ul> <blockquote><p>将<code>enabled=1</code>改成<code>enabled=0</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>mysql80-community<span class="token punctuation">]</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span>MySQL <span class="token number">8.0</span> Community Server
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://repo.mysql.com/yum/mysql-8.0-community/el/7/<span class="token variable">$basearch</span>/
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
+</code></pre></div><ul><li>或者使用命令</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 禁用MySQL版本</span>
+yum-config-manager <span class="token parameter variable">--disable</span> mysql80-community
+<span class="token comment"># 启用MySQL版本</span>
+yum-config-manager <span class="token parameter variable">--enable</span> mysql57-community
+</code></pre></div><p><strong>查看默认启用版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum repolist enabled <span class="token operator">|</span> <span class="token function">grep</span> mysql
+</code></pre></div><p><strong>安装</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> mysql-community-server
+</code></pre></div><p><strong>查看安装版本</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>mysqld <span class="token parameter variable">-V</span>
+</code></pre></div><h3 id="编译安装"><a href="#编译安装" class="header-anchor">#</a> 编译安装</h3> <p><strong>下载</strong></p> <ul><li><a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/downloads/mysql/5.7.html#downloads<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><img src="/images/MySQL-glibc%E4%B8%8B%E8%BD%BD.png" alt=""></p> <p><strong>解压</strong></p> <blockquote><p>建议：不要安装到其它目录，否则数据库初始化的时候会报<code>cannot change dir</code>的错</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">tar</span> zxvf mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz <span class="token parameter variable">-C</span> /usr/local/mysql
+<span class="token comment"># 重命名</span>
+<span class="token function">mv</span> mysql-5.7.22-linux-glibc2.12-x86_64 mysql
+</code></pre></div><p><strong>创建用户组</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>group <span class="token function">add</span> mysql
+</code></pre></div><p><strong>创建用户</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>user <span class="token function">add</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-g</span> mysql mysql
+</code></pre></div><ul><li><p>为了安全性，给mysql数据库创建专有用户，该用户只能访问mysql目录，不能访问系统其它目录</p></li> <li><p>另外不建议直接用root初始化mysql，否则连接mysql时会报错：</p></li></ul> <blockquote><p><code>[ERROR] Fatal error: Please read &quot;Security&quot; section of the manual to find out how to run mysqld as root!</code></p></blockquote> <p><strong>创建data目录</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql
+<span class="token function">mkdir</span> data
+</code></pre></div><p><strong>指定用户和用户组</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local
+<span class="token function">chown</span> <span class="token parameter variable">-R</span> mysql mysql/
+<span class="token function">chgrp</span> <span class="token parameter variable">-R</span> mysql mysql/
+</code></pre></div><blockquote><p><code>-R</code>包含目录下所有和目录和文件</p></blockquote> <p><strong>初始化</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/bin
+
+./mysqld <span class="token parameter variable">--initialize</span> <span class="token parameter variable">--user</span><span class="token operator">=</span>mysql <span class="token punctuation">\</span>
+<span class="token parameter variable">--basedir</span><span class="token operator">=</span>/usr/local/mysql/ <span class="token punctuation">\</span>
+<span class="token parameter variable">--datadir</span><span class="token operator">=</span>/usr/local/mysql/data/ <span class="token punctuation">\</span>
+<span class="token parameter variable">--lc_messages_dir</span><span class="token operator">=</span>/usr/local/mysql/share <span class="token punctuation">\</span>
+<span class="token parameter variable">--lc_messages</span><span class="token operator">=</span>en_US
+</code></pre></div><blockquote><p>记住生成的临时密码,如果忘记密码或者想重新初始化，可以先将<code>mysql/data</code>目录中文件删除，然后再执行初始化命令</p></blockquote> <p><strong>启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/bin
+<span class="token comment"># 启动</span>
+./mysqld_safe <span class="token parameter variable">--user</span><span class="token operator">=</span>mysql <span class="token operator">&amp;</span>
+</code></pre></div><p><strong>设为开机启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/mysql/support-files/
+<span class="token function">cp</span> mysql.server /etc/init.d/mysql
+<span class="token function">vi</span> /etc/init.d/mysql
+</code></pre></div><blockquote><p>将mysql目录填上</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">basedir</span><span class="token operator">=</span>/usr/local/mysql/
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/usr/local/mysql/data/
+</code></pre></div><p><strong>授权</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chmod</span> +x /etc/init.d/mysql
+</code></pre></div><p><strong>添加开机启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chkconfig</span> <span class="token parameter variable">--add</span> mysql
+</code></pre></div><p><strong>service启动</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 重启服务</span>
+<span class="token function">service</span> mysql restart
+<span class="token comment"># 停止服务</span>
+<span class="token function">service</span> mysql stop
+<span class="token comment"># 启动服务</span>
+<span class="token function">service</span> mysql start
+<span class="token comment"># 查看服务</span>
+<span class="token function">service</span> mysql status
+</code></pre></div><h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <ul><li>5.7动态参数 <a href="https://dev.mysql.com/doc/refman/5.7/en/dynamic-system-variables.html" target="_blank" rel="noopener noreferrer">5.7 Dynamic System Variables<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>8.0动态参数 <a href="https://dev.mysql.com/doc/refman/8.0/en/dynamic-system-variables.html" target="_blank" rel="noopener noreferrer">8.0 Dynamic System Variables<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html" target="_blank" rel="noopener noreferrer">https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><code>set persist</code> 修改并持久化动态参数</li> <li><code>set persist_only</code> 持久化静态参数</li></ul></li> <li><a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html" target="_blank" rel="noopener noreferrer">服务器系统变量 - 官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <blockquote><p>从5.7.17后mysql就没有默认的<code>my_default.cnf</code>文件，需要手动创建</p></blockquote> <blockquote><p>windows在mysql目录下创建一个ini或cnf配置文件</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/my.cnf
+</code></pre></div><blockquote><p>按<code>i</code>后输入以下内容</p></blockquote> <div class="language-conf extra-class"><pre class="language-text"><code>[mysqld]
+# sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES 
+
+# 一般配置选项
+basedir = /usr/local/mysql/
+datadir = /usr/local/mysql/data
+port = 3306
+character-set-server = utf8
+explicit_defaults_for_timestamp = true
+# socket = /var/run/mysqld/mysqld.sock
+# 0：区分大小写，1：不区分大小写
+lower_case_table_names =1
+
+#下面是可选项，要不要都行，如果出现启动错误，则全部注释掉，
+#保留最基本的配置选项，然后尝试添加某些配置项后启动，检测配置项是否有误
+back_log = 300
+max_connections = 3000
+max_connect_errors = 50
+table_open_cache = 4096
+max_allowed_packet = 32M
+#binlog_cache_size = 4M
+
+max_heap_table_size = 128M
+read_rnd_buffer_size = 16M
+sort_buffer_size = 16M
+join_buffer_size = 16M
+thread_cache_size = 16
+query_cache_size = 128M
+query_cache_limit = 4M
+ft_min_word_len = 8
+
+# 默认开启事件调度器ON或者是1
+event_scheduler=ON
+thread_stack = 512K
+#默认是REPEATABLE-READ，改成读已提交
+transaction-isolation=READ-COMMITTED
+#永久设置手动提交事务
+#autocommit=0
+tmp_table_size = 128M
+#log-bin=mysql-bin
+long_query_time = 6
+
+server_id=1
+
+innodb_buffer_pool_size = 1G
+innodb_thread_concurrency = 16
+innodb_log_buffer_size = 16M
+
+innodb_log_file_size = 512M
+innodb_log_files_in_group = 3
+innodb_max_dirty_pages_pct = 90
+innodb_lock_wait_timeout = 120
+innodb_file_per_table = on
+
+[mysqldump]
+quick
+max_allowed_packet = 32M
+
+[mysql]
+no-auto-rehash
+default-character-set=utf8
+safe-updates
+
+[myisamchk]
+key_buffer = 16M
+sort_buffer_size = 16M
+read_buffer = 8M
+write_buffer = 8M
+
+[mysqlhotcopy]
+interactive-timeout
+
+[mysqld_safe]
+open-files-limit = 8192
+
+</code></pre></div><h3 id="yum安装配置"><a href="#yum安装配置" class="header-anchor">#</a> yum安装配置</h3> <div class="language-conf extra-class"><pre class="language-text"><code>[client]
+#password   = your_password
+port        = 3306
+socket      = /var/lib/mysql/mysql.sock
+
+[mysqld]
+port        = 3306
+socket      = /var/lib/mysql/mysql.sock
+datadir = /var/lib/mysql
+symbolic-links= 0
+log-error= /var/log/mysqld.log
+pid-file= /var/run/mysqld/mysqld.pid
+skip-external-locking
+performance_schema_max_table_instances=400
+table_definition_cache=400
+key_buffer_size = 32M
+max_allowed_packet = 100G
+table_open_cache = 128
+sort_buffer_size = 768K
+net_buffer_length = 8K
+read_buffer_size = 768K
+read_rnd_buffer_size = 512K
+myisam_sort_buffer_size = 8M
+thread_cache_size = 16
+query_cache_size = 16M
+tmp_table_size = 32M
+sql-mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp = true
+#skip-networking
+max_connections = 500
+max_connect_errors = 100
+open_files_limit = 65535
+
+# 0：区分大小写，1：不区分大小写
+lower_case_table_names =1
+# 默认开启事件调度器ON或者是1
+event_scheduler=ON
+
+thread_stack = 512K
+#默认是REPEATABLE-READ，改成读已提交
+transaction-isolation=READ-COMMITTED
+#永久设置手动提交事务
+#autocommit=0
+tmp_table_size = 128M
+#注释掉之后，会关闭binlog日志
+log-bin=mysql-bin
+#注释掉之后，会关闭binlog日志
+binlog_format=mixed
+
+# 数据库ID号,为1时表示为Master,其中master_id必须为1到232–1
+# 之间的一个正整数值，主从server-id不能一样;
+server-id = 1
+#自动删除5天前的日志。默认值为0，表示从不删除。
+expire_logs_days = 5
+slow_query_log=1
+slow-query-log-file=/var/lib/mysql/mysql-slow.log
+long_query_time=3
+#log_queries_not_using_indexes=on
+
+# MySQL5.7.11拥有，默认值为keyring_file，
+# InnoDB表空间在初始化InnoDB之前需要此插件来加密，
+# MySQL5.7.12及以后此参数默认为空
+#early-plugin-load = &quot;&quot;
+
+#loose-innodb-trx=0
+#loose-innodb-locks=0
+#loose-innodb-lock-waits=0
+#loose-innodb-cmp=0
+#loose-innodb-cmp-per-index=0
+#loose-innodb-cmp-per-index-reset=0
+#loose-innodb-cmp-reset=0
+#loose-innodb-cmpmem=0
+#loose-innodb-cmpmem-reset=0
+#loose-innodb-buffer-page=0
+#loose-innodb-buffer-page-lru=0
+#loose-innodb-buffer-pool-stats=0
+#loose-innodb-metrics=0
+#loose-innodb-ft-default-stopword=0
+#loose-innodb-ft-inserted=0
+#loose-innodb-ft-deleted=0
+#loose-innodb-ft-being-deleted=0
+#loose-innodb-ft-config=0
+#loose-innodb-ft-index-cache=0
+#loose-innodb-ft-index-table=0
+#loose-innodb-sys-tables=0
+#loose-innodb-sys-tablestats=0
+#loose-innodb-sys-indexes=0
+#loose-innodb-sys-columns=0
+#loose-innodb-sys-fields=0
+#loose-innodb-sys-foreign=0
+#loose-innodb-sys-foreign-cols=0
+
+default_storage_engine = InnoDB
+innodb_data_home_dir = /var/lib/mysql
+innodb_data_file_path = ibdata1:10M:autoextend
+innodb_log_group_home_dir = /var/lib/mysql
+innodb_buffer_pool_size = 128M
+innodb_log_file_size = 64M
+innodb_log_buffer_size = 16M
+innodb_flush_log_at_trx_commit = 1
+innodb_lock_wait_timeout = 120
+innodb_max_dirty_pages_pct = 90
+innodb_read_io_threads = 3
+innodb_write_io_threads = 3
+
+[mysqldump]
+quick
+max_allowed_packet = 16M
+
+[mysql]
+no-auto-rehash
+
+[myisamchk]
+key_buffer_size = 32M
+sort_buffer_size = 768K
+read_buffer = 2M
+write_buffer = 2M
+
+[mysqlhotcopy]
+interactive-timeout
+</code></pre></div><h3 id="宝塔面板安装配置"><a href="#宝塔面板安装配置" class="header-anchor">#</a> 宝塔面板安装配置</h3> <div class="language-conf extra-class"><pre class="language-text"><code>[client]
+#password   = your_password
+port        = 3306
+socket      = /tmp/mysql.sock
+
+[mysqld]
+port        = 3306
+socket      = /tmp/mysql.sock
+datadir = /usr/local/mysql/data
+skip-external-locking
+performance_schema_max_table_instances=400
+table_definition_cache=400
+key_buffer_size = 32M
+max_allowed_packet = 100G
+table_open_cache = 128
+sort_buffer_size = 768K
+net_buffer_length = 8K
+read_buffer_size = 768K
+read_rnd_buffer_size = 512K
+myisam_sort_buffer_size = 8M
+thread_cache_size = 16
+query_cache_size = 16M
+tmp_table_size = 32M
+sql-mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp = true
+#skip-networking
+max_connections = 500
+max_connect_errors = 100
+open_files_limit = 65535
+
+# 0：区分大小写，1：不区分大小写
+lower_case_table_names =1
+# 默认开启事件调度器ON或者是1
+event_scheduler=ON
+
+thread_stack = 512K
+#默认是REPEATABLE-READ，改成读已提交
+transaction-isolation=READ-COMMITTED
+#永久设置手动提交事务
+#autocommit=0
+tmp_table_size = 128M
+#注释掉之后，会关闭binlog日志
+log-bin=mysql-bin
+#注释掉之后，会关闭binlog日志
+binlog_format=mixed
+server-id = 1
+#自动删除5天前的日志。默认值为0，表示从不删除。
+expire_logs_days = 5
+slow_query_log=1
+slow-query-log-file=/usr/local/mysql/data/mysql-slow.log
+long_query_time=3
+#log_queries_not_using_indexes=on
+# MySQL5.7.11拥有，默认值为keyring_file，
+# InnoDB表空间在初始化InnoDB之前需要此插件来加密，
+# MySQL5.7.12及以后此参数默认为空
+#early-plugin-load = &quot;&quot;
+
+#loose-innodb-trx=0
+#loose-innodb-locks=0
+#loose-innodb-lock-waits=0
+#loose-innodb-cmp=0
+#loose-innodb-cmp-per-index=0
+#loose-innodb-cmp-per-index-reset=0
+#loose-innodb-cmp-reset=0
+#loose-innodb-cmpmem=0
+#loose-innodb-cmpmem-reset=0
+#loose-innodb-buffer-page=0
+#loose-innodb-buffer-page-lru=0
+#loose-innodb-buffer-pool-stats=0
+#loose-innodb-metrics=0
+#loose-innodb-ft-default-stopword=0
+#loose-innodb-ft-inserted=0
+#loose-innodb-ft-deleted=0
+#loose-innodb-ft-being-deleted=0
+#loose-innodb-ft-config=0
+#loose-innodb-ft-index-cache=0
+#loose-innodb-ft-index-table=0
+#loose-innodb-sys-tables=0
+#loose-innodb-sys-tablestats=0
+#loose-innodb-sys-indexes=0
+#loose-innodb-sys-columns=0
+#loose-innodb-sys-fields=0
+#loose-innodb-sys-foreign=0
+#loose-innodb-sys-foreign-cols=0
+
+default_storage_engine = InnoDB
+innodb_data_home_dir = /usr/local/mysql/data
+innodb_data_file_path = ibdata1:10M:autoextend
+innodb_log_group_home_dir = /usr/local/mysql/data
+innodb_buffer_pool_size = 128M
+innodb_log_file_size = 64M
+innodb_log_buffer_size = 16M
+innodb_flush_log_at_trx_commit = 1
+innodb_lock_wait_timeout = 120
+innodb_max_dirty_pages_pct = 90
+innodb_read_io_threads = 3
+innodb_write_io_threads = 3
+
+[mysqldump]
+quick
+max_allowed_packet = 16M
+
+[mysql]
+no-auto-rehash
+
+[myisamchk]
+key_buffer_size = 32M
+sort_buffer_size = 768K
+read_buffer = 2M
+write_buffer = 2M
+
+[mysqlhotcopy]
+interactive-timeout
+</code></pre></div><blockquote><p>按<code>ESC</code>后输入<code>:wq</code>退出</p></blockquote></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bajins/notes-vuepress/edit/master//DBS/MySQL安装配置.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2026-02-28 02:28:37</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/DBS/MySQL存储过程.html" class="prev">
+        MySQL存储过程
+      </a></span> <span class="next"><a href="/DBS/Oracle.html">
+        Oracle
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1faa001a.js" defer></script><script src="/assets/js/2.4296a15b.js" defer></script><script src="/assets/js/1.13868f42.js" defer></script><script src="/assets/js/29.eedaa43e.js" defer></script>
+  </body>
+</html>

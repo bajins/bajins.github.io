@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CentOS | Bajins</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon" href="/images/icons/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <meta name="description" content="https://uefi.org/specifications
+UEFI加载 https://github.com/rhboot
+RHEL衍生版本升级 https://github.com/oamg/leapp
+    https://almalinux.org/elevate
+    https://docs.rockylinux.org/zh/guides/migrate2rocky
+    https://github.com/rocky-linux/rocky-tools
+https://github.com/upgrades-migrations/redhat-upgrade-tool
+Upgrading CentOS 7 to Stream 9
+如何使用 Leapp 为 RHEL PAYG 虚拟机执行升级
+使用 Leapp 升级 Oracle Linux
+    CentOS切换Oracle脚本 https://github.com/oracle/centos2ol
+https://github.com/Ink-33/OhMyStream9">
+    <meta name="twitter:title" content="CentOS">
+    <meta name="twitter:description" content="https://uefi.org/specifications
+UEFI加载 https://github.com/rhboot
+RHEL衍生版本升级 https://github.com/oamg/leapp
+    https://almalinux.org/elevate
+    https://docs.rockylinux.org/zh/guides/migrate2rocky
+    https://github.com/rocky-linux/rocky-tools
+https://github.com/upgrades-migrations/redhat-upgrade-tool
+Upgrading CentOS 7 to Stream 9
+如何使用 Leapp 为 RHEL PAYG 虚拟机执行升级
+使用 Leapp 升级 Oracle Linux
+    CentOS切换Oracle脚本 https://github.com/oracle/centos2ol
+https://github.com/Ink-33/OhMyStream9">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://bajins.com/System/CentOS.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CentOS">
+    <meta property="og:description" content="https://uefi.org/specifications
+UEFI加载 https://github.com/rhboot
+RHEL衍生版本升级 https://github.com/oamg/leapp
+    https://almalinux.org/elevate
+    https://docs.rockylinux.org/zh/guides/migrate2rocky
+    https://github.com/rocky-linux/rocky-tools
+https://github.com/upgrades-migrations/redhat-upgrade-tool
+Upgrading CentOS 7 to Stream 9
+如何使用 Leapp 为 RHEL PAYG 虚拟机执行升级
+使用 Leapp 升级 Oracle Linux
+    CentOS切换Oracle脚本 https://github.com/oracle/centos2ol
+https://github.com/Ink-33/OhMyStream9">
+    <meta property="og:url" content="https://bajins.com/System/CentOS.html">
+    <meta property="og:site_name" content="bajins">
+    <meta itemprop="name" content="CentOS">
+    <meta itemprop="description" content="https://uefi.org/specifications
+UEFI加载 https://github.com/rhboot
+RHEL衍生版本升级 https://github.com/oamg/leapp
+    https://almalinux.org/elevate
+    https://docs.rockylinux.org/zh/guides/migrate2rocky
+    https://github.com/rocky-linux/rocky-tools
+https://github.com/upgrades-migrations/redhat-upgrade-tool
+Upgrading CentOS 7 to Stream 9
+如何使用 Leapp 为 RHEL PAYG 虚拟机执行升级
+使用 Leapp 升级 Oracle Linux
+    CentOS切换Oracle脚本 https://github.com/oracle/centos2ol
+https://github.com/Ink-33/OhMyStream9">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="keywords" content="bajins,vue,vuepress,vuepress-theme,theme,主题,vuepress主题,blog
+        ,vuepress-blog,java,python,shell,sql,golang,script,shell script,nginx,windows,去广告,androd,google drive
+        ,one drive,idea,eclipse,git,小程序">
+    <meta name="referrer" content="never">
+    
+    <link rel="preload" href="/assets/css/0.styles.921daf77.css" as="style"><link rel="preload" href="/assets/js/app.1faa001a.js" as="script"><link rel="preload" href="/assets/js/2.4296a15b.js" as="script"><link rel="preload" href="/assets/js/1.13868f42.js" as="script"><link rel="preload" href="/assets/js/106.602c6293.js" as="script"><link rel="prefetch" href="/assets/js/100.fb476d17.js"><link rel="prefetch" href="/assets/js/101.65373054.js"><link rel="prefetch" href="/assets/js/102.34afe950.js"><link rel="prefetch" href="/assets/js/103.08e76636.js"><link rel="prefetch" href="/assets/js/104.81b9f765.js"><link rel="prefetch" href="/assets/js/105.d87b9813.js"><link rel="prefetch" href="/assets/js/107.9405c4cf.js"><link rel="prefetch" href="/assets/js/108.ded99788.js"><link rel="prefetch" href="/assets/js/109.ab499760.js"><link rel="prefetch" href="/assets/js/110.789e52aa.js"><link rel="prefetch" href="/assets/js/111.966ae33e.js"><link rel="prefetch" href="/assets/js/112.189d5eb3.js"><link rel="prefetch" href="/assets/js/113.8e20e93c.js"><link rel="prefetch" href="/assets/js/114.b70628d6.js"><link rel="prefetch" href="/assets/js/115.c82a373f.js"><link rel="prefetch" href="/assets/js/116.e34cd637.js"><link rel="prefetch" href="/assets/js/117.cc670f24.js"><link rel="prefetch" href="/assets/js/118.d958ab99.js"><link rel="prefetch" href="/assets/js/119.f5be99c9.js"><link rel="prefetch" href="/assets/js/12.a562b374.js"><link rel="prefetch" href="/assets/js/120.8675f97c.js"><link rel="prefetch" href="/assets/js/121.4cdd8db5.js"><link rel="prefetch" href="/assets/js/122.ca783f05.js"><link rel="prefetch" href="/assets/js/123.869d2c73.js"><link rel="prefetch" href="/assets/js/124.fd840642.js"><link rel="prefetch" href="/assets/js/125.74c9f0fa.js"><link rel="prefetch" href="/assets/js/126.3cd314db.js"><link rel="prefetch" href="/assets/js/127.457509ef.js"><link rel="prefetch" href="/assets/js/128.1b98a1c4.js"><link rel="prefetch" href="/assets/js/13.0df2e0a7.js"><link rel="prefetch" href="/assets/js/14.406f3fa2.js"><link rel="prefetch" href="/assets/js/15.71767727.js"><link rel="prefetch" href="/assets/js/16.c3b53708.js"><link rel="prefetch" href="/assets/js/17.37ca37ec.js"><link rel="prefetch" href="/assets/js/18.162669ae.js"><link rel="prefetch" href="/assets/js/19.091120bc.js"><link rel="prefetch" href="/assets/js/20.fb63d007.js"><link rel="prefetch" href="/assets/js/21.1c14567e.js"><link rel="prefetch" href="/assets/js/22.35d51bbe.js"><link rel="prefetch" href="/assets/js/23.825a1fb5.js"><link rel="prefetch" href="/assets/js/24.2e205b7a.js"><link rel="prefetch" href="/assets/js/25.e4fa03d6.js"><link rel="prefetch" href="/assets/js/26.85767710.js"><link rel="prefetch" href="/assets/js/27.d046a28b.js"><link rel="prefetch" href="/assets/js/28.6f83aea0.js"><link rel="prefetch" href="/assets/js/29.eedaa43e.js"><link rel="prefetch" href="/assets/js/3.00255157.js"><link rel="prefetch" href="/assets/js/30.8410e120.js"><link rel="prefetch" href="/assets/js/31.c7609f0f.js"><link rel="prefetch" href="/assets/js/32.5c322ef0.js"><link rel="prefetch" href="/assets/js/33.64cc9fe8.js"><link rel="prefetch" href="/assets/js/34.bcf6d63d.js"><link rel="prefetch" href="/assets/js/35.d726e14f.js"><link rel="prefetch" href="/assets/js/36.26402a9f.js"><link rel="prefetch" href="/assets/js/37.1e0403d6.js"><link rel="prefetch" href="/assets/js/38.2d75f668.js"><link rel="prefetch" href="/assets/js/39.4d8d888f.js"><link rel="prefetch" href="/assets/js/4.a41861e7.js"><link rel="prefetch" href="/assets/js/40.fb37b3d7.js"><link rel="prefetch" href="/assets/js/41.bb9946e4.js"><link rel="prefetch" href="/assets/js/42.cf5a059e.js"><link rel="prefetch" href="/assets/js/43.dc969823.js"><link rel="prefetch" href="/assets/js/44.fae0f835.js"><link rel="prefetch" href="/assets/js/45.c61a83fc.js"><link rel="prefetch" href="/assets/js/46.aaa58bd7.js"><link rel="prefetch" href="/assets/js/47.ce9952ea.js"><link rel="prefetch" href="/assets/js/48.27a679af.js"><link rel="prefetch" href="/assets/js/49.1d46de41.js"><link rel="prefetch" href="/assets/js/5.bbf8e470.js"><link rel="prefetch" href="/assets/js/50.abefa3e0.js"><link rel="prefetch" href="/assets/js/51.8b4021ed.js"><link rel="prefetch" href="/assets/js/52.023ec242.js"><link rel="prefetch" href="/assets/js/53.4ccae60e.js"><link rel="prefetch" href="/assets/js/54.48c46570.js"><link rel="prefetch" href="/assets/js/55.bcde0428.js"><link rel="prefetch" href="/assets/js/56.289a8f5a.js"><link rel="prefetch" href="/assets/js/57.dc4a711d.js"><link rel="prefetch" href="/assets/js/58.add3287e.js"><link rel="prefetch" href="/assets/js/59.baffa02b.js"><link rel="prefetch" href="/assets/js/6.c6438728.js"><link rel="prefetch" href="/assets/js/60.5992001b.js"><link rel="prefetch" href="/assets/js/61.fa8afda9.js"><link rel="prefetch" href="/assets/js/62.9fe383af.js"><link rel="prefetch" href="/assets/js/63.df19c15f.js"><link rel="prefetch" href="/assets/js/64.54698821.js"><link rel="prefetch" href="/assets/js/65.4c482019.js"><link rel="prefetch" href="/assets/js/66.6086e608.js"><link rel="prefetch" href="/assets/js/67.fbfb96e6.js"><link rel="prefetch" href="/assets/js/68.81007873.js"><link rel="prefetch" href="/assets/js/69.0199c159.js"><link rel="prefetch" href="/assets/js/7.afb14c62.js"><link rel="prefetch" href="/assets/js/70.2fcf8ce3.js"><link rel="prefetch" href="/assets/js/71.321b22a1.js"><link rel="prefetch" href="/assets/js/72.379b9ea7.js"><link rel="prefetch" href="/assets/js/73.4f1136ed.js"><link rel="prefetch" href="/assets/js/74.563df937.js"><link rel="prefetch" href="/assets/js/75.5d1ebb4f.js"><link rel="prefetch" href="/assets/js/76.fa2bb98d.js"><link rel="prefetch" href="/assets/js/77.92abe7f3.js"><link rel="prefetch" href="/assets/js/78.c2f60b8d.js"><link rel="prefetch" href="/assets/js/79.7a915e00.js"><link rel="prefetch" href="/assets/js/8.d99bad6b.js"><link rel="prefetch" href="/assets/js/80.81894c77.js"><link rel="prefetch" href="/assets/js/81.1e3e3ce3.js"><link rel="prefetch" href="/assets/js/82.d135f529.js"><link rel="prefetch" href="/assets/js/83.f8454a02.js"><link rel="prefetch" href="/assets/js/84.08db55e8.js"><link rel="prefetch" href="/assets/js/85.3bf464db.js"><link rel="prefetch" href="/assets/js/86.30271d76.js"><link rel="prefetch" href="/assets/js/87.efe1dc5a.js"><link rel="prefetch" href="/assets/js/88.849450cb.js"><link rel="prefetch" href="/assets/js/89.a3f2d9e4.js"><link rel="prefetch" href="/assets/js/90.cc19367e.js"><link rel="prefetch" href="/assets/js/91.359e1a28.js"><link rel="prefetch" href="/assets/js/92.9cef9392.js"><link rel="prefetch" href="/assets/js/93.92a0107b.js"><link rel="prefetch" href="/assets/js/94.c8672212.js"><link rel="prefetch" href="/assets/js/95.9d596948.js"><link rel="prefetch" href="/assets/js/96.56d14cf1.js"><link rel="prefetch" href="/assets/js/97.ac9d011e.js"><link rel="prefetch" href="/assets/js/98.ccae6e29.js"><link rel="prefetch" href="/assets/js/99.dd37c751.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.37b7ea54.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.46952646.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.921daf77.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/icons/logo.png" alt="Bajins" class="logo"> <span class="site-name can-hide">Bajins</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link router-link-active">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/DBS/" class="nav-link">
+  DBS
+</a></div><div class="nav-item"><a href="/Go/" class="nav-link">
+  Go
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div><div class="nav-item"><a href="/PL/" class="nav-link">
+  PL
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Shell/" class="nav-link">
+  Shell
+</a></div><div class="nav-item"><a href="/System/" class="nav-link router-link-active">
+  System
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="快捷链接" class="dropdown-title"><span class="title">快捷链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="快捷链接" class="mobile-dropdown-title"><span class="title">快捷链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          外部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tool.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  获取XShell
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tr.bajins.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  OCR图片识别
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wnf" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  朋友圈不折叠
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.bajins.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://g.woetu.eu.org" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub反代
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/wp/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  WeasyPrint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://tool.bajins.com/sd/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Showdown
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          内部链接
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/files.html" class="nav-link">
+  文件
+</a></li><li class="dropdown-subitem"><a href="/Other/Bookmarks.html" class="nav-link">
+  书签锦集
+</a></li><li class="dropdown-subitem"><a href="/System/Windows软件.html" class="nav-link">
+  Windows软件
+</a></li><li class="dropdown-subitem"><a href="/Other/Markdown.html#工具" class="nav-link">
+  Markdown工具
+</a></li></ul></li></ul></div></div> <a href="https://github.com/bajins/notes-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>System</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/System/" aria-current="page" class="sidebar-link">System</a></li><li><a href="/System/Android.html" class="sidebar-link">Android</a></li><li><a href="/System/CentOS.html" aria-current="page" class="active sidebar-link">CentOS</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/System/CentOS.html#flag" class="sidebar-link">Flag</a></li><li class="sidebar-sub-header"><a href="/System/CentOS.html#yum和rpm操作" class="sidebar-link">YUM和RPM操作</a></li><li class="sidebar-sub-header"><a href="/System/CentOS.html#systemctl" class="sidebar-link">systemctl</a></li><li class="sidebar-sub-header"><a href="/System/CentOS.html#内核升级" class="sidebar-link">内核升级</a></li><li class="sidebar-sub-header"><a href="/System/CentOS.html#一键安装bbr" class="sidebar-link">一键安装BBR</a></li><li class="sidebar-sub-header"><a href="/System/CentOS.html#三方工具" class="sidebar-link">三方工具</a></li><li class="sidebar-sub-header"><a href="/System/CentOS.html#chrome" class="sidebar-link">Chrome</a></li></ul></li><li><a href="/System/IOS.html" class="sidebar-link">IOS</a></li><li><a href="/System/Linux.html" class="sidebar-link">Linux</a></li><li><a href="/System/Linux网络防火墙.html" class="sidebar-link">Linux网络防火墙</a></li><li><a href="/System/Linux配置.html" class="sidebar-link">Linux配置</a></li><li><a href="/System/Nginx.html" class="sidebar-link">Nginx</a></li><li><a href="/System/Windows.html" class="sidebar-link">Windows</a></li><li><a href="/System/Windows软件.html" class="sidebar-link">Windows软件</a></li><li><a href="/System/内网穿透.html" class="sidebar-link">内网穿透</a></li><li><a href="/System/挂载网盘.html" class="sidebar-link">挂载网盘</a></li><li><a href="/System/文件压缩解压.html" class="sidebar-link">文件压缩解压</a></li><li><a href="/System/邮箱服务.html" class="sidebar-link">邮箱服务</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="centos"><a href="#centos" class="header-anchor">#</a> CentOS</h1> <p></p><div class="table-of-contents"><ul><li><a href="#flag">Flag</a></li><li><a href="#yum和rpm操作">YUM和RPM操作</a></li><li><a href="#systemctl">systemctl</a></li><li><a href="#内核升级">内核升级</a></li><li><a href="#一键安装bbr">一键安装BBR</a><ul><li><a href="#安装新版内核headers">安装新版内核headers</a></li><li><a href="#内核升级方法">内核升级方法</a></li></ul></li><li><a href="#三方工具">三方工具</a></li><li><a href="#chrome">Chrome</a><ul><li><a href="#debian或ubuntu">Debian或Ubuntu</a></li></ul></li></ul></div><p></p> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> Flag</h2> <ul><li><a href="https://uefi.org/specifications" target="_blank" rel="noopener noreferrer">https://uefi.org/specifications<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>UEFI加载 <a href="https://github.com/rhboot" target="_blank" rel="noopener noreferrer">https://github.com/rhboot<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>RHEL衍生版本升级 <a href="https://github.com/oamg/leapp" target="_blank" rel="noopener noreferrer">https://github.com/oamg/leapp<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li><a href="https://almalinux.org/elevate" target="_blank" rel="noopener noreferrer">https://almalinux.org/elevate<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.rockylinux.org/zh/guides/migrate2rocky" target="_blank" rel="noopener noreferrer">https://docs.rockylinux.org/zh/guides/migrate2rocky<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/rocky-linux/rocky-tools" target="_blank" rel="noopener noreferrer">https://github.com/rocky-linux/rocky-tools<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li><a href="https://github.com/upgrades-migrations/redhat-upgrade-tool" target="_blank" rel="noopener noreferrer">https://github.com/upgrades-migrations/redhat-upgrade-tool<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.motofans.club/post/upgrade-centos-7-to-centos-stream-9.html" target="_blank" rel="noopener noreferrer">Upgrading CentOS 7 to Stream 9<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://learn.microsoft.com/zh-cn/troubleshoot/azure/virtual-machines/linux/leapp-upgrade-process-rhel-7-and-8" target="_blank" rel="noopener noreferrer">如何使用 Leapp 为 RHEL PAYG 虚拟机执行升级<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.oracle.com/zh-cn/learn/ol-linux-leapp/index.html" target="_blank" rel="noopener noreferrer">使用 Leapp 升级 Oracle Linux<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <ul><li>CentOS切换Oracle脚本 <a href="https://github.com/oracle/centos2ol" target="_blank" rel="noopener noreferrer">https://github.com/oracle/centos2ol<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li> <li><a href="https://github.com/Ink-33/OhMyStream9" target="_blank" rel="noopener noreferrer">https://github.com/Ink-33/OhMyStream9<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><strong>下载almalinux所有RPM包</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 下载 Packages 页面的 HTML 内容，提取所有 RPM 文件名（包含 dnf 或 python）</span>
+<span class="token function">curl</span> <span class="token parameter variable">-s</span> https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/ <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-oP</span> <span class="token string">'href=&quot;\K[^&quot;]+\.rpm'</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">'dnf|*python'</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token string">'x86_64'</span> <span class="token operator">&gt;</span> rpm-list.txt
+<span class="token keyword">while</span> <span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> pkg<span class="token punctuation">;</span> <span class="token keyword">do</span>
+  <span class="token function">curl</span> <span class="token parameter variable">-O</span> https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/<span class="token string">&quot;<span class="token variable">$pkg</span>&quot;</span>
+<span class="token keyword">done</span> <span class="token operator">&lt;</span> rpm_list.txt
+
+<span class="token function">cat</span> rpm-list.txt <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token parameter variable">-I</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token parameter variable">-P</span> <span class="token number">8</span> <span class="token function">curl</span> <span class="token parameter variable">-O</span> https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/<span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p><strong>升级GLBC后删除目录导致系统崩溃</strong></p> <ul><li><a href="https://www.cnblogs.com/hefeng2014/p/17916585.html" target="_blank" rel="noopener noreferrer">/lib64/libc.so.6 错误导致的系统崩溃<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>sln /usr/lib64/ld-2.17.so /usr/lib64/ld-linux-x86-64.so.2
+sln /usr/lib64/libc-2.17.so /usr/lib64/libc.so.6
+sln /usr/lib64/libdl-2.17.so /usr/lib64/libdl.so.2
+sln /usr/lib64/libpthread-2.17.so /usr/lib64/libpthread.so.0
+</code></pre></div><p><strong>yum、dnf、python都被卸载后如何装回dnf</strong></p> <blockquote><p>yum依赖dnf，dnf依赖python，当rpm还在时如何救回dnf</p></blockquote> <ul><li><a href="https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/" target="_blank" rel="noopener noreferrer">https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://rpmfind.net/linux/rpm2html/search.php" target="_blank" rel="noopener noreferrer">https://rpmfind.net/linux/rpm2html/search.php<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><a href="https://cloud.tencent.com/developer/article/2442683" target="_blank" rel="noopener noreferrer">Centos Stream9下重新安装yum和DNF以及python3<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://stackoverflow.com/questions/47633870/rpm-lib64-liblzma-so-5-version-xz-5-1-2alpha-not-found-required-by-lib-li" target="_blank" rel="noopener noreferrer">rpm: /lib64/liblzma.so.5: version `XZ_5.1.2alpha' not found (required by /lib/librpmio.so.3)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 忽略依赖强制安装python及dnf相关依赖</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-i</span> <span class="token parameter variable">--nodeps</span> <span class="token parameter variable">--force</span> rpm的地址
+</code></pre></div><h2 id="yum和rpm操作"><a href="#yum和rpm操作" class="header-anchor">#</a> YUM和RPM操作</h2> <ul><li><code>yum -y install 包名</code>（支持*） ：自动选择y，全自动</li> <li><code>yum install 包名</code>（支持*） ：手动选择y or n</li> <li><code>yum remove 包名</code>（不支持*）</li> <li><code>rpm -ivh 包名</code>（支持*）：安装rpm包</li> <li><code>rpm -e 包名</code>（不支持*）：卸载rpm包</li> <li><code>yum info nginx</code>(查看当前版本可选)</li> <li><code>yum list installed | grep 包名</code>（不支持*）：确认是否安装过包</li> <li><code>yum -y update</code> 更新yum源包</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 安装EPEL源</span>
+yum <span class="token parameter variable">-y</span> <span class="token function">install</span> epel-release 
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查询已安装软件包信息</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qi</span> 软件名
+<span class="token comment"># 查询已安装软件包安装位置</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-ql</span> 软件名
+<span class="token comment"># 查看已安装软件依赖</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qR</span> 软件名
+<span class="token comment"># 查看已安装软件的配置文件</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qc</span> 软件名
+<span class="token comment"># 查询已安装文件所属软件包</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qf</span> 文件名的绝对路径
+<span class="token comment"># 安装软件包数量</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span> 
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> 软件名称
+<span class="token function">rpm</span> <span class="token parameter variable">-e</span> <span class="token parameter variable">--nodeps</span> 列出的软件全名
+</code></pre></div><h2 id="systemctl"><a href="#systemctl" class="header-anchor">#</a> systemctl</h2> <blockquote><p><code>systemctl</code>是<code>CentOS7</code>的服务管理工具中主要的工具，它融合之前<code>service</code>和<code>chkconfig</code>的功能于一体。</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 启动一个服务</span>
+systemctl start firewalld.service
+<span class="token comment"># 关闭一个服务</span>
+systemctl stop firewalld.service
+<span class="token comment"># 重启一个服务</span>
+systemctl restart firewalld.service
+<span class="token comment"># 显示一个服务的状态</span>
+systemctl status firewalld.service
+<span class="token comment"># 在开机时启用一个服务</span>
+systemctl <span class="token builtin class-name">enable</span> firewalld.service
+<span class="token comment"># 在开机时禁用一个服务</span>
+systemctl disable firewalld.service
+<span class="token comment"># 查看服务是否开机启动</span>
+systemctl is-enabled firewalld.service
+<span class="token comment"># 查看已启动的服务列表</span>
+systemctl list-unit-files<span class="token operator">|</span><span class="token function">grep</span> enabled
+<span class="token comment"># 查看启动失败的服务列表</span>
+systemctl <span class="token parameter variable">--failed</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看mysql是否自启动</span>
+<span class="token function">chkconfig</span> <span class="token parameter variable">--list</span> <span class="token operator">|</span> <span class="token function">grep</span> mysqld
+<span class="token comment"># 设置开启自启动</span>
+<span class="token function">chkconfig</span> mysqld on
+</code></pre></div><h2 id="内核升级"><a href="#内核升级" class="header-anchor">#</a> 内核升级</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 检查当前CentOS系统版本</span>
+<span class="token function">cat</span> /etc/redhat-release
+<span class="token comment"># 检查当前CentOS系统内核版本</span>
+<span class="token function">uname</span> <span class="token parameter variable">-sr</span>
+</code></pre></div><ul><li>运行yum命令升级</li></ul> <blockquote><p>CentOS中update命令可以一次性更新所有软件(包括系统版本)到最新版本。</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 先清除所有</span>
+yum clean all
+<span class="token comment"># 再升级</span>
+yum update <span class="token parameter variable">-y</span>
+<span class="token comment"># 升级内核</span>
+yum update kernel  <span class="token parameter variable">-y</span>
+</code></pre></div><ul><li>在<code>CentOS7.x</code>上启用<code>ELRepo</code>仓库</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 首先导入elrepo的key</span>
+<span class="token function">rpm</span> <span class="token parameter variable">--import</span> https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+<span class="token comment"># 安装elrepo的yum</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-Uvh</span> http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+</code></pre></div><ul><li>查看内核相关包</li></ul> <blockquote><p>仓库启用后，你可以使用下面的命令列出可用的系统内核相关包，查看内核相关包</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">--disablerepo</span><span class="token operator">=</span><span class="token string">&quot;*&quot;</span> <span class="token parameter variable">--enablerepo</span><span class="token operator">=</span><span class="token string">&quot;elrepo-kernel&quot;</span> list available
+</code></pre></div><ul><li>安装最新的主线稳定内核</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> <span class="token parameter variable">--enablerepo</span><span class="token operator">=</span>elrepo-kernel <span class="token function">install</span> kernel-ml
+<span class="token comment"># 或者以下命令安装最新的主线稳定内核</span>
+yum <span class="token parameter variable">-y</span> <span class="token parameter variable">--enablerepo</span><span class="token operator">=</span>elrepo-kernel <span class="token function">install</span> kernel-ml.x86_64 kernel-ml-devel.x86_64
+</code></pre></div><ul><li>查看可用内核</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> /boot/grub2/grub.cfg <span class="token operator">|</span><span class="token function">grep</span> menuentry 
+</code></pre></div><ul><li>设置内核启动项</li></ul> <blockquote><p>替换刚刚查看出来的内核名字执行，比如：<code>grub2-set-default 'CentOS Linux (4.15.13-1.el7.elrepo.x86_64) 7 (Core)'</code></p> <blockquote><p><code>grub2-set-default '内核名字'</code></p></blockquote></blockquote> <ul><li>查看内核启动项是否设置成功</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>grub2-editenv list
+<span class="token comment"># 重启</span>
+<span class="token function">reboot</span>
+<span class="token comment"># 检查当前CentOS系统内核版本</span>
+<span class="token function">uname</span> <span class="token parameter variable">-sr</span>
+<span class="token comment"># 查看多余的内核</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> kernel
+<span class="token comment"># 删除多余的内核</span>
+yum remove 内核名字
+</code></pre></div><h2 id="一键安装bbr"><a href="#一键安装bbr" class="header-anchor">#</a> 一键安装BBR</h2> <ul><li><a href="https://github.com/ylx2016/Linux-NetSpeed" target="_blank" rel="noopener noreferrer">https://github.com/ylx2016/Linux-NetSpeed<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><a href="https://github.com/teddysun/across" target="_blank" rel="noopener noreferrer">秋水逸冰<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li>下载并执行脚本</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">wget</span> --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+<span class="token function">chmod</span> +x bbr.sh
+./bbr.sh
+</code></pre></div><blockquote><p>安装完成后，脚本会提示需要重启 VPS，输入<code>y</code>并回车后重启。</p></blockquote> <ul><li>查看内核版本</li></ul> <blockquote><p>显示为最新版就表示OK了，重启完成后，进入VPS，验证一下是否成功安装最新内核并开启<code>TCP BBR</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">uname</span> <span class="token parameter variable">-r</span>
+<span class="token function">sysctl</span> net.ipv4.tcp_available_congestion_control
+</code></pre></div><blockquote><p>返回值一般为<code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code>，
+或者为：<code>net.ipv4.tcp_available_congestion_control = reno cubic bbr</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sysctl</span> net.ipv4.tcp_congestion_control
+</code></pre></div><blockquote><p>返回值一般为 <code>net.ipv4.tcp_congestion_control = bbr</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sysctl</span> net.core.default_qdisc
+</code></pre></div><blockquote><p>返回值一般为 <code>net.core.default_qdisc = fq</code></p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code>lsmod <span class="token operator">|</span> <span class="token function">grep</span> bbr
+</code></pre></div><blockquote><p>返回值有<code>tcp_bbr</code>模块即说明<code>bbr</code>已启动。</p></blockquote> <blockquote><p>注意：并不是所有的都会有此返回值，若没有也属正常。</p></blockquote> <h3 id="安装新版内核headers"><a href="#安装新版内核headers" class="header-anchor">#</a> 安装新版内核headers</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">--enablerepo</span><span class="token operator">=</span>elrepo-kernel <span class="token parameter variable">-y</span> <span class="token function">install</span> kernel-ml-headers
+</code></pre></div><ul><li>根据<code>CentOS</code>版本的不同，此时一般会出现类似于以下的错误提示：
+<ul><li><code>Error: kernel-ml-headers conflicts with kernel-headers-2.6.32-696.20.1.el6.x86_64</code></li> <li><code>Error: kernel-ml-headers conflicts with kernel-headers-3.10.0-693.17.1.el7.x86_64</code></li></ul></li></ul> <p><strong>卸载原版内核<code>headers</code></strong></p> <blockquote><p>需要先卸载原版内核<code>headers</code>，然后再安装最新版内核<code>headers</code>。</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code>yum remove kernel-headers <span class="token parameter variable">-y</span>
+</code></pre></div><blockquote><p>注意：有时候这么操作还会卸载一些对内核 headers 依赖的安装包，比如 gcc、gcc-c++ 之类的。
+不过不要紧，我们可以在安装完最新版内核 headers 后再重新安装回来即可。</p></blockquote> <h3 id="内核升级方法"><a href="#内核升级方法" class="header-anchor">#</a> 内核升级方法</h3> <ul><li>CentOS系统升级内核</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> kernel-ml kernel-ml-devel
+</code></pre></div><ul><li>升级<code>headers</code></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> kernel-ml-headers
+</code></pre></div><ul><li>执行命令</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>grub2-set-default <span class="token number">0</span>
+</code></pre></div><blockquote><p>最后，重启VPS即可。</p></blockquote> <h2 id="三方工具"><a href="#三方工具" class="header-anchor">#</a> 三方工具</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token function">which</span> gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel lrzsz <span class="token punctuation">\</span>
+lrzsz-devel p7zip p7zip-devel net-tools net-tools-devel <span class="token function">vim</span> vim-devel libaio libaio-devel
+</code></pre></div><p><strong><code>figlet</code></strong></p> <blockquote><p>Linux下的命令行工具，我们经常会看到一些终端工具有一个字符Logo,这些Logo可以通过<code>Figlet</code>生成：</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> <span class="token parameter variable">-y</span> figlet
+</code></pre></div><ul><li>居中显示用 <code>-c</code></li> <li>从文件导入用 <code>-p</code>， 比如从testFile导入<code>figlet -c -p &lt; testFile</code></li> <li>还可以用<code>-w</code>指定宽度。</li> <li>实时显示时间<code>watch -n1 &quot;date '+%D%n%T' |figlet -k&quot;</code></li></ul> <p><strong><code>boxes</code></strong></p> <blockquote><p>这个工具提供了 n 种样式，例如各种动物等，然后你输入的字符就放在这些图案的内部空白处。</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> boxes
+</code></pre></div><blockquote><p>使用boxes -l列出所有的样式。</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token punctuation">[</span>text<span class="token punctuation">]</span> <span class="token operator">|</span> boxes <span class="token parameter variable">-d</span> <span class="token punctuation">[</span>style name<span class="token punctuation">]</span>
+<span class="token comment"># 比如dog</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Hello World&quot;</span> <span class="token operator">|</span> boxes <span class="token parameter variable">-d</span> dog
+</code></pre></div><p><strong><code>Toilet</code></strong></p> <blockquote><p>可以输出更丰富的样式，它比 <code>figlet</code> 命令的效果更有艺术感。</p></blockquote> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;Hello World&quot;</span> <span class="token operator">|</span> toilet <span class="token parameter variable">-f</span> term <span class="token parameter variable">-F</span> border <span class="token parameter variable">--gay</span>
+<span class="token comment"># 可以有颜色</span>
+toilet <span class="token parameter variable">-f</span> mono12 <span class="token parameter variable">-F</span> metal Linux
+<span class="token comment"># 多种样式</span>
+<span class="token keyword">while</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> <span class="token string">'+%D %T'</span> <span class="token operator">|</span> toilet <span class="token parameter variable">-f</span> term <span class="token parameter variable">-F</span> border <span class="token parameter variable">--gay</span><span class="token variable">)</span></span>&quot;</span><span class="token punctuation">;</span> <span class="token function">sleep</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token keyword">done</span>
+</code></pre></div><h2 id="chrome"><a href="#chrome" class="header-anchor">#</a> Chrome</h2> <ul><li><a href="https://intoli.com/blog/installing-google-chrome-on-centos" target="_blank" rel="noopener noreferrer">chrome其他安装方式<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <ul><li><a href="http://dist.control.lth.se/public/CentOS-7/x86_64/google.x86_64/" target="_blank" rel="noopener noreferrer">http://dist.control.lth.se/public/CentOS-7/x86_64/google.x86_64/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p><strong>rpm包安装</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 下载rpm包</span>
+<span class="token function">wget</span> https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+<span class="token comment"># 安装依赖</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> lsb libXScrnSaver libappindicator-gtk3 liberation-fonts libvulkan atk cups-libs*<span class="token punctuation">\</span>
+ gtk3 libXcomposite libXdamage libXrandr libdrm mesa-libgbm alsa-lib libX11 nss xvfb
+
+<span class="token comment"># 安装chrome</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> google-chrome-stable_current_x86_64.rpm
+<span class="token comment"># 或者使用yum安装chrome</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> google-chrome-stable_current_x86_64.rpm
+
+<span class="token comment"># 查看版本</span>
+google-chrome <span class="token parameter variable">--version</span>
+
+<span class="token comment"># 安装chromedriver：一个用来和chrome交互的接口</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> chromedriver
+<span class="token comment"># 查看安装的chromedriver版本</span>
+chromedriver <span class="token parameter variable">--version</span>
+</code></pre></div><p><strong>Cent OS7安装Google Chrome</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">wget</span> http://dist.control.lth.se/public/CentOS-7/x86_64/google.x86_64/google-chrome-stable-125.0.6422.141-1.x86_64
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> google-chrome-stable-125.0.6422.141-1.x86_64.rpm
+</code></pre></div><p><strong>在线安装</strong></p> <ul><li>创建repo文件</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/yum.repos.d/google-chrome.repo
+</code></pre></div><ul><li>添加内容</li></ul> <div class="language-conf extra-class"><pre class="language-text"><code>[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+</code></pre></div><ul><li>或者</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">'echo &quot;[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://dl.google.com/linux/linux_signing_key.pub&quot; &gt; /etc/yum.repos.d/google-chrome.repo'</span>
+</code></pre></div><ul><li>安装</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> <span class="token parameter variable">-y</span> google-chrome-stable
+<span class="token comment"># 如果安装失败</span>
+yum <span class="token function">install</span> google-chrome-stable <span class="token parameter variable">--nogpgcheck</span>
+</code></pre></div><h3 id="debian或ubuntu"><a href="#debian或ubuntu" class="header-anchor">#</a> Debian或Ubuntu</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># APT仓库安装</span>
+<span class="token function">sudo</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">'echo &quot;deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt; /etc/apt/sources.list.d/google-chrome.list'</span>
+<span class="token function">wget</span> <span class="token parameter variable">-q</span> <span class="token parameter variable">-O</span> - https://dl.google.com/linux/linux_signing_key.pub <span class="token operator">|</span> <span class="token function">sudo</span> apt-key <span class="token function">add</span> -
+<span class="token comment"># 刷新可用软件包及其版本的列表，处理依赖冲突并升级软件包（包括内核）升级到最新版本</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> dist-upgrade <span class="token parameter variable">-y</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> google-chrome-stable <span class="token parameter variable">-y</span>
+<span class="token comment"># 下载.deb包安装</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> google-chrome-stable_current_amd64.deb <span class="token parameter variable">-y</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/bajins/notes-vuepress/edit/master//System/CentOS.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2026-02-28 02:28:37</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/System/Android.html" class="prev">
+        Android
+      </a></span> <span class="next"><a href="/System/IOS.html">
+        IOS
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1faa001a.js" defer></script><script src="/assets/js/2.4296a15b.js" defer></script><script src="/assets/js/1.13868f42.js" defer></script><script src="/assets/js/106.602c6293.js" defer></script>
+  </body>
+</html>
